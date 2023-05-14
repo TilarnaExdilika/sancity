@@ -1,5 +1,6 @@
 
-
+<!-- bat dau session -->
+<?php session_start(); ?>
 <!-- ... -->
 <!-- Đoạn code layout của trang layout.php -->
 <!-- ... -->
@@ -24,8 +25,7 @@
 
 
 <body class="yellow-skin">
-    <!-- bat dau session -->
-    <?php session_start(); ?>
+
     <!-- menu & slide -->
 
 

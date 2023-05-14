@@ -52,6 +52,8 @@ class UserModel extends Connect
             return $result['password'];
         }
         return null;
+
+        
     }
 }
 ?>
