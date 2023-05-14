@@ -6,7 +6,7 @@
         <div class="modal-content overli" id="registermodal">
             <div class="modal-body p-0">
                 <div class="resp_log_wrap">
-                    <div class="resp_log_thumb" style="background:url(public/img/city-1.png)no-repeat;"></div>
+                    <div class="resp_log_thumb" style="background:url(public/img/loginbanner.png)no-repeat;"></div>
                     <div class="resp_log_caption">
                         <span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
                         <div class="edlio_152">
@@ -102,7 +102,7 @@
                                             <div class="eltio_ol9">
                                                 <div class="eltio_k1">
                                                     <input id="dds" class="checkbox-custom" name="dds" type="checkbox">
-                                                    <label for="dds" class="checkbox-custom-label">Bằng cách sử dụng trang web, bạn chấp nhận các điều khoản và điều kiện</label>
+                                                    <label for="dds" class="checkbox-custom-label">Đã đọc và chấp nhận điều khoản và điều kiện</label>
                                                 </div>	
                                             </div>
                                         </div>
