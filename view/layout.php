@@ -1,6 +1,5 @@
 
 <!-- bat dau session -->
-<?php session_start(); ?>
 <!-- ... -->
 <!-- Đoạn code layout của trang layout.php -->
 <!-- ... -->

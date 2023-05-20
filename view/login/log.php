@@ -1,4 +1,6 @@
-
+<?php
+include_once './helpers/session_helper.php';
+?>
 <!-- ============================ Login ================================== -->	
 <!-- Log In Modal -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">

@@ -1,4 +1,5 @@
 <?php
+
 require_once 'model/LoginModel.php';
 
 class LoginController

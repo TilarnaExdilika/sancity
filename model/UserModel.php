@@ -42,7 +42,7 @@ class UserModel extends Connect
         return $user;
     }
 
-    private function getHashedPassword($username)
+    public function getHashedPassword($username)
     {
         $query = "SELECT password FROM users WHERE username = ?";
         $statement = $this->db->prepare($query);
