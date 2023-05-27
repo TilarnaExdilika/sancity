@@ -1,6 +1,7 @@
 <?php
 require_once 'master.php';
 require_once 'config/db.php';
+require_once 'UserModel.php';
 
 class LoginModel extends MasterModel
 {
