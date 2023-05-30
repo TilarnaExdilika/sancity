@@ -1,40 +1,31 @@
 <?php
 class connect
 {
-    // khởi tạo thuộc tính lớp connect
     protected $db = null;
 
-
-    ///kết nối database
     public function __construct()
     {
         $dsn = 'mysql:host=localhost;dbname=sandb';
         $user = 'root';
         $pass = '';
-        $this->db = new PDO($dsn, $user, $pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        try {
+            $this->db = new PDO($dsn, $user, $pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        } catch (PDOException $e) {
+            throw new Exception("Lỗi kết nối cơ sở dữ liệu: " . $e->getMessage());
+        }
     }
 
-    //Lấy dữ liệu database 
-    public function getList($select)
+    public function getInstance($query)
     {
-        $result = $this->db->query($select);
+        $stmt = $this->db->query($query);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    //tạo phương thức câu lệnh insert,update, delete
     public function exec($query)
     {
         $result = $this->db->exec($query);
         return $result;
     }
-
-    public function getInstance($select)
-    {
-        $results = $this->db->query($select);
-        $result = $results->fetch();
-        return $result;
-    }
-
 }
-
 ?>

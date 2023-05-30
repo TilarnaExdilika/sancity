@@ -1,5 +1,8 @@
 
 <!-- bat dau session -->
+<?php
+session_start();
+?>
 <!-- ... -->
 <!-- Đoạn code layout của trang layout.php -->
 <!-- ... -->
@@ -155,7 +158,7 @@
 							</ul>
     <!-- ==============================  View Signing  ================================ -->
 							<?php
-							require_once __DIR__ . '/../Controller/UserController.php';
+							require_once __DIR__ . '/../Controller/Login.php';
 							$userController = new UserController();
 							$loggedIn = $userController->checkLogin();
 							?>
@@ -180,6 +183,7 @@
 													<li><a href="index.php?controller=DashBoard&action=package"><i class="fa fa-gift"></i>Choose Package</a></li>
 													<li><a href="index.php?controller=DashBoard&action=newProperty"><i class="fa fa-pen-nib"></i>Submit New Property</a></li>
 													<li><a href="index.php?controller=DashBoard&action=changePassword"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
+													<li><a href="index.php?controller=Logout&action=index"><i class="fa fa-power-off"></i>Logout</a></li>
 												</ul>
 											</div>
 										</div>

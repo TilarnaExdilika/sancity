@@ -1,47 +1,55 @@
 <?php
-require_once 'master.php';
+
 require_once 'config/db.php';
-require_once 'UserModel.php';
 
-class LoginModel extends MasterModel
-{
-    private $db;
+class LoginModel extends connect {
+    // public $loggedIn = false;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->db = new connect();
-    }
+    // public function __construct(){
+    //     // if(isset($_SESSION["auth"])){
+    //     //     $this->loggedIn = true;
+    //     // }
+    // }
 
-    public function checkLogin($username, $password)
-    {
-        // Lấy thông tin người dùng từ cơ sở dữ liệu dựa trên tên người dùng
-        $query = "SELECT * FROM users WHERE username = '$username'";
-        $user = $this->db->getInstance($query);
-    
-        if ($user && password_verify($password, $user['password'])) {
-            return true; // Đăng nhập thành công
-        } else {
-            return false; // Đăng nhập không thành công
-        }
-    }
+    public function authenticate($username, $password) {
+        // Xử lý logic xác thực đăng nhập
 
-    public function registerUser($username, $password, $email)
-    {
-        // Mã hóa mật khẩu
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        // Tạo câu truy vấn INSERT để thêm người dùng vào cơ sở dữ liệu
-        $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$hashedPassword', '$email')";
-
-        // Thực thi câu truy vấn
-        $result = $this->db->exec($query);
-
+        $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+        $result = $this->getInstance($query);
+        
         if ($result) {
-            return true; // Đăng kí thành công
+            $_SESSION["auth"] = $result;
+            $this->isLoggedIn(); // Đánh dấu là đã đăng nhập thành công
+            return $result;
         } else {
-            return false; // Đăng kí không thành công
+            // Xác thực không thành công, trả về false
+            return false;
         }
+    }
+
+    public function register($username, $email, $password) {
+        // Xử lý logic đăng ký
+        
+        $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+        $result = $this->exec($query);
+        
+        if ($result) {
+            // Đăng ký thành công, trả về true
+            $_SESSION["auth"] = $result;
+            $this->isLoggedIn(); // Đánh dấu là đã đăng nhập thành công
+            return true;
+        } else {
+            // Đăng ký không thành công, trả về false
+            return false;
+        }
+    }
+
+    public function isLoggedIn() {
+        $loggedIn = false;
+
+        if(isset($_SESSION["auth"])){
+            $loggedIn = true;
+        }
+        return $loggedIn;
     }
 }
-?>
