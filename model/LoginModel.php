@@ -3,18 +3,13 @@
 require_once 'config/db.php';
 
 class LoginModel extends connect {
-    // public $loggedIn = false;
-
-    // public function __construct(){
-    //     // if(isset($_SESSION["auth"])){
-    //     //     $this->loggedIn = true;
-    //     // }
-    // }
 
     public function authenticate($username, $password) {
         // Xử lý logic xác thực đăng nhập
 
-        $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+        $hashedPassword = md5($password); // Mã hóa mật khẩu bằng MD5
+
+        $query = "SELECT * FROM users WHERE username = '$username' AND password = '$hashedPassword'";
         $result = $this->getInstance($query);
         
         if ($result) {
@@ -30,7 +25,9 @@ class LoginModel extends connect {
     public function register($username, $email, $password) {
         // Xử lý logic đăng ký
         
-        $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+        $hashedPassword = md5($password); // Mã hóa mật khẩu bằng MD5
+
+        $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedPassword')";
         $result = $this->exec($query);
         
         if ($result) {
