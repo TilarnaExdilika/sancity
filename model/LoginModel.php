@@ -7,10 +7,13 @@ class LoginModel extends connect {
     public function authenticate($username, $password) {
         // Xử lý logic xác thực đăng nhập
 
-        $hashedPassword = md5($password); // Mã hóa mật khẩu bằng MD5
-
-        $query = "SELECT * FROM users WHERE username = '$username' AND password = '$hashedPassword'";
-        $result = $this->getInstance($query);
+        $query = "SELECT * FROM users WHERE username = :username AND password = :password";
+        $statement = $this->getConnection()->prepare($query);
+        $hashedPassword = md5($password);
+        $statement->bindParam(':username', $username);
+        $statement->bindParam(':password', $hashedPassword);
+        $statement->execute();
+        $result = $statement->fetch();
         
         if ($result) {
             $_SESSION["auth"] = $result;
@@ -24,11 +27,14 @@ class LoginModel extends connect {
 
     public function register($username, $email, $password) {
         // Xử lý logic đăng ký
-        
-        $hashedPassword = md5($password); // Mã hóa mật khẩu bằng MD5
 
-        $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedPassword')";
-        $result = $this->exec($query);
+        $query = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+        $statement = $this->getConnection()->prepare($query);
+        $hashedPassword = md5($password);
+        $statement->bindParam(':username', $username);
+        $statement->bindParam(':email', $email);
+        $statement->bindParam(':password', $hashedPassword);
+        $result = $statement->execute();
         
         if ($result) {
             // Đăng ký thành công, trả về true
