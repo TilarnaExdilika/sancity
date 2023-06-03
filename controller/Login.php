@@ -15,7 +15,6 @@ class LoginController {
             $username = $_POST['username'];
             $password = $_POST['password'];
             
-            // Gọi phương thức xác thực đăng nhập từ model
             $result = $this->loginModel->authenticate($username, $password);
             
             if ($result) {
@@ -36,7 +35,6 @@ class LoginController {
             $email = $_POST['email'];
             $password = $_POST['password'];
             
-            // Gọi phương thức đăng ký từ model
             $result = $this->loginModel->register($username, $email, $password);
             
             if ($result) {
@@ -57,11 +55,7 @@ class UserController {
     }
 
     public function checkLogin() {
-        // Thực hiện logic kiểm tra đăng nhập của người dùng
         $loggedIn = $this->loginModel->isLoggedIn();
-        // $loggedIn = true;
         return $loggedIn;
     }
-    
 }
-?>

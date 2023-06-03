@@ -5,7 +5,7 @@ class connect
 
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost;dbname=sandb';
+        $dsn = 'mysql:host=localhost;dbname=sancityup1';
         $user = 'root';
         $pass = '';
         try {
