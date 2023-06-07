@@ -5,7 +5,7 @@ class connect
 
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost;dbname=sancityup1';
+        $dsn = 'mysql:host=localhost;dbname=sancitydatabase';
         $user = 'root';
         $pass = '';
         try {
@@ -30,6 +30,13 @@ class connect
     public function exec($query)
     {
         $result = $this->db->exec($query);
+        return $result;
+    }
+
+    public function getList($query)
+    {
+        $stmt = $this->db->query($query);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 }

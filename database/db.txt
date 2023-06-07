@@ -1,0 +1,177 @@
+-- Bảng Loại tài khoản (Account Types)
+CREATE TABLE account_types (
+account_type_id INT PRIMARY KEY AUTO_INCREMENT,
+account_type_name NVARCHAR(50) NOT NULL
+);
+
+-- Bảng Người dùng (Users)
+CREATE TABLE users (
+user_id INT PRIMARY KEY AUTO_INCREMENT,
+username NVARCHAR(50) NOT NULL,
+password NVARCHAR(50) NOT NULL,
+email NVARCHAR(100) NOT NULL,
+phone_number NVARCHAR(20) NOT NULL,
+account_type_id INT,
+FOREIGN KEY (account_type_id) REFERENCES account_types(account_type_id)
+);
+
+-- Bảng Loại bất động sản (Property Types)
+CREATE TABLE property_types (
+type_id INT PRIMARY KEY AUTO_INCREMENT,
+type_name NVARCHAR(50) NOT NULL
+);
+
+-- Bảng Bất động sản (Properties)
+CREATE TABLE properties (
+property_id INT PRIMARY KEY AUTO_INCREMENT,
+user_id INT,
+type_id INT,
+property_name NVARCHAR(100) NOT NULL,
+description TEXT,
+address NVARCHAR(200) NOT NULL,
+price DECIMAL(18, 2) NOT NULL,
+CONSTRAINT fk_property_user FOREIGN KEY (user_id) REFERENCES users(user_id),
+CONSTRAINT fk_property_type FOREIGN KEY (type_id) REFERENCES property_types(type_id)
+);
+
+-- Bảng Hình ảnh bất động sản (Property Images)
+CREATE TABLE property_images (
+image_id INT PRIMARY KEY AUTO_INCREMENT,
+property_id INT,
+image_url NVARCHAR(200) NOT NULL,
+CONSTRAINT fk_property_image FOREIGN KEY (property_id) REFERENCES properties(property_id)
+);
+
+-- Bảng Tiện ích (Utilities)
+CREATE TABLE utilities (
+utility_id INT PRIMARY KEY AUTO_INCREMENT,
+utility_name NVARCHAR(100) NOT NULL
+);
+
+-- Bảng Liên kết Bất động sản - Tiện ích (Property Utilities)
+CREATE TABLE property_utilities (
+property_id INT,
+utility_id INT,
+PRIMARY KEY (property_id, utility_id),
+FOREIGN KEY (property_id) REFERENCES properties(property_id),
+FOREIGN KEY (utility_id) REFERENCES utilities(utility_id)
+);
+
+-- Bảng Phòng ngủ (Bedrooms)
+CREATE TABLE bedrooms (
+bedroom_id INT PRIMARY KEY AUTO_INCREMENT,
+bedroom_count INT NOT NULL
+);
+
+-- Bảng Phòng tắm (Bathrooms)
+CREATE TABLE bathrooms (
+bathroom_id INT PRIMARY KEY AUTO_INCREMENT,
+bathroom_count INT NOT NULL
+);
+
+-- Bảng Diện tích (Areas)
+CREATE TABLE areas (
+area_id INT PRIMARY KEY AUTO_INCREMENT,
+area DECIMAL(10, 2) NOT NULL
+);
+
+-- Bảng Chi tiết bất động sản (Property Details)
+CREATE TABLE property_details (
+detail_id INT PRIMARY KEY AUTO_INCREMENT,
+property_id INT,
+bedroom_id INT,
+bathroom_id INT,
+area_id INT,
+CONSTRAINT fk_property_detail_property FOREIGN KEY (property_id) REFERENCES properties(property_id),
+CONSTRAINT fk_property_detail_bedroom FOREIGN KEY (bedroom_id) REFERENCES bedrooms(bedroom_id),
+CONSTRAINT fk_property_detail_bathroom FOREIGN KEY (bathroom_id) REFERENCES bathrooms(bathroom_id),
+CONSTRAINT fk_property_detail_area FOREIGN KEY (area_id) REFERENCES areas(area_id)
+);
+
+-- Bảng Hợp đồng (Contracts)
+CREATE TABLE contracts (
+contract_id INT PRIMARY KEY AUTO_INCREMENT,
+property_id INT,
+user_id INT,
+contract_type ENUM('rental', 'sale') NOT NULL,
+start_date DATE NOT NULL,
+end_date DATE NOT NULL,
+CONSTRAINT fk_contract_property FOREIGN KEY (property_id) REFERENCES properties(property_id),
+CONSTRAINT fk_contract_user FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+-- Bảng Đánh giá (Reviews)
+CREATE TABLE reviews (
+review_id INT PRIMARY KEY AUTO_INCREMENT,
+property_id INT,
+user_id INT,
+rating INT NOT NULL,
+review_text TEXT,
+review_date DATE NOT NULL,
+CONSTRAINT fk_review_property FOREIGN KEY (property_id) REFERENCES properties(property_id),
+CONSTRAINT fk_review_user FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+-- Bảng Lịch hẹn (Appointments)
+CREATE TABLE appointments (
+appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+property_id INT,
+user_id INT,
+appointment_date DATETIME,
+CONSTRAINT fk_appointment_property FOREIGN KEY (property_id) REFERENCES properties(property_id),
+CONSTRAINT fk_appointment_user FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+-- Bảng Tin tức/Blog (News/Blog)
+CREATE TABLE news_blog (
+news_id INT PRIMARY KEY AUTO_INCREMENT,
+title NVARCHAR(200) NOT NULL,
+content TEXT,
+author_id INT,
+publish_date DATE,
+CONSTRAINT fk_news_author FOREIGN KEY (author_id) REFERENCES users(user_id)
+);
+
+-- Bảng Địa điểm (Locations)
+CREATE TABLE locations (
+location_id INT PRIMARY KEY AUTO_INCREMENT,
+property_id INT,
+latitude DECIMAL(10, 8) NOT NULL,
+longitude DECIMAL(11, 8) NOT NULL,
+address NVARCHAR(200) NOT NULL,
+city NVARCHAR(100) NOT NULL,
+state NVARCHAR(100) NOT NULL,
+country NVARCHAR(100) NOT NULL,
+CONSTRAINT fk_location_property FOREIGN KEY (property_id) REFERENCES properties(property_id)
+);
+
+-- Bảng Phản hồi (Feedbacks)
+CREATE TABLE feedbacks (
+feedback_id INT PRIMARY KEY AUTO_INCREMENT,
+property_id INT,
+user_id INT,
+rating INT NOT NULL,
+comment TEXT,
+feedback_date DATE NOT NULL,
+CONSTRAINT fk_feedback_property FOREIGN KEY (property_id) REFERENCES properties(property_id),
+CONSTRAINT fk_feedback_user FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+-- Bảng Giỏ hàng (Carts)
+CREATE TABLE carts (
+cart_id INT PRIMARY KEY AUTO_INCREMENT,
+user_id INT,
+property_id INT,
+quantity INT NOT NULL,
+CONSTRAINT fk_cart_user FOREIGN KEY (user_id) REFERENCES users(user_id),
+CONSTRAINT fk_cart_property FOREIGN KEY (property_id) REFERENCES properties(property_id)
+);
+
+-- Bảng Yêu thích (Favorites)
+CREATE TABLE favorites (
+favorite_id INT PRIMARY KEY AUTO_INCREMENT,
+user_id INT,
+property_id INT,
+CONSTRAINT fk_favorite_user FOREIGN KEY (user_id) REFERENCES users(user_id),
+CONSTRAINT fk_favorite_property FOREIGN KEY (property_id) REFERENCES properties(property_id)
+);

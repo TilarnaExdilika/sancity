@@ -18,7 +18,7 @@
             <div class="col-lg-12 col-md-12">
             
                 <div class="alert alert-info" role="alert">
-                <p>If you don't have an account you can create one by <a href="#">Click Here</a></p>
+                <p>Mọi thông tin chi tiết xin liên hệ CSKH - SANCITY <a href="#">Tại đây</a></p>
                 </div>
             
             </div>
@@ -30,26 +30,26 @@
                     
                     <!-- Basic Information -->
                     <div class="frm_submit_block">	
-                        <h3>Basic Information</h3>
+                        <h3>Thông tin bất động sản</h3>
                         <div class="frm_submit_wrap">
                             <div class="form-row">
                             
                                 <div class="form-group col-md-12">
-                                    <label>Property Title<a href="#" class="tip-topdata" data-tip="Property Title"><i class="ti-help"></i></a></label>
+                                    <label>Tiêu đề<a href="#" class="tip-topdata" data-tip="Property Title"><i class="ti-help"></i></a></label>
                                     <input type="text" class="form-control">
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>Status</label>
+                                    <label>Hình thức bất động sản</label>
                                     <select id="status" class="form-control">
                                         <option value="">&nbsp;</option>
-                                        <option value="1">For Rent</option>
-                                        <option value="2">For Sale</option>
+                                        <option value="1">Cho thuê</option>
+                                        <option value="2">Cho bán</option>
                                     </select>
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>Property Type</label>
+                                    <label>Loại Bất động sản</label>
                                     <select id="ptypes" class="form-control">
                                         <option value="">&nbsp;</option>
                                         <option value="1">Houses</option>
@@ -62,17 +62,17 @@
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>Price</label>
-                                    <input type="text" class="form-control" placeholder="USD">
+                                    <label>Giá</label>
+                                    <input type="text" class="form-control" placeholder="VND">
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>Area</label>
+                                    <label>Diện tích</label>
                                     <input type="text" class="form-control">
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>Bedrooms</label>
+                                    <label>Phòng ngủ</label>
                                     <select id="bedrooms" class="form-control">
                                         <option value="">&nbsp;</option>
                                         <option value="1">1</option>
@@ -84,7 +84,7 @@
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>Bathrooms</label>
+                                    <label>Phòng tắm</label>
                                     <select id="bathrooms" class="form-control">
                                         <option value="">&nbsp;</option>
                                         <option value="1">1</option>
@@ -101,12 +101,12 @@
                     
                     <!-- Gallery -->
                     <div class="frm_submit_block">	
-                        <h3>Gallery</h3>
+                        <h3>Thư viện ảnh</h3>
                         <div class="frm_submit_wrap">
                             <div class="form-row">
                             
                                 <div class="form-group col-md-12">
-                                    <label>Upload Gallery</label>
+                                    <label>Tải ảnh lên</label>
                                     <form action="https://themezhub.net/upload-target" class="dropzone dz-clickable primary-dropzone">
                                         <div class="dz-default dz-message">
                                             <i class="ti-gallery"></i>
@@ -121,27 +121,27 @@
                     
                     <!-- Location -->
                     <div class="frm_submit_block">	
-                        <h3>Location</h3>
+                        <h3>Vị trí</h3>
                         <div class="frm_submit_wrap">
                             <div class="form-row">
                             
                                 <div class="form-group col-md-6">
-                                    <label>Address</label>
+                                    <label>Địa chỉ</label>
                                     <input type="text" class="form-control">
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>City</label>
+                                    <label>Thành phố</label>
                                     <input type="text" class="form-control">
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>State</label>
+                                    <label>Phường</label>
                                     <input type="text" class="form-control">
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>Zip Code</label>
+                                    <label>Đường, số nhà</label>
                                     <input type="text" class="form-control">
                                 </div>
                                 
@@ -151,29 +151,29 @@
                     
                     <!-- Detailed Information -->
                     <div class="frm_submit_block">	
-                        <h3>Detailed Information</h3>
+                        <h3>Chi tiết bất động sản</h3>
                         <div class="frm_submit_wrap">
                             <div class="form-row">
                             
                                 <div class="form-group col-md-12">
-                                    <label>Description</label>
+                                    <label>Mô tả</label>
                                     <textarea class="form-control h-120"></textarea>
                                 </div>
                                 
                                 <div class="form-group col-md-4">
-                                    <label>Building Age (optional)</label>
+                                    <label>Tuổi bất động sản (Tùy chọn)</label>
                                     <select id="bage" class="form-control">
                                         <option value="">&nbsp;</option>
-                                        <option value="1">0 - 5 Years</option>
-                                        <option value="2">0 - 10Years</option>
-                                        <option value="3">0 - 15 Years</option>
-                                        <option value="4">0 - 20 Years</option>
-                                        <option value="5">20+ Years</option>
+                                        <option value="1">0 - 5 Năm</option>
+                                        <option value="2">0 - 10 Năm</option>
+                                        <option value="3">0 - 15 Năm</option>
+                                        <option value="4">0 - 20 Năm</option>
+                                        <option value="5">20+ Năm</option>
                                     </select>
                                 </div>
                                 
                                 <div class="form-group col-md-4">
-                                    <label>Garage (optional)</label>
+                                    <label>Ga-ra  (Tùy chọn)</label>
                                     <select id="garage" class="form-control">
                                         <option value="">&nbsp;</option>
                                         <option value="1">1</option>
@@ -185,7 +185,7 @@
                                 </div>
                                 
                                 <div class="form-group col-md-4">
-                                    <label>Rooms (optional)</label>
+                                    <label>Số phòng (Tùy chọn)</label>
                                     <select id="rooms" class="form-control">
                                         <option value="">&nbsp;</option>
                                         <option value="1">1</option>
@@ -197,16 +197,16 @@
                                 </div>
                                 
                                 <div class="form-group col-md-12">
-                                    <label>Other Features (optional)</label>
+                                    <label>Tiện ích khác (Tùy chọn)</label>
                                     <div class="o-features">
                                         <ul class="no-ul-list third-row">
                                             <li>
                                                 <input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
-                                                <label for="a-1" class="checkbox-custom-label">Air Condition</label>
+                                                <label for="a-1" class="checkbox-custom-label">Lọc khí</label>
                                             </li>
                                             <li>
                                                 <input id="a-2" class="checkbox-custom" name="a-2" type="checkbox">
-                                                <label for="a-2" class="checkbox-custom-label">Bedding</label>
+                                                <label for="a-2" class="checkbox-custom-label">Giường ngủ</label>
                                             </li>
                                             <li>
                                                 <input id="a-3" class="checkbox-custom" name="a-3" type="checkbox">
@@ -258,12 +258,12 @@
                     
                     <!-- Contact Information -->
                     <div class="frm_submit_block">	
-                        <h3>Contact Information</h3>
+                        <h3>Thông tin liên hệ </h3>
                         <div class="frm_submit_wrap">
                             <div class="form-row">
                             
                                 <div class="form-group col-md-4">
-                                    <label>Name</label>
+                                    <label>Họ & tên</label>
                                     <input type="text" class="form-control">
                                 </div>
                                 
@@ -273,7 +273,7 @@
                                 </div>
                                 
                                 <div class="form-group col-md-4">
-                                    <label>Phone (optional)</label>
+                                    <label>Số điện thoại</label>
                                     <input type="text" class="form-control">
                                 </div>
                                 
@@ -283,7 +283,7 @@
                     
                     <div class="form-group">
                         <div class="col-lg-12 col-md-12">
-                        <button class="btn btn-theme" type="submit">Submit & Preview</button>
+                        <button class="btn btn-theme" type="submit">Gửi & trãi nghiệm</button>
                         </div>
                     </div>
                                 

@@ -738,14 +738,14 @@
 			<section class="min">
 				<div class="container">
 				
-					<div class="row justify-content-center">
+					<!-- <div class="row justify-content-center">
 						<div class="col-lg-7 col-md-10 text-center">
 							<div class="sec-heading center mb-4">
 								<h2>Bất động sản gần đây</h2>
 								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					
 					<div class="row justify-content-center">
 						
@@ -1040,221 +1040,10 @@
 							</div>
 						</div>
 						<!-- End Single Property -->
-						
-					</div>
-					
-				</div>
-			</section>
-			<!-- ============================ Latest Property For Sale End ================================== -->
-			
-			
-			<!-- ============================ Latest Property For Sale Start ================================== -->
-			<section>
-				<div class="container">
-				
-					<div class="row justify-content-center">
-						<div class="col-lg-7 col-md-10 text-center">
-							<div class="sec-heading center mb-4">
-								<h2>Bất động sản đề xuất cho bạn</h2>
-								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row justify-content-center">
-						
+
 						<!-- Single Property -->
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<div class="property-listing property-2">
-								
-								<div class="listing-img-wrapper">
-									<div class="_exlio_125">For Sale</div>
-									<div class="list-img-slide">
-										<div class="click">
-											<div><a href="single-property-1.html"><img src="public/img/p-1.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-2.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-3.png" class="img-fluid mx-auto" alt="" /></a></div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-wrapper">
-									<div class="listing-short-detail-wrap">
-										<div class="_card_list_flex mb-2">
-											<div class="_card_flex_01">
-												<span class="_list_blickes _netork">6 Network</span>
-												<span class="_list_blickes types">Family</span>
-											</div>
-											<div class="_card_flex_last">
-												<div class="prt_saveed_12lk">
-													<label class="toggler toggler-danger"><input type="checkbox"><i class="ti-heart"></i></label>
-												</div>
-											</div>
-										</div>
-										<div class="_card_list_flex">
-											<div class="_card_flex_01">
-												<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7012 Shine Sehu Street, Liverpool London, LC345AC</a></h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="price-features-wrapper">
-									<div class="list-fx-features">
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>3 Beds
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>1 Bath
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>800 sqft
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-footer">
-									<div class="footer-first">
-										<h6 class="listing-card-info-price mb-0 p-0">$7,000</h6>
-									</div>
-									<div class="footer-flex">
-										<a href="property-detail.html" class="prt-view">View Detail</a>
-									</div>
-								</div>
-								
-							</div>
-						</div>
-						<!-- End Single Property -->
-						
-						<!-- Single Property -->
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<div class="property-listing property-2">
-								
-								<div class="listing-img-wrapper">
-									<div class="_exlio_125">For Rent</div>
-									<div class="list-img-slide">
-										<div class="click">
-											<div><a href="single-property-1.html"><img src="public/img/p-4.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-5.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-6.png" class="img-fluid mx-auto" alt="" /></a></div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-wrapper">
-									<div class="listing-short-detail-wrap">
-										<div class="_card_list_flex mb-2">
-											<div class="_card_flex_01">
-												<span class="_list_blickes _netork">4 Network</span>
-												<span class="_list_blickes types">Condos</span>
-											</div>
-											<div class="_card_flex_last">
-												<div class="prt_saveed_12lk">
-													<label class="toggler toggler-danger"><input type="checkbox"><i class="ti-heart"></i></label>
-												</div>
-											</div>
-										</div>
-										<div class="_card_list_flex">
-											<div class="_card_flex_01">
-												<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">5689 Resot Relly Market, Montreal Canada, HAQC445</a></h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="price-features-wrapper">
-									<div class="list-fx-features">
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>4 Beds
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>740 sqft
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-footer">
-									<div class="footer-first">
-										<h6 class="listing-card-info-price mb-0 p-0">$8,200</h6>
-									</div>
-									<div class="footer-flex">
-										<a href="property-detail.html" class="prt-view">View Detail</a>
-									</div>
-								</div>
-								
-							</div>
-						</div>
-						<!-- End Single Property -->
-						
-						<!-- Single Property -->
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<div class="property-listing property-2">
-								
-								<div class="listing-img-wrapper">
-									<div class="_exlio_125">For Sale</div>
-									<div class="list-img-slide">
-										<div class="click">
-											<div><a href="single-property-1.html"><img src="public/img/p-7.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-8.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-9.png" class="img-fluid mx-auto" alt="" /></a></div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-wrapper">
-									<div class="listing-short-detail-wrap">
-										<div class="_card_list_flex mb-2">
-											<div class="_card_flex_01">
-												<span class="_list_blickes _netork">5 Network</span>
-												<span class="_list_blickes types">Offices</span>
-											</div>
-											<div class="_card_flex_last">
-												<div class="prt_saveed_12lk">
-													<label class="toggler toggler-danger"><input type="checkbox"><i class="ti-heart"></i></label>
-												</div>
-											</div>
-										</div>
-										<div class="_card_list_flex">
-											<div class="_card_flex_01">
-												<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">9632 New Green Garden, Huwai Denever USA, AWE789O</a></h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="price-features-wrapper">
-									<div class="list-fx-features">
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-footer">
-									<div class="footer-first">
-										<h6 class="listing-card-info-price mb-0 p-0">$9,500</h6>
-									</div>
-									<div class="footer-flex">
-										<a href="property-detail.html" class="prt-view">View Detail</a>
-									</div>
-								</div>
-								
-							</div>
-						</div>
-						<!-- End Single Property -->
-						
-						<!-- Single Property -->
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<div class="property-listing property-2">
+						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+							<div class="property-listing list_view">
 								
 								<div class="listing-img-wrapper">
 									<div class="_exlio_125">For Rent</div>
@@ -1267,173 +1056,568 @@
 									</div>
 								</div>
 								
-								<div class="listing-detail-wrapper">
-									<div class="listing-short-detail-wrap">
-										<div class="_card_list_flex mb-2">
-											<div class="_card_flex_01">
-												<span class="_list_blickes _netork">7 Network</span>
-												<span class="_list_blickes types">Apartment</span>
+								<div class="list_view_flex">
+								
+									<div class="listing-detail-wrapper mt-1">
+										<div class="listing-short-detail-wrap">
+											<div class="_card_list_flex mb-2">
+												<div class="_card_flex_01">
+													<span class="_list_blickes _netork">10 Network</span>
+													<span class="_list_blickes types">Villas</span>
+												</div>
+												<div class="_card_flex_last">
+													<h6 class="listing-card-info-price mb-0">$9,100</h6>
+												</div>
 											</div>
-											<div class="_card_flex_last">
-												<div class="prt_saveed_12lk">
-													<label class="toggler toggler-danger"><input type="checkbox"><i class="ti-heart"></i></label>
+											<div class="_card_list_flex">
+												<div class="_card_flex_01">
+													<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
 												</div>
 											</div>
 										</div>
-										<div class="_card_list_flex">
-											<div class="_card_flex_01">
-												<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">8512 Red Reveals Market, Montreal Canada, SHQT45O</a></h4>
+									</div>
+									
+									<div class="price-features-wrapper">
+										<div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
 											</div>
 										</div>
 									</div>
-								</div>
-								
-								<div class="price-features-wrapper">
-									<div class="list-fx-features">
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>4 Beds
+									
+									<div class="listing-detail-footer">
+										<div class="footer-first">
+											<div class="foot-rates">
+												<span class="elio_rate perfect">4.8</span>
+												<div class="_rate_stio">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+											</div>
 										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+										<div class="footer-flex">
+											<a href="property-detail.html" class="prt-view">View Detail</a>
 										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>920 sqft
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-footer">
-									<div class="footer-first">
-										<h6 class="listing-card-info-price mb-0 p-0">$10,400</h6>
-									</div>
-									<div class="footer-flex">
-										<a href="property-detail.html" class="prt-view">View Detail</a>
 									</div>
 								</div>
 								
 							</div>
 						</div>
 						<!-- End Single Property -->
-						
+
 						<!-- Single Property -->
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<div class="property-listing property-2">
-								
-								<div class="listing-img-wrapper">
-									<div class="_exlio_125">For Sale</div>
-									<div class="list-img-slide">
-										<div class="click">
-											<div><a href="single-property-1.html"><img src="public/img/p-13.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-14.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-15.png" class="img-fluid mx-auto" alt="" /></a></div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-wrapper">
-									<div class="listing-short-detail-wrap">
-										<div class="_card_list_flex mb-2">
-											<div class="_card_flex_01">
-												<span class="_list_blickes _netork">7 Network</span>
-												<span class="_list_blickes types">Villas</span>
-											</div>
-											<div class="_card_flex_last">
-												<div class="prt_saveed_12lk">
-													<label class="toggler toggler-danger"><input type="checkbox"><i class="ti-heart"></i></label>
-												</div>
-											</div>
-										</div>
-										<div class="_card_list_flex">
-											<div class="_card_flex_01">
-												<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="price-features-wrapper">
-									<div class="list-fx-features">
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>4 Beds
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>3 Bath
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>850 sqft
-										</div>
-									</div>
-								</div>
-								
-								<div class="listing-detail-footer">
-									<div class="footer-first">
-										<h6 class="listing-card-info-price mb-0 p-0">$9,200</h6>
-									</div>
-									<div class="footer-flex">
-										<a href="property-detail.html" class="prt-view">View Detail</a>
-									</div>
-								</div>
-								
-							</div>
-						</div>
-						<!-- End Single Property -->
-						
-						<!-- Single Property -->
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<div class="property-listing property-2">
+						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+							<div class="property-listing list_view">
 								
 								<div class="listing-img-wrapper">
 									<div class="_exlio_125">For Rent</div>
 									<div class="list-img-slide">
 										<div class="click">
-											<div><a href="single-property-1.html"><img src="public/img/p-16.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-17.png" class="img-fluid mx-auto" alt="" /></a></div>
-											<div><a href="single-property-1.html"><img src="public/img/p-18.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
 										</div>
 									</div>
 								</div>
 								
-								<div class="listing-detail-wrapper">
-									<div class="listing-short-detail-wrap">
-										<div class="_card_list_flex mb-2">
-											<div class="_card_flex_01">
-												<span class="_list_blickes _netork">10 Network</span>
-												<span class="_list_blickes types">Family</span>
+								<div class="list_view_flex">
+								
+									<div class="listing-detail-wrapper mt-1">
+										<div class="listing-short-detail-wrap">
+											<div class="_card_list_flex mb-2">
+												<div class="_card_flex_01">
+													<span class="_list_blickes _netork">10 Network</span>
+													<span class="_list_blickes types">Villas</span>
+												</div>
+												<div class="_card_flex_last">
+													<h6 class="listing-card-info-price mb-0">$9,100</h6>
+												</div>
 											</div>
-											<div class="_card_flex_last">
-												<div class="prt_saveed_12lk">
-													<label class="toggler toggler-danger"><input type="checkbox"><i class="ti-heart"></i></label>
+											<div class="_card_list_flex">
+												<div class="_card_flex_01">
+													<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
 												</div>
 											</div>
 										</div>
-										<div class="_card_list_flex">
-											<div class="_card_flex_01">
-												<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7264 Green Glelcer Street, Barghimbar USA, ERIO098</a></h4>
+									</div>
+									
+									<div class="price-features-wrapper">
+										<div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
 											</div>
 										</div>
 									</div>
-								</div>
-								
-								<div class="price-features-wrapper">
-									<div class="list-fx-features">
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>4 Beds
+									
+									<div class="listing-detail-footer">
+										<div class="footer-first">
+											<div class="foot-rates">
+												<span class="elio_rate perfect">4.8</span>
+												<div class="_rate_stio">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+											</div>
 										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
-										</div>
-										<div class="listing-card-info-icon">
-											<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>750 sqft
+										<div class="footer-flex">
+											<a href="property-detail.html" class="prt-view">View Detail</a>
 										</div>
 									</div>
 								</div>
 								
-								<div class="listing-detail-footer">
-									<div class="footer-first">
-										<h6 class="listing-card-info-price mb-0 p-0">$9,100</h6>
+							</div>
+						</div>
+						<!-- End Single Property -->
+
+						<!-- Single Property -->
+						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+							<div class="property-listing list_view">
+								
+								<div class="listing-img-wrapper">
+									<div class="_exlio_125">For Rent</div>
+									<div class="list-img-slide">
+										<div class="click">
+											<div><a href="single-property-1.html"><img src="public/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
+										</div>
 									</div>
-									<div class="footer-flex">
-										<a href="property-detail.html" class="prt-view">View Detail</a>
+								</div>
+								
+								<div class="list_view_flex">
+								
+									<div class="listing-detail-wrapper mt-1">
+										<div class="listing-short-detail-wrap">
+											<div class="_card_list_flex mb-2">
+												<div class="_card_flex_01">
+													<span class="_list_blickes _netork">10 Network</span>
+													<span class="_list_blickes types">Villas</span>
+												</div>
+												<div class="_card_flex_last">
+													<h6 class="listing-card-info-price mb-0">$9,100</h6>
+												</div>
+											</div>
+											<div class="_card_list_flex">
+												<div class="_card_flex_01">
+													<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="price-features-wrapper">
+										<div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
+											</div>
+										</div>
+									</div>
+									
+									<div class="listing-detail-footer">
+										<div class="footer-first">
+											<div class="foot-rates">
+												<span class="elio_rate perfect">4.8</span>
+												<div class="_rate_stio">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+											</div>
+										</div>
+										<div class="footer-flex">
+											<a href="property-detail.html" class="prt-view">View Detail</a>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<!-- End Single Property -->
+
+						<!-- Single Property -->
+						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+							<div class="property-listing list_view">
+								
+								<div class="listing-img-wrapper">
+									<div class="_exlio_125">For Rent</div>
+									<div class="list-img-slide">
+										<div class="click">
+											<div><a href="single-property-1.html"><img src="public/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="list_view_flex">
+								
+									<div class="listing-detail-wrapper mt-1">
+										<div class="listing-short-detail-wrap">
+											<div class="_card_list_flex mb-2">
+												<div class="_card_flex_01">
+													<span class="_list_blickes _netork">10 Network</span>
+													<span class="_list_blickes types">Villas</span>
+												</div>
+												<div class="_card_flex_last">
+													<h6 class="listing-card-info-price mb-0">$9,100</h6>
+												</div>
+											</div>
+											<div class="_card_list_flex">
+												<div class="_card_flex_01">
+													<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="price-features-wrapper">
+										<div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
+											</div>
+										</div>
+									</div>
+									
+									<div class="listing-detail-footer">
+										<div class="footer-first">
+											<div class="foot-rates">
+												<span class="elio_rate perfect">4.8</span>
+												<div class="_rate_stio">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+											</div>
+										</div>
+										<div class="footer-flex">
+											<a href="property-detail.html" class="prt-view">View Detail</a>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<!-- End Single Property -->
+
+						<!-- Single Property -->
+						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+							<div class="property-listing list_view">
+								
+								<div class="listing-img-wrapper">
+									<div class="_exlio_125">For Rent</div>
+									<div class="list-img-slide">
+										<div class="click">
+											<div><a href="single-property-1.html"><img src="public/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="list_view_flex">
+								
+									<div class="listing-detail-wrapper mt-1">
+										<div class="listing-short-detail-wrap">
+											<div class="_card_list_flex mb-2">
+												<div class="_card_flex_01">
+													<span class="_list_blickes _netork">10 Network</span>
+													<span class="_list_blickes types">Villas</span>
+												</div>
+												<div class="_card_flex_last">
+													<h6 class="listing-card-info-price mb-0">$9,100</h6>
+												</div>
+											</div>
+											<div class="_card_list_flex">
+												<div class="_card_flex_01">
+													<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="price-features-wrapper">
+										<div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
+											</div>
+										</div>
+									</div>
+									
+									<div class="listing-detail-footer">
+										<div class="footer-first">
+											<div class="foot-rates">
+												<span class="elio_rate perfect">4.8</span>
+												<div class="_rate_stio">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+											</div>
+										</div>
+										<div class="footer-flex">
+											<a href="property-detail.html" class="prt-view">View Detail</a>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<!-- End Single Property -->
+
+						<!-- Single Property -->
+						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+							<div class="property-listing list_view">
+								
+								<div class="listing-img-wrapper">
+									<div class="_exlio_125">For Rent</div>
+									<div class="list-img-slide">
+										<div class="click">
+											<div><a href="single-property-1.html"><img src="public/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="list_view_flex">
+								
+									<div class="listing-detail-wrapper mt-1">
+										<div class="listing-short-detail-wrap">
+											<div class="_card_list_flex mb-2">
+												<div class="_card_flex_01">
+													<span class="_list_blickes _netork">10 Network</span>
+													<span class="_list_blickes types">Villas</span>
+												</div>
+												<div class="_card_flex_last">
+													<h6 class="listing-card-info-price mb-0">$9,100</h6>
+												</div>
+											</div>
+											<div class="_card_list_flex">
+												<div class="_card_flex_01">
+													<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="price-features-wrapper">
+										<div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
+											</div>
+										</div>
+									</div>
+									
+									<div class="listing-detail-footer">
+										<div class="footer-first">
+											<div class="foot-rates">
+												<span class="elio_rate perfect">4.8</span>
+												<div class="_rate_stio">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+											</div>
+										</div>
+										<div class="footer-flex">
+											<a href="property-detail.html" class="prt-view">View Detail</a>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<!-- End Single Property -->
+
+						<!-- Single Property -->
+						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+							<div class="property-listing list_view">
+								
+								<div class="listing-img-wrapper">
+									<div class="_exlio_125">For Rent</div>
+									<div class="list-img-slide">
+										<div class="click">
+											<div><a href="single-property-1.html"><img src="public/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="list_view_flex">
+								
+									<div class="listing-detail-wrapper mt-1">
+										<div class="listing-short-detail-wrap">
+											<div class="_card_list_flex mb-2">
+												<div class="_card_flex_01">
+													<span class="_list_blickes _netork">10 Network</span>
+													<span class="_list_blickes types">Villas</span>
+												</div>
+												<div class="_card_flex_last">
+													<h6 class="listing-card-info-price mb-0">$9,100</h6>
+												</div>
+											</div>
+											<div class="_card_list_flex">
+												<div class="_card_flex_01">
+													<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="price-features-wrapper">
+										<div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
+											</div>
+										</div>
+									</div>
+									
+									<div class="listing-detail-footer">
+										<div class="footer-first">
+											<div class="foot-rates">
+												<span class="elio_rate perfect">4.8</span>
+												<div class="_rate_stio">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+											</div>
+										</div>
+										<div class="footer-flex">
+											<a href="property-detail.html" class="prt-view">View Detail</a>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<!-- End Single Property -->
+
+						<!-- Single Property -->
+						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+							<div class="property-listing list_view">
+								
+								<div class="listing-img-wrapper">
+									<div class="_exlio_125">For Rent</div>
+									<div class="list-img-slide">
+										<div class="click">
+											<div><a href="single-property-1.html"><img src="public/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
+											<div><a href="single-property-1.html"><img src="public/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="list_view_flex">
+								
+									<div class="listing-detail-wrapper mt-1">
+										<div class="listing-short-detail-wrap">
+											<div class="_card_list_flex mb-2">
+												<div class="_card_flex_01">
+													<span class="_list_blickes _netork">10 Network</span>
+													<span class="_list_blickes types">Villas</span>
+												</div>
+												<div class="_card_flex_last">
+													<h6 class="listing-card-info-price mb-0">$9,100</h6>
+												</div>
+											</div>
+											<div class="_card_list_flex">
+												<div class="_card_flex_01">
+													<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7298 Rani Market Near Saaket, Henever Canada, QWUI98</a></h4>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="price-features-wrapper">
+										<div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+											</div>
+											<div class="listing-card-info-icon">
+												<div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
+											</div>
+										</div>
+									</div>
+									
+									<div class="listing-detail-footer">
+										<div class="footer-first">
+											<div class="foot-rates">
+												<span class="elio_rate perfect">4.8</span>
+												<div class="_rate_stio">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+											</div>
+										</div>
+										<div class="footer-flex">
+											<a href="property-detail.html" class="prt-view">View Detail</a>
+										</div>
 									</div>
 								</div>
 								
@@ -1442,11 +1626,11 @@
 						<!-- End Single Property -->
 						
 					</div>
-					
+
 					<!-- Pagination -->
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 text-center">
-							<a href="list-layout-with-map.html" class="btn btn-theme-light-2 rounded">Explore More Properties</a>
+							<a href="list-layout-with-map.html" class="btn btn-theme-light-2 rounded">Load more</a>
 						</div>
 					</div>
 					
@@ -1454,6 +1638,8 @@
 			</section>
 			<!-- ============================ Latest Property For Sale End ================================== -->
 			
+			
+	
 			<!-- ============================ Property Location ================================== -->
 			<section class="min">
 				<div class="container">
@@ -1461,8 +1647,8 @@
 					<div class="row justify-content-center">
 						<div class="col-lg-7 col-md-8">
 							<div class="sec-heading center">
-								<h2>Khám phá theo địa điểm</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+								<h2>Các điểm nóng bất động sản</h2>
+								<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
 							</div>
 						</div>
 					</div>
