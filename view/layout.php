@@ -278,42 +278,42 @@ session_start();
 								
 									<div class="col-lg-4 col-md-4">
 										<div class="footer_widget">
-											<h4 class="widget_title">Layouts</h4>
+											<h4 class="widget_title">Hướng dẫn</h4>
 											<ul class="footer-menu">
-												<li><a href="#">Home Page</a></li>
-												<li><a href="#">About Page</a></li>
-												<li><a href="#">Service Page</a></li>
-												<li><a href="#">Property Page</a></li>
-												<li><a href="#">Contact Page</a></li>
-												<li><a href="#">Single Blog</a></li>
+												<li><a href="#">Báo giá & hỗ trợ</a></li>
+												<li><a href="#">Câu hỏi thường gặp</a></li>
+												<li><a href="#">Thông báo</a></li>
+												<li><a href="#">Liên hệ</a></li>
+												<li><a href="#">Sitemap</a></li>
+												<li><a href="#">Góp ý báo lỗi</a></li>
 											</ul>
 										</div>
 									</div>
 											
-									<div class="col-lg-4 col-md-4">
+									<div class="col-lg-5 col-md-4">
 										<div class="footer_widget">
-											<h4 class="widget_title">All Sections</h4>
+											<h4 class="widget_title">Quy định</h4>
 											<ul class="footer-menu">
-												<li><a href="#">Headers<span class="new">New</span></a></li>
-												<li><a href="#">Features</a></li>
-												<li><a href="#">Attractive<span class="new">New</span></a></li>
-												<li><a href="#">Testimonials</a></li>
-												<li><a href="#">Videos</a></li>
-												<li><a href="#">Footers</a></li>
+												<li><a href="#">Quy định đăng tin<span class="new">New</span></a></li>
+												<li><a href="#">Quy chế hoạt động</a></li>
+												<li><a href="#">Điều khoản thỏa thuận<span class="new">New</span></a></li>
+												<li><a href="#">Chính sách bảo mật</a></li>
+												<li><a href="#">Giải quyết khiếu nại</a></li>
+												<li><a href="#">Góp ý báo lỗi</a></li>
 											</ul>
 										</div>
 									</div>
 							
-									<div class="col-lg-4 col-md-4">
+									<div class="col-lg-3 col-md-4">
 										<div class="footer_widget">
-											<h4 class="widget_title">Company</h4>
+											<h4 class="widget_title">Khu vưc</h4>
 											<ul class="footer-menu">
-												<li><a href="#">About</a></li>
-												<li><a href="#">Blog</a></li>
-												<li><a href="#">Pricing</a></li>
-												<li><a href="#">Affiliate</a></li>
-												<li><a href="#">Login</a></li>
-												<li><a href="#">Changelog<span class="update">Update</span></a></li>
+												<li><a href="#">Hồ Chí Minh</a></li>
+												<li><a href="#">Nha Trang</a></li>
+												<li><a href="#">Vũng Tàu</a></li>
+												<li><a href="#">Hà Nội</a></li>
+												<li><a href="#">Cần Thơ</a></li>
+												<li><a href="#">Vĩnh Long<span class="update">Up</span></a></li>
 											</ul>
 										</div>
 									</div>
@@ -328,7 +328,7 @@ session_start();
 					<div class="container">
 						<div class="row align-items-center">
 							<div class="col-lg-12 col-md-12 text-center">
-								<p class="mb-0">© 2023 SANCITY. Designd By <a href="#">Sang Pham</a>.</p>
+								<p class="mb-0">© 2023 SANCITY. Designd and Powered By <a href="#">Sang Pham</a>.</p>
 							</div>
 						</div>
 					</div>
