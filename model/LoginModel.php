@@ -55,4 +55,16 @@ class LoginModel extends connect {
         }
         return $loggedIn;
     }
+
+    public function getUserIdByUsername($username) {
+        $query = "SELECT user_id FROM users WHERE username = :username";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+    
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['user_id'];
+    }
+    
+    
 }

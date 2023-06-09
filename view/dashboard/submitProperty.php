@@ -65,7 +65,6 @@ $conn = null;
                         <h3>Thông tin bất động sản</h3>
                         <div class="frm_submit_wrap">
                             <div class="form-row">
-                            
                                 <div class="form-group col-md-12">
                                     <label for="property_name">Tiêu đề bất động sản<a href="#" class="tip-topdata" data-tip="Property Title"><i class="ti-help"></i></a></label>
                                     <input type="text" id="property_name" name="property_name" required class="form-control">
@@ -154,6 +153,7 @@ $conn = null;
                                     <input type="file" id="image_url" name="image_url" multiple>
                                 </div>
                             </div>
+                            <div id="image_preview" class="form-group col-md-4"></div>
                         </div>
                     </div>
                     <!-- Location -->
@@ -201,7 +201,7 @@ $conn = null;
                                             <!-- Lấy dữ liệu từ cơ sở dữ liệu bảng utilities -->
                                             <?php while ($row = $utilitiesResult->fetch(PDO::FETCH_ASSOC)) { ?>
                                                 <li>
-                                                    <input id="utilities-<?php echo $row['utility_id']; ?>" class="checkbox-custom" name="utilities" type="checkbox" value="<?php echo $row['utility_id']; ?>">
+                                                    <input id="utilities-<?php echo $row['utility_id']; ?>" class="checkbox-custom" name="utilities[]" type="checkbox" value="<?php echo $row['utility_id']; ?>">
                                                     <label for="utilities-<?php echo $row['utility_id']; ?>" class="checkbox-custom-label"><?php echo $row['utility_name']; ?></label>
                                                 </li>
                                             <?php } ?>
@@ -229,35 +229,4 @@ $conn = null;
 </section>
 <!-- ============================ Submit Property End ================================== -->
 
-<script>
-    document.getElementById('image_url').addEventListener('change', function(e) {
-        var files = e.target.files; // Lấy danh sách các file đã chọn
-        var folderPath = 'public/img/gallery/'; // Đường dẫn thư mục đích
-        
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                // Tạo một đối tượng XMLHttpRequest để tải file lên máy chủ
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'controller/upload.php', true); // Thay thế 'upload-target-url' bằng URL xử lý tải lên máy chủ của bạn
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        // Xử lý phản hồi từ máy chủ (nếu cần)
-                    }
-                };
-
-                // Gửi dữ liệu file tới máy chủ
-                var formData = new FormData();
-                formData.append('file', file, file.name);
-                xhr.send(formData);
-            };
-
-            reader.readAsDataURL(file);
-        }
-    });
-</script>
 

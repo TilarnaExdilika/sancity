@@ -20,6 +20,8 @@ class LoginController {
             if ($result) {
                 // Đăng nhập thành công, thực hiện các hành động sau khi đăng nhập
                 $_SESSION["auth"] = $result;
+                $user_id = $this->loginModel->getUserIdByUsername($username); // Lấy user_id từ cơ sở dữ liệu
+                $_SESSION["auth"] = $user_id;
                 echo '<script>window.location.href = "index.php?controller=Home&action=index";</script>';
             } else {
                 // Đăng nhập không thành công, hiển thị thông báo lỗi
@@ -39,6 +41,8 @@ class LoginController {
             
             if ($result) {
                 // Đăng ký thành công, thực hiện các hành động sau khi đăng ký
+                $user_id = $this->loginModel->getUserIdByUsername($username); // Lấy user_id từ cơ sở dữ liệu
+                $_SESSION["auth"] = $user_id; // Lưu user_id vào session
                 echo '<script>window.location.href = "index.php?controller=DashBoard&action=index";</script>';
             } else {
                 // Đăng ký không thành công, hiển thị thông báo lỗi
