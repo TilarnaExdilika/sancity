@@ -55,7 +55,7 @@ $conn = null;
             </div>
             
             <!-- Submit Form -->
-            <form action="?controller=newProperty&action=index" method="POST">
+            <form action="controller/resultSubmit.php" method="POST">
             <div class="col-lg-12 col-md-12">
             
                 <div class="submit-page p-0">
@@ -216,7 +216,7 @@ $conn = null;
 
                     <div class="form-group">
                         <div class="col-lg-12 col-md-12">
-                        <button class="btn btn-theme" type="submit">Đăng bất động sản</button>
+                        <button class="btn btn-theme" type="submit" name="submit">Đăng bất động sản</button>
                         </div>
                     </div>
                                 
@@ -230,7 +230,7 @@ $conn = null;
 <!-- ============================ Submit Property End ================================== -->
 
 <script>
-    document.getElementById('upload-input').addEventListener('change', function(e) {
+    document.getElementById('image_url').addEventListener('change', function(e) {
         var files = e.target.files; // Lấy danh sách các file đã chọn
         var folderPath = 'public/img/gallery/'; // Đường dẫn thư mục đích
         
@@ -241,7 +241,7 @@ $conn = null;
             reader.onload = function(e) {
                 // Tạo một đối tượng XMLHttpRequest để tải file lên máy chủ
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'upload-target-url', true); // Thay thế 'upload-target-url' bằng URL xử lý tải lên máy chủ của bạn
+                xhr.open('POST', 'controller/upload.php', true); // Thay thế 'upload-target-url' bằng URL xử lý tải lên máy chủ của bạn
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
                 xhr.onreadystatechange = function() {
@@ -260,3 +260,4 @@ $conn = null;
         }
     });
 </script>
+
