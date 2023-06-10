@@ -41,7 +41,7 @@ class LoginController {
             
             if ($result) {
                 // Đăng ký thành công, thực hiện các hành động sau khi đăng ký
-                echo '<script>window.location.href = "index.php?controller=DashBoard&action=index";</script>';
+                echo '<script>window.location.href = "index.php?controller=Home&action=index";</script>';
             } else {
                 // Đăng ký không thành công, hiển thị thông báo lỗi
             }
