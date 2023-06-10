@@ -22,6 +22,7 @@ session_start();
 		 
     <!-- Custom CSS -->
     <link href="public/css/styles.css" rel="stylesheet">
+	
     <title>SANCITY</title>
 </head>
 

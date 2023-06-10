@@ -55,7 +55,7 @@ $conn = null;
             </div>
             
             <!-- Submit Form -->
-            <form action="controller/resultSubmit.php" method="POST">
+            <form action="controller/resultSubmit.php" method="POST" enctype="multipart/form-data">
             <div class="col-lg-12 col-md-12">
             
                 <div class="submit-page p-0">
@@ -150,10 +150,9 @@ $conn = null;
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label>Tải ảnh lên</label>
-                                    <input type="file" id="image_url" name="image_url" multiple>
+                                    <input type="file" name="my_image" required class="form-control" multiple>
                                 </div>
                             </div>
-                            <div id="image_preview" class="form-group col-md-4"></div>
                         </div>
                     </div>
                     <!-- Location -->
