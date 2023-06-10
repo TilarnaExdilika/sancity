@@ -136,12 +136,12 @@ CONSTRAINT fk_news_author FOREIGN KEY (author_id) REFERENCES users(user_id)
 CREATE TABLE locations (
 location_id INT PRIMARY KEY AUTO_INCREMENT,
 property_id INT,
-latitude DECIMAL(10, 8) NOT NULL,
-longitude DECIMAL(11, 8) NOT NULL,
-address NVARCHAR(200) NOT NULL,
-city NVARCHAR(100) NOT NULL,
-state NVARCHAR(100) NOT NULL,
-country NVARCHAR(100) NOT NULL,
+latitude DECIMAL(10, 8) NULL,
+longitude DECIMAL(11, 8) NULL,
+address NVARCHAR(200) NULL,
+city NVARCHAR(100) NULL,
+state NVARCHAR(100) NULL,
+country NVARCHAR(100) NULL,
 CONSTRAINT fk_location_property FOREIGN KEY (property_id) REFERENCES properties(property_id)
 );
 

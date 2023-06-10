@@ -150,7 +150,7 @@ $conn = null;
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label>Tải ảnh lên</label>
-                                    <input type="file" name="my_image" required class="form-control" multiple>
+                                    <input type="file" name="my_image[]" required class="form-control" multiple>
                                 </div>
                             </div>
                         </div>

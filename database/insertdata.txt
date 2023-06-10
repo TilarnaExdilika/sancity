@@ -1,19 +1,31 @@
 -- Nhập dữ liệu vào bảng Loại tài khoản (Account Types)
 INSERT INTO account_types (account_type_name)
 VALUES
-('Người mua'),
-('Người bán'),
-('Môi giới');
+('Admin'),
+('Manage'),
+('Standard'),
+('Golde'),
+('Premium'),
+('Users'),
+('Business');
 
 -- Nhập dữ liệu vào bảng Tiện ích (Utilities)
 INSERT INTO utilities (utility_name)
 VALUES
-('Tủ lạnh'),
 ('Ban công'),
-('Wi-fi'),
-('Gym'),
+('Điều hòa'),
 ('Máy giặt'),
-('Gara');
+('Tủ lạnh'),
+('Internet(Wi-fi)'),
+('Cho phép vật nuôi'),
+('Nội thất đầy đủ'),
+('Ga-ra'),
+('Sân vườn'),
+('Hồ Bơi'),
+('Ven sông'),
+('Ven Biển'),
+('Mặt tiền'),
+('Trung tâm thành phố');
 
 -- Nhập dữ liệu vào bảng Phòng tắm (Bathrooms)
 INSERT INTO bathrooms (bathroom_count)
@@ -21,7 +33,11 @@ VALUES
 (1),
 (2),
 (3),
-(4);
+(4),
+(5),
+(6),
+(7),
+(8);
 
 -- Nhập dữ liệu vào bảng Phòng ngủ (Bedrooms)
 INSERT INTO bedrooms (bedroom_count)
@@ -29,7 +45,11 @@ VALUES
 (1),
 (2),
 (3),
-(4);
+(4),
+(5),
+(6),
+(7),
+(8);
 
 -- Nhập dữ liệu vào bảng Diện tích (Areas)
 INSERT INTO areas (area)
@@ -41,12 +61,22 @@ VALUES
 (250),
 (300),
 (350),
-(400);
+(400),
+(450),
+(500),
+(550),
+(600),
+(650);
 
 -- Nhập dữ liệu vào bảng Loại bất động sản (Property Types)
 INSERT INTO property_types (type_name)
 VALUES
-('Căn hộ'),
-('Nhà'),
-('Chung cư'),
-('Đất đai');
+('Căn hộ chung cư'),
+('Nhà riêng'),
+('Nhà mặt phố'),
+('Shophouse'),
+('Biệt thự'),
+('Vinhomes'),
+('Đất, đất nền'),
+('Kho, nhà xưởng'),
+('Bất động sản khác');
