@@ -2,7 +2,7 @@
     <div class="property_dashboard_navbar">
         <div class="dash_user_avater">
             <img src="public/img/user-3.jpg" class="img-fluid avater" alt="">
-            <h4><?php echo $_SESSION["auth"]["username"]; ?></h4>
+            <h4><?php echo $_SESSION["uauth"]["username"]; ?></h4>
             <span>HCM VietNam</span>
         </div>
         

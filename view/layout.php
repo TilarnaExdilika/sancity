@@ -173,7 +173,7 @@ session_start();
 											</button>
 											<div class="dropdown-menu pull-right animated flipInX">
 												<div class="drp_menu_headr">
-													<h4>Hi, <?php echo $_SESSION["auth"]["username"]; ?></h4>
+													<h4>Hi, <?php echo $_SESSION["uauth"]["username"]; ?></h4>
 												</div>
 												<ul>
 													<li><a href="index.php?controller=DashBoard&action=index"><i class="fa fa-tachometer-alt"></i>Dashboard<span class="notti_coun style-1">4</span></a></li>                                  
