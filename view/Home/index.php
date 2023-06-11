@@ -754,7 +754,9 @@
 						<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
 							<div class="property-listing list_view">
 								<div class="listing-img-wrapper">
-									<div class="_exlio_125"><?php echo $row['status']; ?></div>
+									<div class="_exlio_125" style="background:<?php echo ($row['status'] == 'Bán') ? '' : (($row['status'] == 'Thuê') ? '#0072c6 ' : ''); ?>">
+									<?php echo $row['status']; ?>
+								</div>
 									<div class="list-img-slide">
 										<div class="click">
 											<div><a href="single-property-1.html"><img src="public/upload/properties/<?php echo $row['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
@@ -767,7 +769,8 @@
 										<div class="listing-short-detail-wrap">
 											<div class="_card_list_flex mb-2">
 												<div class="_card_flex_01">
-													<span class="_list_blickes _netork"><?php echo $row['age']; ?></span>
+													<span class="_list_blickes _netork">VIP</span>
+													<span class="property-type elt_rent"><?php echo $row['age']; ?></span>
 													<span class="_list_blickes types"><?php echo $row['type_name']; ?></span>
 												</div>
 												<div class="_card_flex_last">
@@ -807,13 +810,23 @@
 									<div class="listing-detail-footer">
 										<div class="footer-first">
 											<div class="foot-rates">
-												<span class="elio_rate perfect">4.7</span>
+												<span class="elio_rate perfect">
+														
+													<?php
+														$price = $row['price'];
+														if (mb_strlen($price) > 6) {
+															$price = mb_substr($price, 0, 6) . '';
+														}
+														echo htmlentities($price);
+													?>/<?php echo $row['unit']; ?>
+
+												</span>
 												<div class="_rate_stio">
+													<!-- <i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i> -->
 												</div>
 											</div>
 										</div>
