@@ -1,6 +1,6 @@
 <?php
 // File HomeController.php
-require_once "model/Home.php";
+require_once "model/Property.php";
 
 class HomeController
 {
