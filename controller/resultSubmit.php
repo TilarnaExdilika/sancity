@@ -7,8 +7,7 @@ $conn = $db->getConnection();
 session_start();
 
 // Xử lý dữ liệu gửi từ biểu mẫu
-if(isset($_POST['submit'])){
-
+if (isset($_POST['submit'])) {
     $user_id = $_SESSION['auth'];
     // Lấy thông tin từ biểu mẫu
     $property_name = $_POST['property_name'];
@@ -23,23 +22,41 @@ if(isset($_POST['submit'])){
     $city = $_POST['city'];
     $description = $_POST['description'];
     $age = $_POST['age'];
+    $unit = $_POST['unit'];
     $utilities = $_POST['utilities']; // Mảng các tiện ích được chọn
 
+    // Hàm format giá
+    function formatPrice($price)
+    {
+        if ($price >= 1000000000) {
+            return number_format($price / 1000000000, 1) . " tỷ";
+        } elseif ($price >= 1000000) {
+            return number_format($price / 1000000, 1) . " triệu";
+        } elseif ($price >= 1000) {
+            return number_format($price / 1000, 0) . " nghìn";
+        } else {
+            return $price;
+        }
+    }
+
+    // Format giá trước khi lưu vào cơ sở dữ liệu
+    $formattedPrice = formatPrice($price);
+
     // Thực hiện câu truy vấn INSERT vào bảng "properties"
-    $query = "INSERT INTO properties (property_name, user_id, type_id, description, address, price, status, real_area, age) 
-            VALUES (:property_name, :user_id, :type_id, :description, :address, :price, :status, :real_area, :age)";
+    $query = "INSERT INTO properties (property_name, user_id, type_id, description, address, price, status, real_area, age, unit) 
+            VALUES (:property_name, :user_id, :type_id, :description, :address, :price, :status, :real_area, :age, :unit)";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':property_name', $property_name);
     $stmt->bindParam(':user_id', $user_id);
     $stmt->bindParam(':type_id', $property_type);
     $stmt->bindParam(':description', $description);
     $stmt->bindParam(':address', $address);
-    $stmt->bindParam(':price', $price);
+    $stmt->bindParam(':price', $formattedPrice);
     $stmt->bindParam(':status', $status);
     $stmt->bindParam(':real_area', $real_area);
     $stmt->bindParam(':age', $age);
+    $stmt->bindParam(':unit', $unit);
     $stmt->execute();
-
 
     // Lấy ID của bất động sản vừa được thêm vào
     $property_id = $conn->lastInsertId();
@@ -74,28 +91,28 @@ if(isset($_POST['submit'])){
 
     if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
         $img_files = $_FILES['my_image'];
-    
+
         // Loop through each uploaded image
         for ($i = 0; $i < count($img_files['name']); $i++) {
             $img_name = $img_files['name'][$i];
             $img_size = $img_files['size'][$i];
             $tmp_name = $img_files['tmp_name'][$i];
             $error = $img_files['error'][$i];
-    
+
             if ($error === 0) {
                 if ($img_size > 2097152) {
                     $em = "Vui lòng chọn ảnh nhỏ hơn 2mb";
                 } else {
                     $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
                     $img_ex_lc = strtolower($img_ex);
-    
+
                     $allowed_exs = array("jpg", "jpeg", "png");
-    
+
                     if (in_array($img_ex_lc, $allowed_exs)) {
-                        $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
-                        $img_upload_path = '../upload/properties/'.$new_img_name;
+                        $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
+                        $img_upload_path = '../public/upload/properties/' . $new_img_name;
                         move_uploaded_file($tmp_name, $img_upload_path);
-    
+
                         // Insert into Database
                         $sql = "INSERT INTO property_images(property_id, image_url) 
                                 VALUES('$property_id', '$new_img_name')";
@@ -112,13 +129,12 @@ if(isset($_POST['submit'])){
                 exit;
             }
         }
-    
+
         header("Location: view.php");
         exit;
     } else {
         header("Location: index.php");
         exit;
     }
-    
 }
 ?>

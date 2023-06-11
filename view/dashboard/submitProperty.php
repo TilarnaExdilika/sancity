@@ -66,7 +66,7 @@ $conn = null;
                         <div class="frm_submit_wrap">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="property_name">Tiêu đề bất động sản<a href="#" class="tip-topdata" data-tip="Property Title"><i class="ti-help"></i></a></label>
+                                    <label for="property_name">Tên bất động sản</label>
                                     <input type="text" id="property_name" name="property_name" required class="form-control">
                                 </div>
                                 
@@ -95,7 +95,18 @@ $conn = null;
                                 
                                 <div class="form-group col-md-6">
                                     <label for="price">Giá</label>
-                                    <input type="text" id="price" name="price" required class="form-control" placeholder="VND">
+                                    <input type="text" id="price" name="price" required class="form-control" placeholder="">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Đơn vị</label>
+                                    <select id="unit" name="unit" class="form-control">
+                                        <option value="">&nbsp;</option>
+                                        <option value="tháng">giá/tháng</option>
+                                        <option value="m²">giá/m²</option>
+                                        <option value="căn">giá/căn</option>
+                                        <option value="Thoả thuận">Thỏa thuận</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -104,8 +115,10 @@ $conn = null;
                                     <select id="area" name="area" required class="form-control">
                                     <option value="">&nbsp;</option>
                                         <?php while ($row = $areasResult->fetch(PDO::FETCH_ASSOC)) { ?>
-                                            <option value="<?php echo $row['area_id']; ?>"><?php echo $row['area']; ?> m^2</option>
+                                            <option value="<?php echo $row['area_id']; ?>"><?php echo $row['area']; ?> m²</option>
                                         <?php } ?>
+                                    <option value="over1000">Trên 1000+ m²</option>
+                                    <option value="option">Tùy chọn</option>
                                     </select>
                                     <!-- Load data -->
                                 </div>
@@ -149,7 +162,7 @@ $conn = null;
                         <div class="frm_submit_wrap">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label>Tải ảnh lên</label>
+                                    <label>Tải ảnh lên<a href="#" class="tip-topdata" data-tip="giữ Shift hoặc chọn nhiều mục để chọn nhiều ảnh"><i class="ti-help"></i></a></label>
                                     <input type="file" name="my_image[]" required class="form-control" multiple>
                                 </div>
                             </div>
@@ -168,7 +181,7 @@ $conn = null;
                                 
                                 <div class="form-group col-md-6">
                                     <label for="city">Thành phố</label>
-                                    <input type="text" name="city" required class="form-control">
+                                    <input type="text" name="city" id="city-input" required class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -186,7 +199,7 @@ $conn = null;
                                 </div>
                                 
                                 <div class="form-group col-md-4">
-                                    <label for="age">Tuổi bất động sản (Tùy chọn)</label>
+                                    <label for="age">Năm hoàn thành (Tùy chọn)</label>
                                     <input type="text" id="age" name="age" required class="form-control">
                                 </div>
                                 

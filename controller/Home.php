@@ -1,10 +1,21 @@
 <?php
 // File HomeController.php
+require_once "model/Home.php";
+
 class HomeController
 {
+    protected $model;
+
+    public function __construct()
+    {
+        $db = new connect();
+        $this->model = new ModelHome($db);
+    }
+
     public function index()
     {
-        require_once "view/home/index.php";
+        $result = $this->model->getProperties();
+        require_once "view/Home/index.php";
     }
 }
 

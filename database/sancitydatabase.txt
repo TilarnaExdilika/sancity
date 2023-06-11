@@ -29,7 +29,7 @@ type_id INT,
 property_name NVARCHAR(100) NOT NULL,
 description TEXT,
 address NVARCHAR(200) NOT NULL,
-price DECIMAL(18, 2),
+price NVARCHAR(50),
 CONSTRAINT fk_property_user FOREIGN KEY (user_id) REFERENCES users(user_id),
 CONSTRAINT fk_property_type FOREIGN KEY (type_id) REFERENCES property_types(type_id)
 );
@@ -72,7 +72,7 @@ bathroom_count INT NOT NULL
 -- Bảng Diện tích (Areas)
 CREATE TABLE areas (
 area_id INT PRIMARY KEY AUTO_INCREMENT,
-area DECIMAL(10, 2) NOT NULL
+area NVARCHAR(50)
 );
 
 -- Bảng Chi tiết bất động sản (Property Details)
@@ -206,4 +206,7 @@ ADD COLUMN age INT;
 
 -- Thêm cột diện tích thực tế vào bảng Bất động sản (Properties)
 ALTER TABLE properties
-ADD COLUMN real_area DECIMAL(10, 2) NOT NULL;
+ADD COLUMN real_area DECIMAL(10) NOT NULL;
+
+ALTER TABLE properties
+ADD COLUMN unit VARCHAR(50);

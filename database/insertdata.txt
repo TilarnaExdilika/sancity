@@ -15,6 +15,7 @@ VALUES
 ('Ban công'),
 ('Điều hòa'),
 ('Máy giặt'),
+('Tivi'),
 ('Tủ lạnh'),
 ('Internet(Wi-fi)'),
 ('Cho phép vật nuôi'),
@@ -64,16 +65,19 @@ VALUES
 (400),
 (450),
 (500),
-(550),
 (600),
-(650);
+(700),
+(800),
+(900),
+(1000);
 
 -- Nhập dữ liệu vào bảng Loại bất động sản (Property Types)
 INSERT INTO property_types (type_name)
 VALUES
-('Căn hộ chung cư'),
-('Nhà riêng'),
+('Nhà gia đình'),
 ('Nhà mặt phố'),
+('Căn hộ chung cư'),
+('Tòa nhà văn phòng'),
 ('Shophouse'),
 ('Biệt thự'),
 ('Vinhomes'),
