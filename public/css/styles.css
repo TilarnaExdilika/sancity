@@ -7367,7 +7367,8 @@ span._list_blickes {
 span._list_blickes._netork {
     background: rgba(255, 87, 34,0.1);
     color: #ff5722;
-}
+}   
+
 span._list_blickes.types {
     background:rgba(37, 181, 121,0.1);
     color: #25b579;

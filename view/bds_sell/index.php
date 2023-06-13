@@ -1,6 +1,4 @@
 
-
-
 <!-- ============================ Page Title Start================================== -->
 <div class="page-title" style="background:#f4f4f4 url(public/img/slider-1.jpg);" data-overlay="5">
     <div class="container">
@@ -270,16 +268,23 @@
                         <div class="row justify-content-center">
                         
                             <!-- Single Property -->
+                            <?php foreach ($result as $row) { ?>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="property-listing property-2">
                                     
                                     <div class="listing-img-wrapper">
-                                        <div class="_exlio_125">For Rent</div>
+                                        <div class="_exlio_125">
+                                            <?php
+                                                $price = $row['price'];
+                                                if (mb_strlen($price) > 6) {
+                                                    $price = mb_substr($price, 0, 6) . '';
+                                                }
+                                                echo htmlentities($price);
+                                            ?>/<?php echo $row['unit']; ?>
+                                        </div>
                                         <div class="list-img-slide">
                                             <div class="click">
-                                                <div><a href="single-property-1.html"><img src="public/img/p-1.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-2.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-3.png" class="img-fluid mx-auto" alt="" /></a></div>
+                                                <div><a href="single-property-1.html"><img src="public/upload/properties/<?php echo $row['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -288,16 +293,23 @@
                                         <div class="listing-short-detail-wrap">
                                             <div class="_card_list_flex mb-2">
                                                 <div class="_card_flex_01">
-                                                    <span class="_list_blickes _netork">4 Network</span>
-                                                    <span class="_list_blickes types">Condos</span>
+                                                    <span class="_list_blickes _netork"><?php echo $row['age']; ?></span>
+                                                    <span class="_list_blickes types"><?php echo $row['type_name']; ?></span>
                                                 </div>
                                                 <div class="_card_flex_last">
-                                                    <h6 class="listing-card-info-price mb-0">$6,700</h6>
+                                                    <h6 class="listing-card-info-price mb-0"></h6>
                                                 </div>
                                             </div>
                                             <div class="_card_list_flex">
                                                 <div class="_card_flex_01">
-                                                    <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7012 Shine Sehu Street, Liverpool London, LC345AC</a></h4>
+                                                    <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">
+                                                        <?php
+														$property_name = $row['property_name'] . ', ' . $row['city'];
+														if (strlen($property_name) > 65) {
+															$property_name = substr($property_name, 0, 62) . '...';
+														}
+														echo htmlentities($property_name);
+														?></a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -306,20 +318,20 @@
                                     <div class="price-features-wrapper">
                                         <div class="list-fx-features">
                                             <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>4 Beds
+                                                <div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div><?php echo $row['bedroom_count']; ?> Beds
                                             </div>
                                             <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
+                                                <div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div><?php echo $row['bathroom_count']; ?> Bath
                                             </div>
                                             <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>820 sqft
+                                                <div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div><?php echo $row['real_area']; ?> m<sup>2
                                             </div>
                                         </div>
                                     </div>
                                     
                                     <div class="listing-detail-footer">
                                         <div class="footer-first">
-                                            <div class="foot-location"><img src="public/img/pin.svg" width="18" alt="" />Montreal, Canada</div>
+                                            <div class="foot-location"><img src="public/img/pin.svg" width="18" alt="" /><?php echo $row['city']; ?></div>
                                         </div>
                                         <div class="footer-flex">
                                             <ul class="selio_style">
@@ -344,390 +356,7 @@
                                     
                                 </div>
                             </div>
-                            <!-- End Single Property -->
-
-                            <!-- Single Property -->
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="property-listing property-2">
-                                    
-                                    <div class="listing-img-wrapper">
-                                        <div class="_exlio_125">For Sale</div>
-                                        <div class="list-img-slide">
-                                            <div class="click">
-                                                <div><a href="single-property-1.html"><img src="public/img/p-4.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-5.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-6.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-wrapper">
-                                        <div class="listing-short-detail-wrap">
-                                            <div class="_card_list_flex mb-2">
-                                                <div class="_card_flex_01">
-                                                    <span class="_list_blickes _netork">5 Network</span>
-                                                    <span class="_list_blickes types">Apartment</span>
-                                                </div>
-                                                <div class="_card_flex_last">
-                                                    <h6 class="listing-card-info-price mb-0">$6,900</h6>
-                                                </div>
-                                            </div>
-                                            <div class="_card_list_flex">
-                                                <div class="_card_flex_01">
-                                                    <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">425 Vine 012 Street, Montreal Canada, UHW45Q</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="price-features-wrapper">
-                                        <div class="list-fx-features">
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>4 Beds
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>700 sqft
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-footer">
-                                        <div class="footer-first">
-                                            <div class="foot-location"><img src="public/img/pin.svg" width="18" alt="" />Montreal, Canada</div>
-                                        </div>
-                                        <div class="footer-flex">
-                                            <ul class="selio_style">
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <label class="toggler toggler-danger" data-toggle="tooltip" data-placement="top" data-original-title="Save property"><input type="checkbox"><i class="ti-heart"></i></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="compare-property.html" data-toggle="tooltip" data-placement="top" data-original-title="Compare property"><i class="ti-control-shuffle"></i></a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="single-property-1.html" data-toggle="tooltip" data-placement="top" data-original-title="View Property"><i class="ti-arrow-right"></i></a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <!-- End Single Property -->
-
-                            <!-- Single Property -->
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="property-listing property-2">
-                                    
-                                    <div class="listing-img-wrapper">
-                                        <div class="_exlio_125">For Rent</div>
-                                        <div class="list-img-slide">
-                                            <div class="click">
-                                                <div><a href="single-property-1.html"><img src="public/img/p-7.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-8.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-9.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-wrapper">
-                                        <div class="listing-short-detail-wrap">
-                                            <div class="_card_list_flex mb-2">
-                                                <div class="_card_flex_01">
-                                                    <span class="_list_blickes _netork">4 Network</span>
-                                                    <span class="_list_blickes types">Villas</span>
-                                                </div>
-                                                <div class="_card_flex_last">
-                                                    <h6 class="listing-card-info-price mb-0">$8,500</h6>
-                                                </div>
-                                            </div>
-                                            <div class="_card_list_flex">
-                                                <div class="_card_flex_01">
-                                                    <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">1244 Vansh Market, Mise Mizkel Australia, AU456HA</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="price-features-wrapper">
-                                        <div class="list-fx-features">
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>3 Beds
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>800 sqft
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-footer">
-                                        <div class="footer-first">
-                                            <div class="foot-location"><img src="public/img/pin.svg" width="18" alt="" />Montreal, Canada</div>
-                                        </div>
-                                        <div class="footer-flex">
-                                            <ul class="selio_style">
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <label class="toggler toggler-danger" data-toggle="tooltip" data-placement="top" data-original-title="Save property"><input type="checkbox"><i class="ti-heart"></i></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="compare-property.html" data-toggle="tooltip" data-placement="top" data-original-title="Compare property"><i class="ti-control-shuffle"></i></a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="single-property-1.html" data-toggle="tooltip" data-placement="top" data-original-title="View Property"><i class="ti-arrow-right"></i></a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <!-- End Single Property -->
-                            
-                            <!-- Single Property -->
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="property-listing property-2">
-                                    
-                                    <div class="listing-img-wrapper">
-                                        <div class="_exlio_125">For Rent</div>
-                                        <div class="list-img-slide">
-                                            <div class="click">
-                                                <div><a href="single-property-1.html"><img src="public/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-wrapper">
-                                        <div class="listing-short-detail-wrap">
-                                            <div class="_card_list_flex mb-2">
-                                                <div class="_card_flex_01">
-                                                    <span class="_list_blickes _netork">5 Network</span>
-                                                    <span class="_list_blickes types">Offices</span>
-                                                </div>
-                                                <div class="_card_flex_last">
-                                                    <h6 class="listing-card-info-price mb-0">$7,900</h6>
-                                                </div>
-                                            </div>
-                                            <div class="_card_list_flex">
-                                                <div class="_card_flex_01">
-                                                    <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7012 Shine Sehu Street, Liverpool London, LC345AC</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="price-features-wrapper">
-                                        <div class="list-fx-features">
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>4 Beds
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>900 sqft
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-footer">
-                                        <div class="footer-first">
-                                            <div class="foot-location"><img src="public/img/pin.svg" width="18" alt="" />Montreal, Canada</div>
-                                        </div>
-                                        <div class="footer-flex">
-                                            <ul class="selio_style">
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <label class="toggler toggler-danger" data-toggle="tooltip" data-placement="top" data-original-title="Save property"><input type="checkbox"><i class="ti-heart"></i></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="compare-property.html" data-toggle="tooltip" data-placement="top" data-original-title="Compare property"><i class="ti-control-shuffle"></i></a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="single-property-1.html" data-toggle="tooltip" data-placement="top" data-original-title="View Property"><i class="ti-arrow-right"></i></a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <!-- End Single Property -->
-                            
-                            <!-- Single Property -->
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="property-listing property-2">
-                                    
-                                    <div class="listing-img-wrapper">
-                                        <div class="_exlio_125">For Sale</div>
-                                        <div class="list-img-slide">
-                                            <div class="click">
-                                                <div><a href="single-property-1.html"><img src="public/img/p-13.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-14.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-15.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-wrapper">
-                                        <div class="listing-short-detail-wrap">
-                                            <div class="_card_list_flex mb-2">
-                                                <div class="_card_flex_01">
-                                                    <span class="_list_blickes _netork">5 Network</span>
-                                                    <span class="_list_blickes types">Family</span>
-                                                </div>
-                                                <div class="_card_flex_last">
-                                                    <h6 class="listing-card-info-price mb-0">$8,500</h6>
-                                                </div>
-                                            </div>
-                                            <div class="_card_list_flex">
-                                                <div class="_card_flex_01">
-                                                    <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7012 Shine Sehu Street, Liverpool London, LC345AC</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="price-features-wrapper">
-                                        <div class="list-fx-features">
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>5 Beds
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>3 Bath
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>920 sqft
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-footer">
-                                        <div class="footer-first">
-                                            <div class="foot-location"><img src="public/img/pin.svg" width="18" alt="" />California, USA</div>
-                                        </div>
-                                        <div class="footer-flex">
-                                            <ul class="selio_style">
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <label class="toggler toggler-danger" data-toggle="tooltip" data-placement="top" data-original-title="Save property"><input type="checkbox"><i class="ti-heart"></i></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="compare-property.html" data-toggle="tooltip" data-placement="top" data-original-title="Compare property"><i class="ti-control-shuffle"></i></a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="single-property-1.html" data-toggle="tooltip" data-placement="top" data-original-title="View Property"><i class="ti-arrow-right"></i></a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <!-- End Single Property -->
-                            <!-- Single Property -->
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="property-listing property-2">
-                                    
-                                    <div class="listing-img-wrapper">
-                                        <div class="_exlio_125">For Rent</div>
-                                        <div class="list-img-slide">
-                                            <div class="click">
-                                                <div><a href="single-property-1.html"><img src="public/img/p-16.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-17.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                                <div><a href="single-property-1.html"><img src="public/img/p-18.png" class="img-fluid mx-auto" alt="" /></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-wrapper">
-                                        <div class="listing-short-detail-wrap">
-                                            <div class="_card_list_flex mb-2">
-                                                <div class="_card_flex_01">
-                                                    <span class="_list_blickes _netork">7 Network</span>
-                                                    <span class="_list_blickes types">Condos</span>
-                                                </div>
-                                                <div class="_card_flex_last">
-                                                    <h6 class="listing-card-info-price mb-0">$1,200</h6>
-                                                </div>
-                                            </div>
-                                            <div class="_card_list_flex">
-                                                <div class="_card_flex_01">
-                                                    <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">7012 Shine Sehu Street, Liverpool London, LC345AC</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="price-features-wrapper">
-                                        <div class="list-fx-features">
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bed.svg" width="13" alt="" /></div>3 Beds
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/bathtub.svg" width="13" alt="" /></div>2 Bath
-                                            </div>
-                                            <div class="listing-card-info-icon">
-                                                <div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div>950 sqft
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="listing-detail-footer">
-                                        <div class="footer-first">
-                                            <div class="foot-location"><img src="public/img/pin.svg" width="18" alt="" />Denever, New York</div>
-                                        </div>
-                                        <div class="footer-flex">
-                                            <ul class="selio_style">
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <label class="toggler toggler-danger" data-toggle="tooltip" data-placement="top" data-original-title="Save property"><input type="checkbox"><i class="ti-heart"></i></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="compare-property.html" data-toggle="tooltip" data-placement="top" data-original-title="Compare property"><i class="ti-control-shuffle"></i></a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="prt_saveed_12lk">
-                                                        <a href="single-property-1.html" data-toggle="tooltip" data-placement="top" data-original-title="View Property"><i class="ti-arrow-right"></i></a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
+                            <?php } ?>
                             <!-- End Single Property -->
                             
                         </div>	

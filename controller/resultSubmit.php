@@ -33,12 +33,12 @@ if (isset($_POST['submit'])) {
         } elseif ($price >= 1000000) {
             return number_format($price / 1000000, 1) . " triệu";
         } elseif ($price >= 1000) {
-            return number_format($price / 1000, 0) . " nghìn";
+            return number_format($price / 1000, ($price >= 10000 ? 1 : 0)) . " nghìn";
         } else {
             return $price;
         }
     }
-
+    
     // Format giá trước khi lưu vào cơ sở dữ liệu
     $formattedPrice = formatPrice($price);
 

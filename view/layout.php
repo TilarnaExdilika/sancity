@@ -409,7 +409,7 @@ session_start();
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="public/js/ajaxjs.js" ></script>
 <script>
         $(document).ready(function() {
             var availableCities = [
