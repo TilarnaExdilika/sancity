@@ -15,7 +15,24 @@ class HomeController
     public function index()
     {
         $result = $this->model->getProperties();
+        foreach ($result as $key => $row) {
+            $result[$key]['formatted_price'] = $this->formatPrice($row['price']);
+        }
         require_once "view/Home/index.php";
+    }
+
+    private function formatPrice($price)
+    {
+        if ($price >= 1000000000) {
+            $formatted_price = number_format($price / 1000000000, 1);
+            return $formatted_price . " tỷ";
+        } else if ($price >= 1000000) {
+            return number_format($price / 1000000, 0) . " triệu";
+        } else if ($price >= 1000) {
+            return number_format($price / 1000, 0) . " nghìn";
+        } else {
+            return $price;
+        }
     }
 }
 

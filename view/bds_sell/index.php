@@ -273,14 +273,8 @@
                                 <div class="property-listing property-2">
                                     
                                     <div class="listing-img-wrapper">
-                                        <div class="_exlio_125">
-                                            <?php
-                                                $price = $row['price'];
-                                                if (mb_strlen($price) > 6) {
-                                                    $price = mb_substr($price, 0, 6) . '';
-                                                }
-                                                echo htmlentities($price);
-                                            ?>/<?php echo $row['unit']; ?>
+                                        <div class="_exlio_125" id="priceElement">
+                                        <?php echo $row['formatted_price']; ?>/<?php echo $row['unit']; ?>
                                         </div>
                                         <div class="list-img-slide">
                                             <div class="click">

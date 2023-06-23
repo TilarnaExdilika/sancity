@@ -26,21 +26,12 @@ if (isset($_POST['submit'])) {
     $utilities = $_POST['utilities']; // Mảng các tiện ích được chọn
 
     // Hàm format giá
-    function formatPrice($price)
-    {
-        if ($price >= 1000000000) {
-            return number_format($price / 1000000000, 1) . " tỷ";
-        } elseif ($price >= 1000000) {
-            return number_format($price / 1000000, 1) . " triệu";
-        } elseif ($price >= 1000) {
-            return number_format($price / 1000, ($price >= 10000 ? 1 : 0)) . " nghìn";
-        } else {
-            return $price;
-        }
-    }
+    
+    
+    
     
     // Format giá trước khi lưu vào cơ sở dữ liệu
-    $formattedPrice = formatPrice($price);
+    // $formattedPrice = formatPrice($price);
 
     // Thực hiện câu truy vấn INSERT vào bảng "properties"
     $query = "INSERT INTO properties (property_name, user_id, type_id, description, address, price, status, real_area, age, unit) 
@@ -51,7 +42,7 @@ if (isset($_POST['submit'])) {
     $stmt->bindParam(':type_id', $property_type);
     $stmt->bindParam(':description', $description);
     $stmt->bindParam(':address', $address);
-    $stmt->bindParam(':price', $formattedPrice);
+    $stmt->bindParam(':price', $price);
     $stmt->bindParam(':status', $status);
     $stmt->bindParam(':real_area', $real_area);
     $stmt->bindParam(':age', $age);

@@ -782,8 +782,8 @@
 												<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">
 														<?php
 														$property_name = $row['property_name'] . ', ' . $row['city'];
-														if (strlen($property_name) > 65) {
-															$property_name = substr($property_name, 0, 62) . '...';
+														if (strlen($property_name) > 70) {
+															$property_name = substr($property_name, 0, 67) . '...';
 														}
 														echo htmlentities($property_name);
 														?>
@@ -813,7 +813,7 @@
 												<span class="elio_rate perfect">
 														
 													<?php
-														$price = $row['price'];
+														$price = $row['formatted_price'];
 														if (mb_strlen($price) > 6) {
 															$price = mb_substr($price, 0, 6) . '';
 														}

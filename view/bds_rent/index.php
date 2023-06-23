@@ -277,18 +277,12 @@
                         <div class="property-listing list_view">
                             
                             <div class="listing-img-wrapper">
-                                <div class="_exlio_125">
-                                <?php
-                                    $price = $row['price'];
-                                    if (mb_strlen($price) > 6) {
-                                        $price = mb_substr($price, 0, 6) . '';
-                                    }
-                                    echo htmlentities($price);
-                                ?>/<?php echo $row['unit']; ?>
+                                <div class="_exlio_125" id="priceElement">
+                                <?php echo $row['formatted_price']; ?>/<?php echo $row['unit']; ?>
                                 </div>
                                 <div class="list-img-slide">
                                     <div class="click">
-                                        <div><a href="single-property-1.html"><img src="public/img/p-1.png" class="img-fluid mx-auto" alt="" /></a></div>
+                                        <div><a href="?controller=BdsRent&action=single"><img src="public/upload/properties/<?php echo $row['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -312,11 +306,11 @@
                                         </div>
                                         <div class="_card_list_flex">
                                             <div class="_card_flex_01">
-                                                <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">
+                                                <h4 class="listing-name verified"><a href="?controller=BdsRent&action=single" class="prt-link-detail">
                                                 <?php
 														$property_name = $row['property_name'] . ', ' . $row['city'];
-														if (strlen($property_name) > 65) {
-															$property_name = substr($property_name, 0, 62) . '...';
+														if (strlen($property_name) > 70) {
+															$property_name = substr($property_name, 0, 67) . '...';
 														}
 														echo htmlentities($property_name);
 														?>
