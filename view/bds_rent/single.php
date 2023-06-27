@@ -15,12 +15,16 @@
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-8 col-md-7 col-sm-12 pr-1">
-							<div class="gg_single_part left"><a href="public/img/p-2.png" class="mfp-gallery"><img src="public/img/p-2.png" class="img-fluid mx-auto" alt="" /></a></div>
+							<div class="gg_single_part left">
+								<a href="public/upload/properties/<?php echo $property['image_url']; ?>" class="mfp-gallery">
+									<img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid mx-auto" alt="" />
+								</a>
+							</div>
 						</div>
 						<div class="col-lg-4 col-md-5 col-sm-12 pl-1">
-							<div class="gg_single_part-right min"><a href="public/img/p-5.png" class="mfp-gallery"><img src="public/img/p-5.png" class="img-fluid mx-auto" alt="" /></a></div>
-							<div class="gg_single_part-right min mt-2 mb-2"><a href="public/img/p-3.png" class="mfp-gallery"><img src="public/img/p-3.png" class="img-fluid mx-auto" alt="" /></a></div>
-							<div class="gg_single_part-right min"><a href="public/img/p-4.png" class="mfp-gallery"><img src="public/img/p-4.png" class="img-fluid mx-auto" alt="" /></a></div>
+							<div class="gg_single_part-right min"><a href="public/upload/properties/<?php echo $property['image_url']; ?>" class="mfp-gallery"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
+							<div class="gg_single_part-right min mt-2 mb-2"><a href="public/upload/properties/<?php echo $property['image_url']; ?>" class="mfp-gallery"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
+							<div class="gg_single_part-right min"><a href="public/upload/properties/<?php echo $property['image_url']; ?>" class="mfp-gallery"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
 						</div>
 					</div>
 				</div>
@@ -48,13 +52,13 @@
 								<div class="property_info_detail_wrap_first">
 									<div class="pr-price-into">
 										<ul class="prs_lists">
-											<li><span class="bed">3 Beds</span></li>
-											<li><span class="bath">2 Bath</span></li>
-											<li><span class="gar">1 Garage</span></li>
-											<li><span class="sqft">800 sqft</span></li>
+											<li><span class="bed">VIP</span></li>
+											<li><span class="bath"><?php echo $property['status']; ?></span></li>
+											<li><span class="gar"><?php echo $property['age']; ?></span></li>
+											<li><span class="sqft"><?php echo $property['type_name']; ?></span></li>
 										</ul>
-										<h2>5689 Resot Relly Market, Montreal Canada, HAQC445</h2>
-										<span><i class="lni-map-marker"></i> 778 Country St. Panama City, FL</span>
+										<h2><?php echo $property['property_name']; ?></h2>
+										<span><i class="lni-map-marker"></i> <?php echo $property['address']; ?></span>
 									</div>
 								</div>
 								
@@ -73,11 +77,11 @@
 							<div class="property_block_wrap">
 								
 								<div class="property_block_wrap_header">
-									<h4 class="property_block_title">About Property</h4>
+									<h4 class="property_block_title">Thông tin bất động sản</h4>
 								</div>
 								
 								<div class="block-body">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+									<p style="text-align: justify; text-justify: inter-word;"><?php echo $property['description']; ?></p>
 								</div>
 								
 							</div>
@@ -86,23 +90,17 @@
 							<div class="property_block_wrap">
 								
 								<div class="property_block_wrap_header">
-									<h4 class="property_block_title">Advance Features</h4>
+									<h4 class="property_block_title">Đặc điểm</h4>
 								</div>
 								
 								<div class="block-body">
 									<ul class="row p-0 m-0">
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bed mr-1"></i>4 Bedrooms</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bath mr-1"></i>2 Bathrooms</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-expand-arrows-alt mr-1"></i>12400 sqft</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-house-damage mr-1"></i>1 Living Rooms</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-building mr-1"></i>Build 2007</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-utensils mr-1"></i>2 Kitchens </li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-car mr-1"></i>Car Parking</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-briefcase-medical mr-1"></i>Free Medical</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-fire mr-1"></i>Fireplace</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-layer-group mr-1"></i>Residential</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-tv mr-1"></i>TV Cable</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-spa mr-1"></i>Free Spa</li>
+										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bed mr-1"></i><?php echo $property['bedroom_count']; ?> Phòng ngủ</li>
+										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bath mr-1"></i><?php echo $property['bathroom_count']; ?> Phòng tắm</li>
+										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-expand-arrows-alt mr-1"></i><?php echo $property['real_area']; ?> m<sup>2</li>
+										<!-- <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-house-damage mr-1"></i>1 Living Rooms</li> -->
+										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-building mr-1"></i>Năm xây dựng: <?php echo $property['age']; ?></li>
+										<!-- <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-utensils mr-1"></i>2 Kitchens </li> -->
 									</ul>
 								</div>
 								
@@ -112,25 +110,20 @@
 							<div class="property_block_wrap">
 								
 								<div class="property_block_wrap_header">
-									<h4 class="property_block_title">Ameneties</h4>
+									<h4 class="property_block_title">Tiện ích</h4>
 								</div>
 								
 								<div class="block-body">
 									<ul class="avl-features third">
-										<li class="active">Air Conditioning</li>
-										<li class="active">Swimming Pool</li>
-										<li class="active">Central Heating</li>
-										<li class="active">Laundry Room</li>
-										<li class="active">Gym</li>
-										<li class="active">Alarm</li>
-										<li class="active">Window Covering</li>
-										<li class="active">Internet</li>
-										<li class="active">Pets Allow</li>
-										<li class="active">Free WiFi</li>
-										<li>Car Parking</li>
-										<li>Spa & Massage</li>
+										<?php
+										$utilities = explode(", ", $property['utilities']);
+										foreach ($utilities as $utility) {
+											echo "<li class='active'>$utility</li>";
+										}
+										?>
 									</ul>
 								</div>
+
 								
 							</div>
 							
@@ -688,7 +681,7 @@
 								
 								<div class="sider_blocks_wrap">
 									<div class="side-booking-header">
-										<div class="sb-header-left"><h3 class="price">$470<sub>/Night</sub><span class="offs">$510</span></h3></div>
+										<div class="sb-header-left"><h3 class="price"><?php echo $property['formatted_price']; ?><sub>/<?php echo $property['unit']; ?></sub><span class="offs"></span></h3></div>
 										<div class="price_offer">20% Off</div>
 									</div>
 									<div class="side-booking-body">

@@ -33,11 +33,26 @@ class connect
         return $result;
     }
 
-    public function getList($query)
+    public function getList($query, $params = array())
     {
-        $stmt = $this->db->query($query);
+        $stmt = $this->db->prepare($query);
+        $stmt->execute($params);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function getRow($query, $params = [])
+    {
+    try {
+        $stmt = $this->db->prepare($query);
+        $stmt->execute($params);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row;
+    } catch (PDOException $e) {
+        echo "Lỗi: " . $e->getMessage();
+        return false;
+    }
+    }
+
 }
 ?>
