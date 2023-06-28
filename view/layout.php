@@ -241,15 +241,15 @@ session_start();
 									</li>
 								</ul>
 							<?php else: ?>
-								<ul class="nav-menu nav-menu-social align-to-right">
+								<ul class="nav-menu nav-menu-social align-to-right" >
 									<li>
 										<a href="#" class="alio_green" data-toggle="modal" data-target="#login">
 											<i class="fas fa-sign-in-alt mr-1"></i><span class="dn-lg">Đăng nhập</span>
 										</a>
 									</li>
 									<li class="add-listing">
-										<a href="index.php?controller=DashBoard&action=submitProperty"  class="theme-cl">
-											<i class="fas fa-plus-circle mr-1"></i>Đăng tin
+										<a href="#" class="theme-cl" data-toggle="modal" data-target="#login">
+											<i class="fas fa-plus-circle mr-1"></i>Đăng kí
 										</a>
 									</li>
 								</ul>
@@ -530,6 +530,29 @@ $(document).ready(function() {
 });
 </script>
 <!-- ============================================================== -->
+<script>
+  function calculateRent() {
+    var priceText = document.getElementById("price").innerText; // Lấy giá trị từ phần tử HTML
+    var price = parseInt(priceText.replace(/[^0-9]/g, "")); // Chuyển đổi giá trị thành số nguyên
+
+    var checkin = new Date(document.getElementById("checkin").value); // Lấy giá trị từ ô input checkin
+    var checkout = new Date(document.getElementById("checkout").value); // Lấy giá trị từ ô input checkout
+
+    var oneDay = 24 * 60 * 60 * 1000; // Số mili giây trong một ngày
+    var numberOfDays = Math.round(Math.abs((checkout - checkin) / oneDay)); // Tính tổng số ngày thuê
+
+    var dailyRent = price / 30; // Tính giá thuê từng ngày (giả sử 30 ngày trong một tháng)
+    var totalRent = dailyRent * numberOfDays; // Tính tổng hợp đồng
+
+    document.getElementById("totalRent").innerText = totalRent.toLocaleString() + " VND"; // Hiển thị giá trị tổng hợp đồng
+  }
+</script>
+
+
+
+
+<!-- ============================================================== -->
+
 
 
 </body>

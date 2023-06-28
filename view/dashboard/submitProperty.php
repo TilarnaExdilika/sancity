@@ -5,6 +5,7 @@ require_once 'config/db.php';
 $db = new connect();
 $conn = $db->getConnection();
 
+
 // Lấy dữ liệu từ bảng "property_types"
 $propertyTypesQuery = "SELECT * FROM property_types";
 $propertyTypesResult = $conn->query($propertyTypesQuery);
@@ -40,6 +41,30 @@ $conn = null;
     </div>
 </div>
 <!-- ============================ Page Title End ================================== -->
+
+<?php
+// Tạo một đối tượng LoginModel
+$loginModel = new LoginModel();
+
+// Gọi phương thức isLoggedIn() để kiểm tra trạng thái đăng nhập
+$loggedIn = $loginModel->isLoggedIn();
+?>
+<?php if (!$loggedIn): ?>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+            
+                <div class="alert alert-info" role="alert">
+                <p>Bạn chưa đăng nhập ? Đăng nhập ngay <a href="#">Tại đây</a></p>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php else: ?>
 
 <!-- ============================ Submit Property Start ================================== -->
 <section>
@@ -240,5 +265,6 @@ $conn = null;
             
 </section>
 <!-- ============================ Submit Property End ================================== -->
+<?php endif; ?>
 
 

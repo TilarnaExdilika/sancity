@@ -1,4 +1,7 @@
 <?php
+require_once 'config/db.php';
+require_once 'model/LoginModel.php';
+
 class DashBoardController
 {
     public function index()
@@ -38,8 +41,17 @@ class DashBoardController
 
     public function submitProperty()
     {
+        $loginModel = new LoginModel();
+        $isLoggedIn = $loginModel->isLoggedIn();
+    
+        
+        // Tiếp tục xử lý dữ liệu và thực hiện các thao tác khác
+    
         require_once 'view/dashboard/submitProperty.php';
     }
+    
+
+    
 
     public function changePassword()
     {

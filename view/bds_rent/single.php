@@ -152,35 +152,24 @@
 							
 							<!-- Single Block Wrap -->
 							<div class="property_block_wrap">
-								
 								<div class="property_block_wrap_header">
-									<h4 class="property_block_title">Property video</h4>
+									<h4 class="property_block_title">Preview video</h4>
 								</div>
-								
 								<div class="block-body">
-									<div class="property_video">
-										<div class="thumb">
-											<img class="pro_img img-fluid w100" src="public/img/p-3.png" alt="7.jpg">
-											<div class="overlay_icon">
-												<div class="bb-video-box">
-													<div class="bb-video-box-inner">
-														<div class="bb-video-box-innerup">
-															<a href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video" class="theme-cl"><i class="ti-control-play"></i></a>
-														</div>
-													</div>
-												</div>
-											</div>
+									<div class="">
+										<div class="">
+											<!-- Thay đổi mã nhúng video YouTube dưới đây -->
+											<iframe width="708" height="398.25" src="https://www.youtube.com/embed/7EHnQ0VM4KY" frameborder="0" allowfullscreen></iframe>
 										</div>
 									</div>
 								</div>
-								
 							</div>
-							
+
 							<!-- Single Block Wrap -->
 							<div class="property_block_wrap">
 								
 								<div class="property_block_wrap_header">
-									<h4 class="property_block_title">Floor Plan</h4>
+									<h4 class="property_block_title">Bản thiết kế</h4>
 								</div>
 								
 								<div class="block-body">
@@ -207,7 +196,7 @@
 										<div class="card">
 											<div class="card-header" id="firstFloor">
 												<h2 class="mb-0">
-													<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#firstfloor">First Floor<span>710 sq ft</span></button>
+													<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#firstfloor">First Floor<span></span></button>
 												</h2>
 												<div class="floor_listeo">
 													<ul>
@@ -226,7 +215,7 @@
 										<div class="card">
 											<div class="card-header" id="seconfFloor">
 												<h2 class="mb-0">
-													<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#secondfloor">Second<span>520 sq ft</span></button>                     
+													<button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#secondfloor">Second<span></span></button>                     
 												</h2>
 												<div class="floor_listeo">
 													<ul>
@@ -251,7 +240,7 @@
 							<div class="property_block_wrap">
 								
 								<div class="property_block_wrap_header">
-									<h4 class="property_block_title">Location</h4>
+									<h4 class="property_block_title">Google Maps</h4>
 								</div>
 								
 								<div class="block-body">
@@ -299,7 +288,7 @@
 												</span>
 											</div>
 											<div class="rating-bars-item">
-												<span class="rating-bars-name">Location</span>
+												<span class="rating-bars-name">Bản đồ</span>
 												<span class="rating-bars-inner">
 													<span class="rating-bars-rating mid" data-rating="6.2">
 														<span class="rating-bars-rating-inner" style="width: 65.2%;"></span>
@@ -308,7 +297,7 @@
 												</span>
 											</div>
 											<div class="rating-bars-item">
-												<span class="rating-bars-name">Agent Support</span>
+												<span class="rating-bars-name">Nhân viên hỗ trợ</span>
 												<span class="rating-bars-inner">
 													<span class="rating-bars-rating high" data-rating="7.0">
 														<span class="rating-bars-rating-inner" style="width:70%;"></span>
@@ -717,7 +706,7 @@
 													<label>Thời gian thuê</label>
 													<div class="cld-box">
 														<i class="ti-calendar"></i>
-														<input type="text" name="checkin" class="form-control" value="" />
+														<input type="text" id="checkin" name="checkin" class="form-control" value="" onchange="calculateRent()"/>
 													</div>
 												</div>
 											</div>
@@ -726,7 +715,7 @@
 													<label>Thời gian kết thúc</label>
 													<div class="cld-box">
 														<i class="ti-calendar"></i>
-														<input type="text" name="checkout" class="form-control" value="" />
+														<input type="text" id="checkout" name="checkout" class="form-control" value="" onchange="calculateRent()" />
 													</div>
 												</div>
 											</div>
@@ -734,16 +723,14 @@
 												<label for="guests">Hóa đơn</label>
 												<div class="_adv_features">
 													<ul>
-														<li>I Night<span>$310</span></li>
-														<li>Discount 25$<span>-$250</span></li>
-														<li>Service Fee<span>$17</span></li>
-														<li>Breakfast Per Adult<span>$35</span></li>
+														<li>Mỗi tháng<span id="price"><?php echo $property['price']; ?> VND</span></li>
+														<li>Tổng hợp đồng<span id="totalRent">cần xử lý</span></li>
 													</ul>
 												</div>
 											</div>
 											<div class="side-booking-foot">
 												<span class="sb-header-left">Tổng trả</span>
-												<h3 class="price theme-cl">$170</h3>
+												<h3 class="price theme-cl"><?php echo $property['formatted_price']; ?></h3>
 											</div>
 											<div class="col-lg-12 col-md-12 col-sm-12">
 												<div class="stbooking-footer mt-1">
@@ -753,6 +740,7 @@
 												</div>
 											</div>
 										</div>
+									</div>
 									</div>
 								<?php else: ?>
 									<div class="sider_blocks_wrap p-3">
