@@ -41,14 +41,18 @@ class BdsRentController
         if (isset($_GET['property_id'])) {
             $propertyId = $_GET['property_id'];
             $property = $this->model->getPropertyById($propertyId);
-    
+
             // Kiểm tra nếu bất động sản tồn tại
             if (!empty($property)) {
+                // Lấy danh sách ảnh của bất động sản từ cơ sở dữ liệu
+                $propertyImages = $this->model->getPropertyImages($propertyId);
+
                 // Định dạng lại giá bất động sản
                 $property['formatted_price'] = $this->formatPrice($property['price']);
-                
-                // Truyền dữ liệu $property vào view
+
+                // Truyền dữ liệu $property và $propertyImages vào view
                 $data['property'] = $property;
+                $data['propertyImages'] = $propertyImages;
                 require_once 'view/bds_rent/single.php';
             } else {
                 // Xử lý trường hợp không tìm thấy bất động sản hoặc không có giá trị 'price'

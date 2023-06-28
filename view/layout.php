@@ -23,8 +23,53 @@ session_start();
     <!-- Custom CSS -->
     <link href="public/css/styles.css" rel="stylesheet">
 	<script src="public/js/tinymce.min.js" referrerpolicy="origin"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
     <title>SANCITY</title>
+
+	<style>
+    .custom-datepicker {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .custom-datepicker .datepicker-days tr th,
+    .custom-datepicker .datepicker-months tr th,
+    .custom-datepicker .datepicker-years tr th {
+      color: white;
+    }
+
+    .custom-datepicker .datepicker-switch:hover {
+      background-color: #333;
+    }
+
+    .custom-datepicker .datepicker-days .disabled,
+    .custom-datepicker .datepicker-months .disabled,
+    .custom-datepicker .datepicker-years .disabled {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .custom-datepicker .datepicker-days .active,
+    .custom-datepicker .datepicker-months .active,
+    .custom-datepicker .datepicker-years .active {
+      background-color: #333;
+    }
+
+    .custom-datepicker .datepicker-days table tr td,
+    .custom-datepicker .datepicker-months table tr td,
+    .custom-datepicker .datepicker-years table tr td {
+      border: 1px solid #333;
+    }
+
+    .custom-datepicker .datepicker-days table tr td:hover,
+    .custom-datepicker .datepicker-months table tr td:hover,
+    .custom-datepicker .datepicker-years table tr td:hover {
+      background-color: #666;
+    }
+  </style>
 </head>
+
 
 
 <body class="yellow-skin">
@@ -455,6 +500,38 @@ document.getElementById('price').addEventListener('input', function (e) {
     });
 </script>
 <!-- ============================================================== -->
+<!-- Over 4 image -->
+
+
+<!-- ============================================================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+<script>
+$(document).ready(function() {
+	$('input[name="checkin"]').datepicker({
+	format: 'dd/mm/yyyy',
+	autoclose: true,
+	beforeShow: function(input, inst) {
+		setTimeout(function() {
+		$('.datepicker-dropdown').addClass('custom-datepicker');
+		}, 0);
+	}
+	});
+
+	$('input[name="checkout"]').datepicker({
+	format: 'dd/mm/yyyy',
+	autoclose: true,
+	beforeShow: function(input, inst) {
+		setTimeout(function() {
+		$('.datepicker-dropdown').addClass('custom-datepicker');
+		}, 0);
+	}
+	});
+});
+</script>
+<!-- ============================================================== -->
+
+
 </body>
 
 </html>

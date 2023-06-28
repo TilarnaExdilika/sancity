@@ -10,34 +10,57 @@
 </div>
 <!-- ============================ Page Title End ================================== -->
 
-			<!-- Gallery Part Start -->
-			<section class="gallery_parts pt-2 pb-2 d-none d-sm-none d-md-none d-lg-none d-xl-block">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-lg-8 col-md-7 col-sm-12 pr-1">
-							<div class="gg_single_part left">
-								<a href="public/upload/properties/<?php echo $property['image_url']; ?>" class="mfp-gallery">
-									<img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid mx-auto" alt="" />
+		<!-- Gallery Part Start -->
+		<section class="gallery_parts pt-2 pb-2 d-none d-sm-none d-md-none d-lg-none d-xl-block">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-8 col-md-7 col-sm-12 pr-1">
+						<div class="gg_single_part left" style="width: 100%; max-width: 100%; height: 0; padding-top: 75%; position: relative;">
+							<?php if (isset($propertyImages) && is_array($propertyImages) && count($propertyImages) > 0) { ?>
+								<a href="public/upload/properties/<?php echo $propertyImages[0]['image_url']; ?>" class="mfp-gallery">
+									<img src="public/upload/properties/<?php echo $propertyImages[0]['image_url']; ?>" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;" alt="" />
 								</a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-5 col-sm-12 pl-1">
-							<div class="gg_single_part-right min"><a href="public/upload/properties/<?php echo $property['image_url']; ?>" class="mfp-gallery"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
-							<div class="gg_single_part-right min mt-2 mb-2"><a href="public/upload/properties/<?php echo $property['image_url']; ?>" class="mfp-gallery"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
-							<div class="gg_single_part-right min"><a href="public/upload/properties/<?php echo $property['image_url']; ?>" class="mfp-gallery"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
+							<?php } ?>
 						</div>
 					</div>
+					<div class="col-lg-4 col-md-5 col-sm-12 pl-1">
+					<?php if (isset($propertyImages) && is_array($propertyImages) && count($propertyImages) > 1) {
+						for ($i = 1; $i < count($propertyImages); $i++) { ?>
+							<div class="gg_single_part-right min" style="position: relative; width: 100%; height: 0; padding-top: 50%; margin: 6px 0;">
+								<a href="public/upload/properties/<?php echo $propertyImages[$i]['image_url']; ?>" class="mfp-gallery">
+									<img src="public/upload/properties/<?php echo $propertyImages[$i]['image_url']; ?>" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;" alt="" />
+								</a>
+								<?php if ($i === 3 && count($propertyImages) > 4) { ?>
+									<div class="overlay"></div>
+									<div class="image-count">
+										<?php echo count($propertyImages) - 3; ?>+ <!-- Hiển thị số ảnh phía sau -->
+									</div>
+								<?php } ?>
+							</div>
+						<?php }
+					} ?>
 				</div>
-			</section>
-			
-			<div class="featured_slick_gallery gray d-block d-md-block d-lg-block d-xl-none">
-				<div class="featured_slick_gallery-slide">
-					<div class="featured_slick_padd"><a href="public/img/slider-2.jpg" class="mfp-gallery"><img src="public/img/slider-2.jpg" class="img-fluid mx-auto" alt="" /></a></div>
-					<div class="featured_slick_padd"><a href="public/img/slider-3.jpg" class="mfp-gallery"><img src="public/img/slider-3.jpg" class="img-fluid mx-auto" alt="" /></a></div>
-					<div class="featured_slick_padd"><a href="public/img/slider-4.jpg" class="mfp-gallery"><img src="public/img/slider-4.jpg" class="img-fluid mx-auto" alt="" /></a></div>
-					<div class="featured_slick_padd"><a href="public/img/slider-5.jpg" class="mfp-gallery"><img src="public/img/slider-5.jpg" class="img-fluid mx-auto" alt="" /></a></div>
+
+
 				</div>
 			</div>
+		</section>
+			
+			<!-- Đây là phần hiển thị trên di động hoặc màn hình kích thước hẹp -->
+			<div class="featured_slick_gallery gray d-block d-md-block d-lg-block d-xl-none">
+				<div class="featured_slick_gallery-slide">
+					<?php if (isset($propertyImages) && is_array($propertyImages) && count($propertyImages) > 0) {
+						for ($i = 0; $i < count($propertyImages); $i++) { ?>
+							<div class="featured_slick_padd">
+								<a href="public/upload/properties/<?php echo $propertyImages[$i]['image_url']; ?>" class="mfp-gallery">
+									<img src="public/upload/properties/<?php echo $propertyImages[$i]['image_url']; ?>" class="img-fluid mx-auto" alt="" />
+								</a>
+							</div>
+					<?php }
+					} ?>
+				</div>
+			</div>
+
 
 <!-- ============================ Property Detail Start ================================== -->
 <section class="pt-4">
@@ -679,111 +702,61 @@
 						<div class="col-lg-4 col-md-12 col-sm-12">
 							<div class="property-sidebar">
 								
-								<div class="sider_blocks_wrap">
-									<div class="side-booking-header">
-										<div class="sb-header-left"><h3 class="price"><?php echo $property['formatted_price']; ?><sub>/<?php echo $property['unit']; ?></sub><span class="offs"></span></h3></div>
-										<div class="price_offer">20% Off</div>
+							<div class="sider_blocks_wrap">
+								<div class="side-booking-header">
+									<div class="sb-header-left">
+									<h3 class="price"><?php echo $property['formatted_price']; ?><sub>/<?php echo $property['unit']; ?></sub><span class="offs"></span></h3>
 									</div>
-									<div class="side-booking-body">
-										<div class="row">
-											<div class="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div class="form-group">
-													<label>Check In</label>
-													<div class="cld-box">
-														<i class="ti-calendar"></i>
-														<input type="text" name="checkin" class="form-control" value="10/24/2020" />
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div class="form-group">
-													<label>Check Out</label>
-													<div class="cld-box">
-														<i class="ti-calendar"></i>
-														<input type="text" name="checkout" class="form-control" value="10/24/2020" />
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div class="form-group">
-													<div>
-													  <label for="guests">Adults</label>
-													  <div class="guests-box">
-														  <button class="counter-btn" type="button" id="cnt-down"><i class="ti-minus"></i></button>
-														  <input type="text" id="guestNo" name="guests" value="2"/>
-														  <button class="counter-btn" type="button" id="cnt-up"><i class="ti-plus"></i></button>
-													  </div>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col-6">
-												<div class="form-group">
-													<div class="guests">
-													  <label>Kids</label>
-													  <div class="guests-box">
-														  <button class="counter-btn" type="button" id="kcnt-down"><i class="ti-minus"></i></button>
-														  <input type="text" id="kidsNo" name="kids" value="0"/>
-														  <button class="counter-btn" type="button" id="kcnt-up"><i class="ti-plus"></i></button>
-													  </div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="col-lg12 col-md-12 col-sm-12 mt-3">
-												<label for="guests">Advance features</label>
-												<div class="_adv_features_list">
-													<ul class="no-ul-list">
-														<li>
-															<input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
-															<label for="a-1" class="checkbox-custom-label">Air Condition<i>$10</i></label>
-														</li>
-														<li>
-															<input id="a-2" class="checkbox-custom" name="a-2" type="checkbox" checked>
-															<label for="a-2" class="checkbox-custom-label">Bedding<i>$07</i></label>
-														</li>
-														<li>
-															<input id="a-3" class="checkbox-custom" name="a-3" type="checkbox" checked>
-															<label for="a-3" class="checkbox-custom-label">Heating<i>$20</i></label>
-														</li>
-														<li>
-															<input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
-															<label for="a-4" class="checkbox-custom-label">Internet<i>$10</i></label>
-														</li>
-														<li>
-															<input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
-															<label for="a-5" class="checkbox-custom-label">Microwave<i>$05</i></label>
-														</li>
-													</ul>
-												</div>
-											</div>
-											
-											<div class="col-lg12 col-md-12 col-sm-12 mt-3">
-												<label for="guests">Price & Tax</label>
-												<div class="_adv_features">
-													<ul>
-														<li>I Night<span>$310</span></li>
-														<li>Discount 25$<span>-$250</span></li>
-														<li>Service Fee<span>$17</span></li>
-														<li>Breakfast Per Adult<span>$35</span></li>
-													</ul>
-												</div>
-											</div>
-											
-											<div class="side-booking-foot">
-												<span class="sb-header-left">Total Payment</span>
-												<h3 class="price theme-cl">$170</h3>
-											</div>
-											
-											<div class="col-lg-12 col-md-12 col-sm-12">
-												<div class="stbooking-footer mt-1">
-													<div class="form-group mb-0 pb-0">
-														<a href="#" class="btn book_btn theme-bg">Book It Now</a>
-													</div>
-												</div>
+									<div class="price_offer">giảm 20%</div>
+								</div>
+								<div class="side-booking-body">
+									<div class="row">
+									<?php if ($property['status'] == 'Thuê'): ?>
+										<div class="col-lg-6 col-md-6 col-sm-6 col-6">
+										<div class="form-group">
+											<label>Thời gian thuê</label>
+											<div class="cld-box">
+											<i class="ti-calendar"></i>
+											<input type="text" name="checkin" class="form-control" value="" />
 											</div>
 										</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6 col-6">
+										<div class="form-group">
+											<label>Thời gian kết thúc</label>
+											<div class="cld-box">
+											<i class="ti-calendar"></i>
+											<input type="text" name="checkout" class="form-control" value="" />
+											</div>
+										</div>
+										</div>
+										<div class="col-lg12 col-md-12 col-sm-12 mt-3">
+										<label for="guests">Hóa đơn</label>
+										<div class="_adv_features">
+											<ul>
+											<li>I Night<span>$310</span></li>
+											<li>Discount 25$<span>-$250</span></li>
+											<li>Service Fee<span>$17</span></li>
+											<li>Breakfast Per Adult<span>$35</span></li>
+											</ul>
+										</div>
+										</div>
+										<div class="side-booking-foot">
+										<span class="sb-header-left">Tổng trả</span>
+										<h3 class="price theme-cl">$170</h3>
+										</div>
+										<div class="col-lg-12 col-md-12 col-sm-12">
+										<div class="stbooking-footer mt-1">
+											<div class="form-group mb-0 pb-0">
+											<a href="#" class="btn book_btn theme-bg">Thuê ngay</a>
+											</div>
+										</div>
+										</div>
+									<?php endif; ?>
 									</div>
 								</div>
+								</div>
+
 							
 								<!-- Agent Detail -->
 								<div class="sider_blocks_wrap">
@@ -792,13 +765,13 @@
 										
 											<div class="agent-_blocks_thumb"><img src="public/img/user-6.jpg" alt=""></div>
 											<div class="agent-_blocks_caption">
-												<h4><a href="#">Shivangi Preet</a></h4>
-												<span class="approved-agent"><i class="ti-check"></i>approved</span>
+												<h4><a href="#"><?php echo $property['username']; ?></a></h4>
+												<span class="approved-agent"><i class="ti-check"></i>Đã xác minh</span>
 											</div>
 											<div class="clearfix"></div>
 										</div>
 										
-										<a href="#" class="agent-btn-contact" data-toggle="modal" data-target="#autho-message"><i class="ti-comment-alt"></i>Message</a>
+										<a href="#" class="agent-btn-contact" data-toggle="modal" data-target="#autho-message"><i class="ti-comment-alt"></i>Nhắn tin</a>
 										
 										<span id="number" data-last="+1234567896">
 											<span><i class="ti-headphone-alt"></i><a class="see">+355(44)35...Show</a></span>

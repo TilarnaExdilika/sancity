@@ -278,7 +278,7 @@
                                         </div>
                                         <div class="list-img-slide">
                                             <div class="click">
-                                                <div><a href="single-property-1.html"><img src="public/upload/properties/<?php echo $row['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
+                                                <div><a href="?controller=BdsRent&action=single&property_id=<?php echo $row['property_id']; ?>"><img src="public/upload/properties/<?php echo $row['image_url']; ?>" class="img-fluid mx-auto" alt="" /></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -296,7 +296,7 @@
                                             </div>
                                             <div class="_card_list_flex">
                                                 <div class="_card_flex_01">
-                                                    <h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">
+                                                    <h4 class="listing-name verified"><a href="?controller=BdsRent&action=single&property_id=<?php echo $row['property_id']; ?>" class="prt-link-detail">
                                                         <?php
 														$property_name = $row['property_name'] . ', ' . $row['city'];
 														if (strlen($property_name) > 65) {

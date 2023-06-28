@@ -78,7 +78,7 @@ class ModelHome extends Mastermodel
     public function getPropertyById($propertyId)
     {
         $query = "
-        SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, GROUP_CONCAT(DISTINCT u.utility_name SEPARATOR ', ') AS utilities
+        SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, GROUP_CONCAT(DISTINCT u1.utility_name SEPARATOR ', ') AS utilities, u2.username
         FROM properties p
         INNER JOIN property_types pt ON p.type_id = pt.type_id
         INNER JOIN property_details pd ON p.property_id = pd.property_id
@@ -87,20 +87,26 @@ class ModelHome extends Mastermodel
         LEFT JOIN locations l ON p.property_id = l.property_id
         LEFT JOIN property_images pi ON p.property_id = pi.property_id
         LEFT JOIN property_utilities pu ON p.property_id = pu.property_id
-        LEFT JOIN utilities u ON pu.utility_id = u.utility_id
+        LEFT JOIN utilities u1 ON pu.utility_id = u1.utility_id
+        LEFT JOIN users u2 ON p.user_id = u2.user_id
         WHERE p.property_id = ?
         GROUP BY p.property_id";
-    
+
+
         $params = array($propertyId);
         $result = $this->db->getRow($query, $params);
-    
+
         return $result;
     }
     
-
-
-    
-    
+    public function getPropertyImages($propertyId)
+    {
+        $query = "SELECT image_url FROM property_images WHERE property_id = ?";
+        $params = array($propertyId);
+        $result = $this->db->getList($query, $params);
+        
+        return $result;
+    }
 
 }
 ?>
