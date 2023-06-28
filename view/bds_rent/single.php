@@ -256,7 +256,7 @@
 								
 								<div class="block-body">
 									<div class="map-container">
-										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15090.183774083564!2d72.82822336977539!3d18.99565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cef0d17ace6f%3A0xba0d758b25d8b289!2sICICI%20Bank%20Curry%20Road%2C%20Mumbai-Branch%20%26%20ATM!5e0!3m2!1sen!2sin!4v1624183548415!5m2!1sen!2sin" class="full-width" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+										<iframe src="https://www.google.com/maps/d/embed?mid=1JUsMjCV0IBtOuR1qTuEilkkrC_Q&hl=en_US&ehbc=2E312F" class="full-width" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 									</div>
 
 								</div>
@@ -709,52 +709,103 @@
 									</div>
 									<div class="price_offer">giảm 20%</div>
 								</div>
-								<div class="side-booking-body">
-									<div class="row">
-									<?php if ($property['status'] == 'Thuê'): ?>
-										<div class="col-lg-6 col-md-6 col-sm-6 col-6">
-										<div class="form-group">
-											<label>Thời gian thuê</label>
-											<div class="cld-box">
-											<i class="ti-calendar"></i>
-											<input type="text" name="checkin" class="form-control" value="" />
+								<?php if ($property['status'] == 'Thuê'): ?>
+									<div class="side-booking-body">
+										<div class="row">
+											<div class="col-lg-6 col-md-6 col-sm-6 col-6">
+												<div class="form-group">
+													<label>Thời gian thuê</label>
+													<div class="cld-box">
+														<i class="ti-calendar"></i>
+														<input type="text" name="checkin" class="form-control" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6 col-6">
+												<div class="form-group">
+													<label>Thời gian kết thúc</label>
+													<div class="cld-box">
+														<i class="ti-calendar"></i>
+														<input type="text" name="checkout" class="form-control" value="" />
+													</div>
+												</div>
+											</div>
+											<div class="col-lg12 col-md-12 col-sm-12 mt-3">
+												<label for="guests">Hóa đơn</label>
+												<div class="_adv_features">
+													<ul>
+														<li>I Night<span>$310</span></li>
+														<li>Discount 25$<span>-$250</span></li>
+														<li>Service Fee<span>$17</span></li>
+														<li>Breakfast Per Adult<span>$35</span></li>
+													</ul>
+												</div>
+											</div>
+											<div class="side-booking-foot">
+												<span class="sb-header-left">Tổng trả</span>
+												<h3 class="price theme-cl">$170</h3>
+											</div>
+											<div class="col-lg-12 col-md-12 col-sm-12">
+												<div class="stbooking-footer mt-1">
+													<div class="form-group mb-0 pb-0">
+														<a href="#" class="btn book_btn theme-bg">Thuê ngay</a>
+													</div>
+												</div>
 											</div>
 										</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-6 col-6">
-										<div class="form-group">
-											<label>Thời gian kết thúc</label>
-											<div class="cld-box">
-											<i class="ti-calendar"></i>
-											<input type="text" name="checkout" class="form-control" value="" />
-											</div>
-										</div>
-										</div>
-										<div class="col-lg12 col-md-12 col-sm-12 mt-3">
-										<label for="guests">Hóa đơn</label>
-										<div class="_adv_features">
-											<ul>
-											<li>I Night<span>$310</span></li>
-											<li>Discount 25$<span>-$250</span></li>
-											<li>Service Fee<span>$17</span></li>
-											<li>Breakfast Per Adult<span>$35</span></li>
-											</ul>
-										</div>
-										</div>
-										<div class="side-booking-foot">
-										<span class="sb-header-left">Tổng trả</span>
-										<h3 class="price theme-cl">$170</h3>
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12">
-										<div class="stbooking-footer mt-1">
-											<div class="form-group mb-0 pb-0">
-											<a href="#" class="btn book_btn theme-bg">Thuê ngay</a>
-											</div>
-										</div>
-										</div>
-									<?php endif; ?>
 									</div>
-								</div>
+								<?php else: ?>
+									<div class="sider_blocks_wrap p-3">
+										<div class="text-center">
+											<h4 class="mb-0">Liên hệ hợp đồng</h4>
+											<a class="_calss_tyui" href="tel:4048651904">(404) 865-1904</a>
+										</div>
+										<div class="login-form">
+											<form>
+												<div class="row">
+													
+													<div class="col-lg-12 col-md-12">
+														<div class="form-group">
+															<label>Name*</label>
+															<input type="text" class="form-control">
+														</div>
+													</div>
+													<div class="col-lg-12 col-md-12">
+														<div class="form-group">
+															<label>Email*</label>
+															<input type="email" class="form-control">
+														</div>
+													</div>
+													<div class="col-lg-12 col-md-12">
+														<div class="form-group">
+															<label>Phone</label>
+															<input type="text" class="form-control">
+														</div>
+													</div>
+												</div>
+												<div class="default-terms_wrap">
+													<div class="default-terms_flex">
+														<input id="vd" class="checkbox-custom" name="vd" type="checkbox">
+														<!-- <label for="vd" class="checkbox-custom-label">Live Video Tour</label> -->
+													</div>
+												</div>
+												<div class="default-terms_wrap">
+													<div class="default-terms_flex">
+														<input id="tm" class="checkbox-custom" name="tm" type="checkbox">
+														<label for="tm" class="checkbox-custom-label"></label>
+													</div>
+													<div class="default-terms">
+														Bằng cách gửi biểu mẫu này, bạn đồng ý với <a href="#" title="Terms of Service">điều khoản dịch vụ</a> và <a href="#" title="Privacy Policy">Chính sách</a> của chúng tôi .</div>
+												</div>
+												<div class="form-group">
+													<button type="submit" class="btn btn-md full-width pop-login">Send Message</button>
+												</div>
+
+											</form>
+										</div>
+									</div>
+								<?php endif; ?>
+
 								</div>
 
 							
@@ -779,127 +830,58 @@
 									</div>
 								</div>
 								
-								<!-- Mortgage Calculator -->
-								<div class="sider_blocks_wrap">
-									<div class="side-booking-header">
-										<h4 class="m-0">Mortgage Calculator</h4>
-									</div>
-									
-									<div class="sider-block-body p-3">
-										<div class="form-group">
-											<div class="input-with-icon">
-												<input type="text" class="form-control light" placeholder="Sale Price">
-												<i class="ti-money"></i>
-											</div>
-										</div>
-										
-										<div class="form-group">
-											<div class="input-with-icon">
-												<input type="text" class="form-control light" placeholder="Down Payment">
-												<i class="ti-money"></i>
-											</div>
-										</div>
-										
-										<div class="form-group">
-											<div class="input-with-icon">
-												<input type="text" class="form-control light" placeholder="Loan Term (Years)">
-												<i class="ti-calendar"></i>
-											</div>
-										</div>
-										
-										<div class="form-group">
-											<div class="input-with-icon">
-												<input type="text" class="form-control light" placeholder="Interest Rate">
-												<i class="fa fa-percent"></i>
-											</div>
-										</div>
-										<div class="mortgage mb-2">Monthly Payment: 22742.10 $</div>
-										<button class="btn book_btn theme-bg">Calculate</button>
-									</div>
-								</div>
+								
 								
 								<!-- Similar Property -->
 								<div class="sidebar-widgets">
 									
-									<h4>Similar Property</h4>
+									<h4>Gợi ý bất động sản cho bạn</h4>
 									
 									<div class="sidebar_featured_property">
 										
+									<?php foreach ($similarProperties as $property) : ?>
 										<!-- List Sibar Property -->
 										<div class="sides_list_property">
 											<div class="sides_list_property_thumb">
-												<img src="public/img/p-1.png" class="img-fluid" alt="" />
+												<img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid" alt="" />
 											</div>
 											<div class="sides_list_property_detail">
-												<h4><a href="single-property-1.html">Loss vengel New Apartment</a></h4>
-												<span><i class="ti-location-pin"></i>Sans Fransico</span>
+												<h4><a href="?controller=BdsRent&action=single&property_id=<?php echo $property['property_id']; ?>">
+												<?php
+													$property_name = $property['property_name'];
+
+													if (strlen($property_name) > 30) {
+														$property_name = substr($property_name, 0, 28) . '..';
+													}
+
+													echo htmlentities($property_name);
+
+												?>
+												</a></h4>
+												<span><i class="ti-location-pin"></i><?php echo $property['city']; ?></span>
 												<div class="lists_property_price">
 													<div class="lists_property_types">
-														<div class="property_types_vlix sale">For Sale</div>
+													<div class="property_types_vlix <?php
+														if ($property['status'] == 'Bán') {
+															echo 'sale';
+														} elseif ($property['status'] == 'Thuê') {
+															echo '';
+														} else {
+															echo 'buy';
+														}
+													?>">
+														Nhà <?php echo $property['status']; ?>
+													</div>
+
 													</div>
 													<div class="lists_property_price_value">
-														<h4>$4,240</h4>
+														<h4></h4>
 													</div>
 												</div>
 											</div>
 										</div>
+										<?php endforeach; ?>
 										
-										<!-- List Sibar Property -->
-										<div class="sides_list_property">
-											<div class="sides_list_property_thumb">
-												<img src="public/img/p-4.png" class="img-fluid" alt="" />
-											</div>
-											<div class="sides_list_property_detail">
-												<h4><a href="single-property-1.html">Montreal Quriqe Apartment</a></h4>
-												<span><i class="ti-location-pin"></i>Liverpool, London</span>
-												<div class="lists_property_price">
-													<div class="lists_property_types">
-														<div class="property_types_vlix">For Rent</div>
-													</div>
-													<div class="lists_property_price_value">
-														<h4>$7,380</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-										<!-- List Sibar Property -->
-										<div class="sides_list_property">
-											<div class="sides_list_property_thumb">
-												<img src="public/img/p-7.png" class="img-fluid" alt="" />
-											</div>
-											<div class="sides_list_property_detail">
-												<h4><a href="single-property-1.html">Curmic Studio For Office</a></h4>
-												<span><i class="ti-location-pin"></i>Montreal, Canada</span>
-												<div class="lists_property_price">
-													<div class="lists_property_types">
-														<div class="property_types_vlix buy">For Buy</div>
-													</div>
-													<div class="lists_property_price_value">
-														<h4>$8,730</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-										<!-- List Sibar Property -->
-										<div class="sides_list_property">
-											<div class="sides_list_property_thumb">
-												<img src="public/img/p-5.png" class="img-fluid" alt="" />
-											</div>
-											<div class="sides_list_property_detail">
-												<h4><a href="single-property-1.html">Montreal Quebec City</a></h4>
-												<span><i class="ti-location-pin"></i>Sreek View, New York</span>
-												<div class="lists_property_price">
-													<div class="lists_property_types">
-														<div class="property_types_vlix">For Rent</div>
-													</div>
-													<div class="lists_property_price_value">
-														<h4>$6,240</h4>
-													</div>
-												</div>
-											</div>
-										</div>
 										
 									</div>
 									
