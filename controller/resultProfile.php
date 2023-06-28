@@ -40,6 +40,21 @@ if (isset($_POST['submit'])) {
                 $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
                 $img_upload_path = '../public/upload/users/' . $new_img_name;
 
+                // Xóa tệp ảnh cũ (nếu tồn tại)
+                $old_img_name = '';
+                $query = "SELECT avatar_url FROM users WHERE user_id = :user_id";
+                $stmt = $conn->prepare($query);
+                $stmt->bindParam(':user_id', $user_id);
+                $stmt->execute();
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($result && isset($result['avatar_url'])) {
+                    $old_img_name = $result['avatar_url'];
+                    $old_img_path = '../public/upload/users/' . $old_img_name;
+                    if (file_exists($old_img_path)) {
+                        unlink($old_img_path);
+                    }
+                }
+
                 // Di chuyển tệp ảnh tải lên vào thư mục đích
                 if (move_uploaded_file($tmp_name, $img_upload_path)) {
                     // Thực hiện câu truy vấn UPDATE vào bảng "users"
@@ -55,7 +70,7 @@ if (isset($_POST['submit'])) {
                     $stmt->bindParam(':about', $about);
                     $stmt->bindParam(':facebook', $facebook);
                     $stmt->bindParam(':linkedin', $linkedin);
-                    $stmt->bindParam(':avatar_url', $new_img_name); // Sử dụng $new_img_name thay vì $avatar_url
+                    $stmt->bindParam(':avatar_url', $new_img_name);
                     $stmt->bindParam(':user_id', $user_id);
                     $stmt->execute();
                 } else {
@@ -88,7 +103,7 @@ if (isset($_POST['submit'])) {
     exit();
 } else {
     // Nếu không có dữ liệu gửi từ biểu mẫu, chuyển hướng trở lại trang profile
-    header("Location: ../ssss.php");
+    header("Location: ../profile.php");
     exit();
 }
 ?>
