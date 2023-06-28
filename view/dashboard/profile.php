@@ -34,28 +34,28 @@
                                 
                                     <div class="form-group col-md-6">
                                         <label>Họ & tên</label>
-                                        <input type="text" name="fullname" class="form-control" value="">
+                                        <input type="text" name="fullname" class="form-control" value="<?php echo $user['fullname']; ?>">
                                     </div>
                                     
                                     <div class="form-group col-md-6">
                                         <label>Email</label>
-                                        <input type="email" name="email" class="form-control" value="">
+                                        <input type="email" name="email" class="form-control" value="<?php echo $user['email']; ?>">
                                     </div>
                                     
                                     
                                     <div class="form-group col-md-6">
                                         <label>Số điện thoại</label>
-                                        <input type="text" name="phone_number" class="form-control" value="">
+                                        <input type="text" name="phone_number" class="form-control" value="<?php echo $user['phone_number']; ?>">
                                     </div>
                                     
                                     <div class="form-group col-md-6">
                                         <label>Thành phố</label>
-                                        <input type="text" name="user_address" class="form-control" value="">
+                                        <input type="text" name="user_address" class="form-control" value="<?php echo $user['user_address']; ?>">
                                     </div>
                                     
                                     <div class="form-group col-md-6">
                                         <label>Quốc tịch</label>
-                                        <input type="text" name="state" class="form-control" value="">
+                                        <input type="text" name="state" class="form-control" value="<?php echo $user['state']; ?>">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -65,7 +65,7 @@
                                     
                                     <div class="form-group col-md-12">
                                         <label>Giới thiệu bản thân</label>
-                                        <textarea  name="about" class="form-control"></textarea>
+                                        <textarea  name="about" class="form-control"><?php echo $user['about']; ?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -78,12 +78,12 @@
                                 
                                     <div class="form-group col-md-6">
                                         <label>Facebook</label>
-                                        <input type="text" name="facebook" class="form-control" value="https://facebook.com/">
+                                        <input type="text" name="facebook" class="form-control" value="<?php echo $user['facebook']; ?>">
                                     </div>
                                     
                                     <div class="form-group col-md-6">
                                         <label>LinkedIn</label>
-                                        <input type="text" name="linkedin" class="form-control" value="https://linkedin.com/">
+                                        <input type="text" name="linkedin" class="form-control" value="<?php echo $user['linkedin']; ?>">
                                     </div>
                                     
                                     <div class="form-group col-lg-12 col-md-12 mt-4">

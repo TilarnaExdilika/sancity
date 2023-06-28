@@ -11,6 +11,17 @@ class UserModel
         $this->db = $connect->getConnection();
     }
 
+    public function getUserByID($user_id)
+    {
+        $query = "SELECT * FROM users WHERE user_id = :user_id";
+        $statement = $this->db->prepare($query);
+        $statement->bindParam(':user_id', $user_id);
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $user;
+    }
+
     
     //Lấy DS tất cả User
     public function getUsers()

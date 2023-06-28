@@ -26,7 +26,7 @@
                 
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h4>Your Current Package: <span class="pc-title theme-cl">Gold Package</span></h4>
+                            <h4>Your Current Package: <span class="pc-title theme-cl">Free Package</span></h4>
                         </div>
                     </div>
                     

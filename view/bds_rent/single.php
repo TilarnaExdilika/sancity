@@ -802,7 +802,7 @@
 									<div class="side-booking-body">
 										<div class="agent-_blocks_title">
 										
-											<div class="agent-_blocks_thumb"><img src="public/img/user-6.jpg" alt=""></div>
+											<div class="agent-_blocks_thumb"><img src="public/upload/users/<?php echo $property['avatar_url']; ?>" alt=""></div>
 											<div class="agent-_blocks_caption">
 												<h4><a href="#"><?php echo $property['username']; ?></a></h4>
 												<span class="approved-agent"><i class="ti-check"></i>Đã xác minh</span>

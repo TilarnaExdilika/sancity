@@ -1,4 +1,23 @@
+<?php
+require_once 'config/db.php';
 
+// Kết nối đến cơ sở dữ liệu
+$connect = new Connect();
+$db = $connect->getConnection();
+
+// Truy vấn để lấy thông tin người dùng từ bảng users
+$query = "SELECT * FROM users";
+$result = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+
+// Kiểm tra và sử dụng dữ liệu người dùng
+if ($result) {
+    $user = $result[0]; // Lấy thông tin của người dùng đầu tiên trong kết quả
+    $username = $user['username'];
+    $email = $user['email'];
+    $avatar_url = $user['avatar_url'];
+    // ...
+}
+?>
 <!-- bat dau session -->
 <?php
 session_start();
@@ -214,7 +233,7 @@ session_start();
 										<div class="btn-group account-drop">
 											<!-- Nội dung cho menu đã đăng nhập -->
 											<button type="button" class="btn btn-order-by-filt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<img src="public/img/user-5.jpg" class="avater-img" alt="">
+												<img src="public/upload/users/<?php echo $avatar_url; ?>" class="avater-img" alt="">
 											</button>
 											<div class="dropdown-menu pull-right animated flipInX">
 												<div class="drp_menu_headr">

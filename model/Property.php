@@ -78,7 +78,7 @@ class ModelHome extends Mastermodel
     public function getPropertyById($propertyId)
     {
         $query = "
-        SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, GROUP_CONCAT(DISTINCT u1.utility_name SEPARATOR ', ') AS utilities, u2.username
+        SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, GROUP_CONCAT(DISTINCT u1.utility_name SEPARATOR ', ') AS utilities, u2.username, u2.fullname, u2.user_address, u2.state, u2.about, u2.facebook, u2.linkedin, u2.avatar_url
         FROM properties p
         INNER JOIN property_types pt ON p.type_id = pt.type_id
         INNER JOIN property_details pd ON p.property_id = pd.property_id
@@ -91,13 +91,14 @@ class ModelHome extends Mastermodel
         LEFT JOIN users u2 ON p.user_id = u2.user_id
         WHERE p.property_id = ?
         GROUP BY p.property_id";
-
-
+    
+    
         $params = array($propertyId);
         $result = $this->db->getRow($query, $params);
-
+    
         return $result;
     }
+    
     
     public function getPropertyImages($propertyId)
     {
