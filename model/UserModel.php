@@ -13,7 +13,10 @@ class UserModel
 
     public function getUserByID($user_id)
     {
-        $query = "SELECT * FROM users WHERE user_id = :user_id";
+        $query = "SELECT u.*, at.account_type_name
+        FROM users u
+        LEFT JOIN account_types at ON u.account_type_id = at.account_type_id
+        WHERE u.user_id = :user_id";
         $statement = $this->db->prepare($query);
         $statement->bindParam(':user_id', $user_id);
         $statement->execute();

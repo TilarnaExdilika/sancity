@@ -1,22 +1,27 @@
+
+<?php
+require_once("verify.php");
+?>
+
 <!-- sidebar user -->
 <div id="sidebar-user" class="col-lg-3 col-md-4">
     <div class="property_dashboard_navbar">
         <div class="dash_user_avater">
             <img src="public/upload/users/<?php echo $user['avatar_url']; ?>" class="img-fluid avater" alt="">
             <h4><?php echo $_SESSION["uauth"]["username"]; ?></h4>
-            <span><?php echo $user['user_address']; ?></span>
+            <span><?php echo $user['account_type_name']; ?></span>
         </div>
         
         <div class="dash_user_menues">
             <ul>
                 <!-- thêm active vào li tương ứng với url đang chạy -->
                 <li><a href="index.php?controller=DashBoard&action=index"><i class="fa fa-tachometer-alt"></i>Trang chủ<span class="notti_coun style-1">4</span></a></li>
-                <li><a href="index.php?controller=DashBoard&action=profile"><i class="fa fa-user-tie"></i>Thông tin cá nhân</a></li>
-                <li><a href="index.php?controller=DashBoard&action=saveProperty"><i class="fa fa-bookmark"></i>Tài sản đánh dấu<span class="notti_coun style-2">7</span></a></li>
-                <li><a href="index.php?controller=DashBoard&action=myProperty"><i class="fa fa-tasks"></i>Bất động sản của bạn</a></li>
-                <li><a href="index.php?controller=DashBoard&action=messages"><i class="fa fa-envelope"></i>Tin nhắn<span class="notti_coun style-3">3</span></a></li>
-                <li><a href="index.php?controller=DashBoard&action=package"><i class="fa fa-gift"></i>Đăng kí gói<span class="expiration">10 days left</span></a></li>
-                <li><a href="index.php?controller=DashBoard&action=newProperty"><i class="fa fa-pen-nib"></i>Tạo bài viết</a></li>
+                <li><a href="index.php?controller=DashBoard&action=profile"><i class="fa fa-user-tie"></i>Quản lý tài khoản</a></li>
+                <li><a href="index.php?controller=DashBoard&action=saveProperty"><i class="fa fa-bookmark"></i>Quản lý nhân viên<span class="notti_coun style-2">7</span></a></li>
+                <li><a href="index.php?controller=DashBoard&action=myProperty"><i class="fa fa-tasks"></i>Quản lý bất động sản</a></li>
+                <li><a href="index.php?controller=DashBoard&action=messages"><i class="fa fa-envelope"></i>Quản lý tin tức <span class="notti_coun style-3">3</span></a></li>
+                <li><a href="index.php?controller=DashBoard&action=package"><i class="fa fa-gift"></i>Quản lý gói dịch vụ<span class="expiration">10 days left</span></a></li>
+                <li><a href="index.php?controller=DashBoard&action=newProperty"><i class="fa fa-pen-nib"></i>Tùy chọn giao diện</a></li>
                 <li><a href="index.php?controller=DashBoard&action=changePassword"><i class="fa fa-unlock-alt"></i>Đổi mật khẩu</a></li>
             </ul>
         </div>
@@ -25,7 +30,7 @@
             <ul>
                 <li><a href="#"><i class="fa fa-power-off"></i></a></li>
                 <li><a href="#"><i class="fa fa-comment"></i></a></li>
-                <li><a href="?controller=DashBoard&action=admin_dashboard"><i class="fa fa-cog"></i></a></li><!-- khi ấn vào biểu tương này chuyển sang sidebar admin -->
+                <li><a href="?controller=DashBoard&action=index"><i class="fa fa-cog"></i></a></li><!-- khi ấn vào biểu tương này chuyển sang sidebar admin -->
             </ul>
         </div>
     </div>

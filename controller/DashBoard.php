@@ -74,6 +74,15 @@ class DashBoardController
         $user = $this->user;
         require_once 'view/dashboard/changePassword.php';
     }
+
+    // admin controller
+    public function admin_dashboard()
+    {
+        $user = $this->user;
+        require_once 'view/dashboard/admin/admin_dashboard.php';
+    }
+
+
 }
 
 ?>

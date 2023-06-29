@@ -18,7 +18,7 @@
         <div class="row">
             
             <!-- dashboard navbar start -->
-            <?php require_once 'navbar.php'; ?>
+            <?php require_once 'sidebar.php'; ?>
             <!-- dashboard navbar end -->
             
             <div class="col-lg-9 col-md-8">
@@ -26,7 +26,7 @@
                 
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h4>Gói hiện tại: <span class="pc-title theme-cl">Free Package</span></h4>
+                            <h4>Your Current Package: <span class="pc-title theme-cl">Free Package</span></h4>
                         </div>
                     </div>
                     
@@ -57,7 +57,91 @@
                     <!--  row -->
                     
                     <div class="row">
+                        <div class="col-lg-8 col-md-7 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="mb-0">Extra Area Chart</h4>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-inline text-center m-t-40">
+                                        <li>
+                                            <h5><i class="fa fa-circle m-r-5 text-warning"></i>Website A</h5>
+                                        </li>
+                                        <li>
+                                            <h5><i class="fa fa-circle m-r-5 text-danger"></i>Website B</h5>
+                                        </li>
+                                        <li>
+                                            <h5><i class="fa fa-circle m-r-5 text-success"></i>Website C</h5>
+                                        </li>
+                                    </ul>
+                                    <div class="chart" id="extra-area-chart" style="height: 300px;"></div>
+                                </div>
+                            </div>
+                        </div>
                         
+                        <div class="col-lg-4 col-md-5 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Notifications</h6>
+                                </div>
+                                <div class="ground-list ground-list-hove">
+                                    <div class="ground ground-single-list">
+                                        <a href="#">
+                                            <div class="btn-circle-40 theme-cl theme-bg-light"><i class="ti-home"></i></div>
+                                        </a>
+
+                                        <div class="ground-content">
+                                            <h6><a href="#">Your listing <strong>Azreal Modern</strong> has been approved!.</a></h6>
+                                            <span class="small">Just Now</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="ground ground-single-list">
+                                        <a href="#">
+                                            <div class="btn-circle-40 theme-cl theme-bg-light"><i class="ti-comment-alt"></i></div>
+                                        </a>
+
+                                        <div class="ground-content">
+                                            <h6><a href="#">Litha Lynes left a review on <strong>Renovated Apartment</strong></a></h6>
+                                            <span class="small">20 min ago</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="ground ground-single-list">
+                                        <a href="#">
+                                            <div class="btn-circle-40 theme-cl theme-bg-light"><i class="ti-heart"></i></div>
+                                        </a>
+
+                                        <div class="ground-content">
+                                            <h6><a href="#">Someone bookmark your View listing!<strong>Sargun Villa Bay</strong></a></h6>
+                                            <span class="small">1 day ago</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="ground ground-single-list">
+                                        <a href="#">
+                                            <div class="btn-circle-40 theme-cl theme-bg-light"><i class="ti-home"></i></div>
+                                        </a>
+
+                                        <div class="ground-content">
+                                            <h6><a href="#">Your listing <strong>Modern Family Home</strong> has been approved!.</a></h6>
+                                            <span class="small">10 days ago</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="ground ground-single-list">
+                                        <a href="#">
+                                            <div class="btn-circle-40 theme-cl theme-bg-light"><i class="ti-comment-alt"></i></div>
+                                        </a>
+
+                                        <div class="ground-content">
+                                            <h6><a href="#">Adam Brown left a review on <strong>Renovated Apartment</strong></a></h6>
+                                            <span class="small">Just Now</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- row -->
                     
