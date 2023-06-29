@@ -34,21 +34,21 @@
             
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-1">
-                                <div class="dashboard_stats_wrap_content"><h4>607</h4> <span>Listed Property</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4><?php echo $propertyCount; ?></h4> <span>Tổng bất động sản</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-location-pin"></i></div>
                             </div>	
                         </div>
                         
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-3">
-                                <div class="dashboard_stats_wrap_content"><h4>$10,540</h4> <span>Earned This Week</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4>$10,540</h4> <span>Doanh thu tháng</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-wallet"></i></div>
                             </div>	
                         </div>
                         
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-2">
-                                <div class="dashboard_stats_wrap_content"><h4>5,40580</h4> <span>Earned This Month</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4>5,40580</h4> <span>Doanh thu năm</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-credit-card"></i></div>
                             </div>	
                         </div>
@@ -65,53 +65,55 @@
                         <div class="col-lg-12 col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="mb-0">Order Status</h4>
+                                    <h4 class="mb-0">Tình trạng gần đây</h4>
                                 </div>
                                 <div class="card-body p-0">
                                     <div class="table-responsive">
                                         <table class="table table-lg table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Product ID</th>
-                                                    <th>Status</th>
-                                                    <th>Price</th>
-                                                    <th>Date Created</th>
+                                                    <th>Tên bất động sản của bạn</th>
+                                                    <th>ID</th>
+                                                    <th>Trạng thái</th>
+                                                    <th>Giá</th>
+                                                    <th>Ngày đăng</th>
                                                 </tr>
                                             </thead>
                                             
                                             <tbody>
-                                                <tr>
-                                                    <td><a href="#"><img src="public/img/p-1.png" class="avatar avatar-30 mr-2" alt="Avatar">Luxury House</a></td>
-                                                    <td>#258475</td>
-                                                    <td><div class="label text-success bg-success-light">Paid</div></td>                
-                                                    <td>$ 310</td>
-                                                    <td>04/10/2013</td>  
-                                                </tr>
+
+                                            <?php foreach ($properties as $property): ?>
                                                 
                                                 <tr>
-                                                    <td><a href="#"><img src="public/img/p-2.png" class="avatar avatar-30 mr-2" alt="Avatar">Sargun Apartment</a></td>
-                                                    <td>#249578</td>
-                                                    <td><div class="label text-warning bg-warning-light">Pending</div></td>							
-                                                    <td>$ 584.14</td>
-                                                    <td>05/08/2014</td> 
+                                                    <td><a href="#"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="avatar avatar-30 mr-2" alt="Avatar">
+                                                    <?php
+                                                    $property_name = $property['property_name'];
+                                                    if (strlen($property_name) > 60) {
+                                                        $property_name = substr($property_name, 0, 57) . '...';
+                                                    }
+                                                    echo htmlentities($property_name);
+                                                    ?>
+                                                </a></td>
+                                                    <td>#<?php echo $property['property_id']; ?></td>
+                                                    <?php
+                                                    $status = $property['status']; 
+
+                                                    $class = '';
+                                                    if ($status == 'Bán') {
+                                                        $class = 'label text-success bg-success-light';
+                                                    } elseif ($status == 'Thuê') {
+                                                        $class = 'label text-warning bg-warning-light';
+                                                    } else {
+                                                        $class = 'label text-danger bg-danger-light';
+                                                    }
+                                                    ?>
+                                                    <td><div class="<?php echo $class; ?>"><?php echo $property['status']; ?></div></td>                
+                                                    <td> <?php echo $property['price']; ?> VND/<?php echo $property['unit']; ?></td>
+                                                    <td><?php echo $property['created_at']; ?></td>  
                                                 </tr>
+                                            <?php endforeach; ?>
+
                                                 
-                                                <tr>
-                                                    <td><a href="#"><img src="public/img/p-3.png" class="avatar avatar-30 mr-2" alt="Avatar">Preet Silver City</a></td>
-                                                    <td>#248712</td>
-                                                    <td><div class="label text-danger bg-danger-light">Cancel</div></td>  
-                                                    <td>$ 710.5</td>
-                                                    <td>11/05/2015</td>                                          
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <td><a href="#"><img src="public/img/p-4.png" class="avatar avatar-30 mr-2" alt="Avatar">Mount See Villa</a></td>
-                                                    <td>#287246</td>
-                                                    <td><div class="label text-success bg-success-light">Paid</div></td>
-                                                    <td>$ 482.70</td>
-                                                    <td>06/09/2016</td>
-                                                </tr>
                                                 
                                             </tbody>
                                         </table>

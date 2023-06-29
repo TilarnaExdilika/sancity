@@ -6,16 +6,25 @@ require_once 'model/UserModel.php';
 class DashBoardController
 {
     protected $user;
+    protected $userModel;
 
     public function __construct()
     {
-        $userModel = new UserModel();
+        $this->userModel = new UserModel();
         $user_id = $_SESSION['auth'];
-        $this->user = $userModel->getUserByID($user_id);
+        $this->user = $this->userModel->getUserByID($user_id);
+        
     }
     public function index()
     {
+        
         $user = $this->user;
+        $user_id = $user['user_id'];
+        
+        // Đếm tổng số bất động sản của người dùng
+        $propertyCount = $this->userModel->countTotalByColumn('user_id', 'properties', $user_id);
+    
+        $properties = $this->userModel->getPropertyByUser($user_id);
         require_once 'view/dashboard/index.php';
     }
 

@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION["uauth"]["account_type_id"]) && $_SESSION["uauth"]["account_type_id"] == 1) {
+if(isset($_SESSION["uauth"]["account_type_id"]) && $_SESSION["uauth"]["account_type_id"] == 1 || $_SESSION["uauth"]["account_type_id"] == 1 ) {
     // Cho phép tiếp tục truy cập vào URL
     // Các mã và chức năng khác có thể được thêm vào đây
 } else {
@@ -15,7 +15,7 @@ if(isset($_SESSION["uauth"]["account_type_id"]) && $_SESSION["uauth"]["account_t
                     <div class="text-center">
                         
                         <img src="public/img/404.png" class="img-fluid" alt="">
-                        <p>Bạn không có quyền truy cập chức năng này</p>
+                        <h4>Bạn không có quyền truy cập chức năng này</h4>
                         <a class="btn btn-theme" href="index.php?controller=Home&action=index">Trở lại</a>
                         
                     </div>

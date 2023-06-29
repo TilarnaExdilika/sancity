@@ -59,5 +59,42 @@ class UserModel
 
         return $result;
     }
+    
+
+    public function getPropertyByUser($user_id)
+    {
+        $query = "SELECT p.*, pi.image_url
+        FROM properties p
+        LEFT JOIN (
+            SELECT property_id, MIN(image_url) AS image_url
+            FROM property_images
+            GROUP BY property_id
+        ) pi ON p.property_id = pi.property_id
+        WHERE p.user_id = :user_id
+        ORDER BY p.property_id DESC";
+        $statement = $this->db->prepare($query);
+        $statement->bindParam(':user_id', $user_id);
+        $statement->execute();
+        $properties = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $properties;
+    }
+
+    public function countTotalByColumn($columnName, $tableName, $user_id)
+    {
+        $query = "SELECT COUNT($columnName) AS total_count FROM $tableName WHERE user_id = :user_id";
+        $statement = $this->db->prepare($query);
+        $statement->bindParam(':user_id', $user_id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+        if ($result && isset($result['total_count'])) {
+            return $result['total_count'];
+        }
+
+        return 0;
+    }
+
+
 }
 ?>
