@@ -38,7 +38,6 @@ class LoginModel extends connect {
         
         if ($result) {
             // Đăng ký thành công, trả về true
-            $_SESSION["auth"] = $result;
             $this->isLoggedIn(); // Đánh dấu là đã đăng nhập thành công
             return true;
         } else {

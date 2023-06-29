@@ -805,15 +805,23 @@
 											<div class="agent-_blocks_thumb"><img src="public/upload/users/<?php echo $property['avatar_url']; ?>" alt=""></div>
 											<div class="agent-_blocks_caption">
 												<h4><a href="#"><?php echo $property['username']; ?></a></h4>
-												<span class="approved-agent"><i class="ti-check"></i>Đã xác minh</span>
+												<?php
+												if (isset($_SESSION["uauth"]["phone_number"]) && !empty($_SESSION["uauth"]["phone_number"])) {
+													// Nếu "phone_number" tồn tại và không rỗng
+													echo '<span class="approved-agent"><i style="" class="ti-check"></i>Đã xác minh</span>';
+												} else {
+													// Nếu "phone_number" không tồn tại hoặc rỗng
+													echo '<span class="approved-agent"><i style="background: #737373" class="ti-check"></i>Chưa xác minh</span>';
+												}
+												?>
 											</div>
 											<div class="clearfix"></div>
 										</div>
 										
 										<a href="#" class="agent-btn-contact" data-toggle="modal" data-target="#autho-message"><i class="ti-comment-alt"></i>Nhắn tin</a>
 										
-										<span id="number" data-last="+1234567896">
-											<span><i class="ti-headphone-alt"></i><a class="see">+355(44)35...Show</a></span>
+										<span id="number" data-last="<?php echo $_SESSION["uauth"]["phone_number"]; ?>">
+											<span><i class="ti-headphone-alt"></i><a class="see">+84**********</a></span>
 										</span>
 									</div>
 								</div>

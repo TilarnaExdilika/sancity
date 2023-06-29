@@ -213,7 +213,7 @@ session_start();
 										<div class="btn-group account-drop">
 											<!-- Nội dung cho menu đã đăng nhập -->
 											<button type="button" class="btn btn-order-by-filt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<img src="public/upload/users/<?php echo $_SESSION["uauth"]["avatar_url"]; ?>" class="avater-img" alt="">
+												<img src="public/upload/users/<?php echo isset($_SESSION["uauth"]["avatar_url"]) && !empty($_SESSION["uauth"]["avatar_url"]) ? $_SESSION["uauth"]["avatar_url"] : 'default.jpg'; ?>" class="avater-img" alt="">
 											</button>
 											<div class="dropdown-menu pull-right animated flipInX">
 												<div class="drp_menu_headr">

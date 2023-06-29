@@ -60,7 +60,7 @@
 
                                     <div class="form-group col-md-6">
                                         <label>Ảnh đại diện</label>
-                                        <input type="file" name="avatar_url" required class="form-control">
+                                        <input type="file" name="avatar_url"  class="form-control">
                                     </div>
                                     
                                     <div class="form-group col-md-12">
