@@ -84,3 +84,19 @@ VALUES
 ('Đất, đất nền'),
 ('Kho, nhà xưởng'),
 ('Bất động sản khác');
+
+-- Chèn dữ liệu vào bảng tags
+INSERT INTO tags (tags_name) VALUES
+('Tin tức'),
+('Blog'),
+('Tư vấn'),
+('Chính sách'),
+('Kinh nghiệm'),
+('Phong cách sống'),
+('Thiết kế nội thất'),
+('Cải tạo nhà cửa'),
+('Xây dựng nhà'),
+('Đầu tư'),
+('Pháp lý'),
+('Hướng dẫn'),
+('Phân tích thị trường');

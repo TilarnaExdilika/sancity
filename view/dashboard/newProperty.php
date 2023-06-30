@@ -30,74 +30,17 @@
                             <div class="col-lg-12 col-md-12">
                             
                                 <div class="submit-page">
-                                    
+                                <form action="">
                                     <!-- Basic Information -->
                                     <div class="frm_submit_block">	
-                                        <h3>Basic Information</h3>
+                                        <h3>Thông tin cơ bản</h3>
                                         <div class="frm_submit_wrap">
                                             <div class="form-row">
                                             
                                                 <div class="form-group col-md-12">
-                                                    <label>Property Title<a href="#" class="tip-topdata" data-tip="Property Title"><i class="ti-help"></i></a></label>
+                                                    <label>Tiêu đề bài đăng<a href="#" class="tip-topdata" data-tip="Property Title"><i class="ti-help"></i></a></label>
                                                     <input type="text" class="form-control">
                                                 </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>Status</label>
-                                                    <select id="status" class="form-control">
-                                                        <option value="">&nbsp;</option>
-                                                        <option value="1">For Rent</option>
-                                                        <option value="2">For Sale</option>
-                                                    </select>
-                                                </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>Property Type</label>
-                                                    <select id="ptypes" class="form-control">
-                                                        <option value="">&nbsp;</option>
-                                                        <option value="1">Houses</option>
-                                                        <option value="2">Apartment</option>
-                                                        <option value="3">Villas</option>
-                                                        <option value="4">Commercial</option>
-                                                        <option value="5">Offices</option>
-                                                        <option value="6">Garage</option>
-                                                    </select>
-                                                </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>Price</label>
-                                                    <input type="text" class="form-control" placeholder="USD">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>Area</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>Bedrooms</label>
-                                                    <select id="bedrooms" class="form-control">
-                                                        <option value="">&nbsp;</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>Bathrooms</label>
-                                                    <select id="bathrooms" class="form-control">
-                                                        <option value="">&nbsp;</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -110,12 +53,12 @@
                                             
                                                 <div class="form-group col-md-12">
                                                     <label>Upload Gallery</label>
-                                                    <form action="https://themezhub.net/upload-target" class="dropzone dz-clickable primary-dropzone">
+    
                                                         <div class="dz-default dz-message">
                                                             <i class="ti-gallery"></i>
                                                             <span>Drag & Drop To Change Logo</span>
                                                         </div>
-                                                    </form>
+                                                    
                                                 </div>
                                                 
                                             </div>
@@ -123,84 +66,21 @@
                                     </div>
                                     
                                     <!-- Location -->
-                                    <div class="frm_submit_block">	
-                                        <h3>Location</h3>
-                                        <div class="frm_submit_wrap">
-                                            <div class="form-row">
-                                            
-                                                <div class="form-group col-md-6">
-                                                    <label>Address</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>City</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>State</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-6">
-                                                    <label>Zip Code</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     
                                     <!-- Detailed Information -->
                                     <div class="frm_submit_block">	
-                                        <h3>Detailed Information</h3>
+                                        <h3>Thông tin chi tiết</h3>
                                         <div class="frm_submit_wrap">
                                             <div class="form-row">
                                             
                                                 <div class="form-group col-md-12">
-                                                    <label>Description</label>
-                                                    <textarea class="form-control h-120"></textarea>
+                                                    <label>Nội dung bài đăng</label> 
+                                                    <textarea id="description" class="form-control h-120"></textarea>
                                                 </div>
-                                                
-                                                <div class="form-group col-md-4">
-                                                    <label>Building Age (optional)</label>
-                                                    <select id="bage" class="form-control">
-                                                        <option value="">&nbsp;</option>
-                                                        <option value="1">0 - 5 Years</option>
-                                                        <option value="2">0 - 10Years</option>
-                                                        <option value="3">0 - 15 Years</option>
-                                                        <option value="4">0 - 20 Years</option>
-                                                        <option value="5">20+ Years</option>
-                                                    </select>
-                                                </div>
-                                                
-                                                <div class="form-group col-md-4">
-                                                    <label>Garage (optional)</label>
-                                                    <select id="garage" class="form-control">
-                                                        <option value="">&nbsp;</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                                
-                                                <div class="form-group col-md-4">
-                                                    <label>Rooms (optional)</label>
-                                                    <select id="rooms" class="form-control">
-                                                        <option value="">&nbsp;</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                                
+
                                                 <div class="form-group col-md-12">
-                                                    <label>Other Features (optional)</label>
+                                                    <label>Thêm tags bài viết</label>
                                                     <div class="o-features">
                                                         <ul class="no-ul-list third-row">
                                                             <li>
@@ -259,45 +139,22 @@
                                         </div>
                                     </div>
                                     
-                                    <!-- Contact Information -->
-                                    <div class="frm_submit_block">	
-                                        <h3>Contact Information</h3>
-                                        <div class="frm_submit_wrap">
-                                            <div class="form-row">
-                                            
-                                                <div class="form-group col-md-4">
-                                                    <label>Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-4">
-                                                    <label>Email</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-4">
-                                                    <label>Phone (optional)</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     
                                     <div class="form-group col-lg-12 col-md-12">
-                                        <label>GDPR Agreement *</label>
+                                        <label>GDPR Thỏa thuận*</label>
                                         <ul class="no-ul-list">
                                             <li>
                                                 <input id="aj-1" class="checkbox-custom" name="aj-1" type="checkbox">
-                                                <label for="aj-1" class="checkbox-custom-label">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+                                                <label for="aj-1" class="checkbox-custom-label">Tôi đồng ý để trang web này lưu trữ thông tin đã gửi của tôi để họ có thể trả lời yêu cầu của tôi.</label>
                                             </li>
                                         </ul>
                                     </div>
                                     
                                     <div class="form-group col-lg-12 col-md-12">
-                                        <button class="btn btn-theme" type="submit">Submit & Preview</button>
+                                        <button class="btn btn-theme" type="submit">Đăng bài</button>
                                     </div>
-                                                
+                                </form>                
                                 </div>
                             </div>
                             

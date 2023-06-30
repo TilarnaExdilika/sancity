@@ -227,3 +227,22 @@ ADD COLUMN view_count INT DEFAULT 0;
 -- Thêm cột view_count vào bảng news_blog
 ALTER TABLE news_blog
 ADD COLUMN view_count INT DEFAULT 0;
+
+-- Bảng Tags
+CREATE TABLE tags (
+tags_id INT PRIMARY KEY AUTO_INCREMENT,
+tags_name NVARCHAR(50) NOT NULL
+);
+
+-- Bảng Lưu tags của News/Blog
+CREATE TABLE news_tags (
+news_id INT,
+tags_id INT,
+PRIMARY KEY (news_id, tags_id),
+FOREIGN KEY (news_id) REFERENCES news_blog(news_id),
+FOREIGN KEY (tags_id) REFERENCES tags(tags_id)
+);
+
+-- Thêm cột news_image vào bảng news_blog
+ALTER TABLE news_blog
+ADD COLUMN news_image NVARCHAR(200);
