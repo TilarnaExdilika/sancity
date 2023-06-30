@@ -46,6 +46,7 @@
                                     <td class="action">
                                         <a href="#" class="delete"><i class="ti-close"></i> Delete</a>
                                     </td>
+                                    
                                 </tr>
 
                                 <!-- Item #2 -->

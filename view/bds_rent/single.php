@@ -806,7 +806,7 @@
 											<div class="agent-_blocks_caption">
 												<h4><a href="#"><?php echo $property['username']; ?></a></h4>
 												<?php
-												if (isset($_SESSION["uauth"]["phone_number"]) && !empty($_SESSION["uauth"]["phone_number"])) {
+												if (isset($property['phone_number']) && !empty($property['phone_number'])) {
 													// Nếu "phone_number" tồn tại và không rỗng
 													echo '<span class="approved-agent"><i style="" class="ti-check"></i>Đã xác minh</span>';
 												} else {
@@ -820,7 +820,7 @@
 										
 										<a href="#" class="agent-btn-contact" data-toggle="modal" data-target="#autho-message"><i class="ti-comment-alt"></i>Nhắn tin</a>
 										
-										<span id="number" data-last="<?php echo $_SESSION["uauth"]["phone_number"]; ?>">
+										<span id="number" data-last="<?php echo $property['phone_number']; ?>">
 											<span><i class="ti-headphone-alt"></i><a class="see">+84**********</a></span>
 										</span>
 									</div>

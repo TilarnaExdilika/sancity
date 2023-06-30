@@ -41,14 +41,14 @@
                         
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-3">
-                                <div class="dashboard_stats_wrap_content"><h4>$10,540</h4> <span>Doanh thu tháng</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4>NaN</h4> <span>Doanh thu tháng</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-wallet"></i></div>
                             </div>	
                         </div>
                         
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-2">
-                                <div class="dashboard_stats_wrap_content"><h4>5,40580</h4> <span>Doanh thu năm</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4>NaN</h4> <span>Doanh thu năm</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-credit-card"></i></div>
                             </div>	
                         </div>
