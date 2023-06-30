@@ -2,6 +2,7 @@
 require_once 'config/db.php';
 require_once 'model/LoginModel.php';
 require_once 'model/UserModel.php';
+require_once 'model/newsModel.php';
 
 class DashBoardController
 {
@@ -60,7 +61,10 @@ class DashBoardController
 
     public function newProperty()
     {
+        
         $user = $this->user;
+        $newsModel = new NewsModel();
+        $tags = $newsModel->getAllTags();
         require_once 'view/dashboard/newProperty.php';
     }
 

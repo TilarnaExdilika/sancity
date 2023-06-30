@@ -6,6 +6,15 @@ $conn = $db->getConnection();
 // Bắt đầu session
 session_start();
 
+// Hàm getUrl() di chuyển ra khỏi class connect
+function getUrl($params) {
+    $baseUrl = "http://localhost/sancity"; // Địa chỉ gốc của trang web của bạn
+
+    $url = $baseUrl . $params;
+
+    return $url;
+}
+
 // Xử lý dữ liệu gửi từ biểu mẫu
 if (isset($_POST['submit'])) {
     $user_id = $_SESSION['auth'];
@@ -99,11 +108,13 @@ if (isset($_POST['submit'])) {
     }
 
     // Chuyển hướng trở lại trang profile
-    header("Location: ../profile.php");
+    $url = getUrl("?controller=DashBoard&action=profile");
+    echo "<script>window.location.href = '{$url}';</script>";
     exit();
 } else {
     // Nếu không có dữ liệu gửi từ biểu mẫu, chuyển hướng trở lại trang profile
-    header("Location: ../profile.php");
+    $url = getUrl("?controller=DashBoard&action=index");
+    echo "<script>window.location.href = '{$url}';</script>";
     exit();
 }
 ?>
