@@ -27,11 +27,14 @@ class connect
         return $result;
     }
 
-    public function exec($query)
+    public function exec($query, $params = array())
     {
-        $result = $this->db->exec($query);
+        $stmt = $this->db->prepare($query);
+        $stmt->execute($params);
+        $result = $stmt->rowCount();
         return $result;
     }
+    
 
     public function getList($query, $params = array())
     {

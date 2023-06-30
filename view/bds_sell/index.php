@@ -289,6 +289,8 @@
                                                 <div class="_card_flex_01">
                                                     <span class="_list_blickes _netork"><?php echo $row['age']; ?></span>
                                                     <span class="_list_blickes types"><?php echo $row['type_name']; ?></span>
+                                                    <span class="_list_blickes"><i class="fas fa-eye"></i>&nbsp;<?php echo $row['view_count']; ?></span>
+
                                                 </div>
                                                 <div class="_card_flex_last">
                                                     <h6 class="listing-card-info-price mb-0"></h6>
@@ -320,6 +322,7 @@
                                             <div class="listing-card-info-icon">
                                                 <div class="inc-fleat-icon"><img src="public/img/move.svg" width="13" alt="" /></div><?php echo $row['real_area']; ?> m<sup>2
                                             </div>
+                                            
                                         </div>
                                     </div>
                                     

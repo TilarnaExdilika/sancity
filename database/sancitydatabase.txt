@@ -219,3 +219,11 @@ ADD COLUMN about TEXT,
 ADD COLUMN facebook NVARCHAR(200),
 ADD COLUMN linkedin NVARCHAR(200),
 ADD COLUMN avatar_url NVARCHAR(200);
+
+-- Thêm cột view_count vào bảng properties
+ALTER TABLE properties
+ADD COLUMN view_count INT DEFAULT 0;
+
+-- Thêm cột view_count vào bảng news_blog
+ALTER TABLE news_blog
+ADD COLUMN view_count INT DEFAULT 0;

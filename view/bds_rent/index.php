@@ -336,6 +336,7 @@
                                 <div class="listing-detail-footer">
                                     <div class="footer-first">
                                         <div class="foot-rates">
+                                            <span class="elio_rate perfect"><i class="fas fa-eye"></i> <?php echo $row['view_count']; ?></span>
                                             <span class="elio_rate good">4.2</span>
                                             <div class="_rate_stio">
                                                 <i class="fa fa-star"></i>

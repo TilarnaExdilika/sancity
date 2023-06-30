@@ -82,6 +82,8 @@
 										</ul>
 										<h2><?php echo $property['property_name']; ?></h2>
 										<span><i class="lni-map-marker"></i> <?php echo $property['address']; ?></span>
+										<br>
+										<span><i class="fas fa-eye"></i> lượt xem <?php echo $property['view_count']; ?></span>
 									</div>
 								</div>
 								

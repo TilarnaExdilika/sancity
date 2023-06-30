@@ -12,7 +12,7 @@ class ModelHome extends Mastermodel
 
     public function getProperties()
     {
-        $query = "SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url
+        $query = "SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, p.view_count
         FROM properties p
         INNER JOIN property_types pt ON p.type_id = pt.type_id
         INNER JOIN property_details pd ON p.property_id = pd.property_id
@@ -33,7 +33,7 @@ class ModelHome extends Mastermodel
 
     public function SellProperties()
     {
-        $query = "SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url
+        $query = "SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, p.view_count
         FROM properties p
         INNER JOIN property_types pt ON p.type_id = pt.type_id
         INNER JOIN property_details pd ON p.property_id = pd.property_id
@@ -55,7 +55,7 @@ class ModelHome extends Mastermodel
 
     public function RentProperties()
     {
-        $query = "SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url
+        $query = "SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, p.view_count
         FROM properties p
         INNER JOIN property_types pt ON p.type_id = pt.type_id
         INNER JOIN property_details pd ON p.property_id = pd.property_id
@@ -78,7 +78,7 @@ class ModelHome extends Mastermodel
     public function getPropertyById($propertyId)
     {
         $query = "
-        SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, GROUP_CONCAT(DISTINCT u1.utility_name SEPARATOR ', ') AS utilities, u2.username, u2.fullname, u2.user_address, u2.state, u2.about, u2.phone_number, u2.facebook, u2.linkedin, u2.avatar_url
+        SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, GROUP_CONCAT(DISTINCT u1.utility_name SEPARATOR ', ') AS utilities, u2.username, u2.fullname, u2.user_address, u2.state, u2.about, u2.phone_number, u2.facebook, u2.linkedin, u2.avatar_url, p.view_count
         FROM properties p
         INNER JOIN property_types pt ON p.type_id = pt.type_id
         INNER JOIN property_details pd ON p.property_id = pd.property_id
@@ -91,6 +91,7 @@ class ModelHome extends Mastermodel
         LEFT JOIN users u2 ON p.user_id = u2.user_id
         WHERE p.property_id = ?
         GROUP BY p.property_id";
+        
     
     
         $params = array($propertyId);
@@ -133,6 +134,19 @@ class ModelHome extends Mastermodel
 
     return $result;
 }
+
+public function incrementViewCount($propertyId)
+{
+    $query = 'UPDATE properties SET view_count = view_count + 1 WHERE property_id = :propertyId';
+    $params = array(':propertyId' => $propertyId);
+    $this->db->exec($query, $params);
+}
+
+
+
+
+
+
 
 
 }
