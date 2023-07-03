@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col text-center">
                 <div class="sec-heading center">
-                    <h2>Latest News</h2>
+                    <h2>Tin tức</h2>
                     <p>We post regulary most powerful articles for help and support.</p>
                 </div>
             </div>
@@ -26,155 +26,54 @@
         <!-- row Start -->
         <div class="row">
             
+        <?php foreach ($newsList as $news): ?>
             <!-- Single blog Grid -->
             <div class="col-lg-4 col-md-6">
                 <div class="grid_blog_box">
                     
                     <div class="gtid_blog_thumb">
-                        <a href="blog-detail.html"><img src="public/img/b-1.jpg" class="img-fluid" alt="" /></a>
-                        <div class="gtid_blog_info"><span>12</span>Sep 2021</div>
+                        <a href="index.php?controller=Blog&action=blog&newsId=<?php echo $news['news_id']; ?>"><img src="public/upload/news/<?php echo $news['news_image']; ?>" class="img-fluid" alt="" /></a>
+                        <div class="gtid_blog_info"><span><?php echo date('d', strtotime($news['created_at'])); ?></span><?php echo date('F', strtotime($news['created_at'])); ?> <?php echo date('Y', strtotime($news['created_at'])); ?></div>
                     </div>								
                     
                     <div class="blog-body">
-                        <h4 class="bl-title"><a href="blog-detail.html">Creative Designs</a><span class="latest_new_post">New</span></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
+                        <h4 class="bl-title"><a href="index.php?controller=Blog&action=blog&newsId=<?php echo $news['news_id']; ?>">
+                            <?php
+                            $news_name = $news['title'];
+                            if (strlen($news_name) > 45) {
+                                $news_name = substr($news_name, 0, 42) . '...';
+                            }
+                            echo htmlentities($news_name);
+                            ?> 
+                            </a>
+                            <?php if ($news['view_count'] > 20): ?>
+                                <span class="latest_new_post hot">Hot</span>
+                            <?php else: ?>
+                                <span class="latest_new_post">New</span>
+                            <?php endif; ?>
+                        </h4>
+                        <p>
+                            <?php
+                            $news_name = $news['content'];
+                            if (strlen($news_name) > 90) {
+                                $news_name = substr($news_name, 0, 87) . '...';
+                            }
+                            echo htmlentities($news_name);
+                            ?> 
+                        </p>
                     </div>
                     
                     <div class="modern_property_footer">
                         <div class="property-author">
-                            <div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="public/img/user-1.jpg" class="img-fluid" alt=""></a></div>
-                            <h5><a href="agent-page.html" tabindex="-1">Shaurya Preet</a></h5>
+                            <div class="path-img"><a href="index.php?controller=Blog&action=blog" tabindex="-1"><img src="public/upload/users/<?php echo $news['avatar_url']; ?>" class="img-fluid" alt=""></a></div>
+                            <h5><a href="index.php?controller=Blog&action=blog" tabindex="-1"><?php echo $news['author_fullname']; ?></a></h5>
                         </div>
-                        <span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>202</span>
+                        <span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i><?php echo $news['view_count']; ?></span>
                     </div>
                     
                 </div>
             </div>
-            
-            <!-- Single blog Grid -->
-            <div class="col-lg-4 col-md-6">
-                <div class="grid_blog_box">
-                    
-                    <div class="gtid_blog_thumb">
-                        <a href="blog-detail.html"><img src="public/img/b-5.jpg" class="img-fluid" alt="" /></a>
-                        <div class="gtid_blog_info"><span>15</span>Aug 2021</div>
-                    </div>								
-                    
-                    <div class="blog-body">
-                        <h4 class="bl-title"><a href="blog-detail.html">UX/UI Developer</a><span class="latest_new_post hot">Hot</span></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
-                    </div>
-                    
-                    <div class="modern_property_footer">
-                        <div class="property-author">
-                            <div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="public/img/user-2.jpg" class="img-fluid" alt=""></a></div>
-                            <h5><a href="agent-page.html" tabindex="-1">Nirgam Singh</a></h5>
-                        </div>
-                        <span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>407</span>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <!-- Single blog Grid -->
-            <div class="col-lg-4 col-md-6">
-                <div class="grid_blog_box">
-                    
-                    <div class="gtid_blog_thumb">
-                        <a href="blog-detail.html"><img src="public/img/b-6.jpg" class="img-fluid" alt="" /></a>
-                        <div class="gtid_blog_info"><span>27</span>Nov 2021</div>
-                    </div>								
-                    
-                    <div class="blog-body">
-                        <h4 class="bl-title"><a href="blog-detail.html">WordPress Developer & UI</a><span class="latest_new_post">New</span></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
-                    </div>
-                    
-                    <div class="modern_property_footer">
-                        <div class="property-author">
-                            <div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="public/img/user-3.jpg" class="img-fluid" alt=""></a></div>
-                            <h5><a href="agent-page.html" tabindex="-1">Dhananjay Singh</a></h5>
-                        </div>
-                        <span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>410</span>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <!-- Single blog Grid -->
-            <div class="col-lg-4 col-md-6">
-                <div class="grid_blog_box">
-                    
-                    <div class="gtid_blog_thumb">
-                        <a href="blog-detail.html"><img src="public/img/b-1.jpg" class="img-fluid" alt="" /></a>
-                        <div class="gtid_blog_info"><span>12</span>Sep 2021</div>
-                    </div>								
-                    
-                    <div class="blog-body">
-                        <h4 class="bl-title"><a href="blog-detail.html">Creative Designs</a><span class="latest_new_post">New</span></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
-                    </div>
-                    
-                    <div class="modern_property_footer">
-                        <div class="property-author">
-                            <div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="public/img/user-1.jpg" class="img-fluid" alt=""></a></div>
-                            <h5><a href="agent-page.html" tabindex="-1">Shaurya Preet</a></h5>
-                        </div>
-                        <span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>202</span>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <!-- Single blog Grid -->
-            <div class="col-lg-4 col-md-6">
-                <div class="grid_blog_box">
-                    
-                    <div class="gtid_blog_thumb">
-                        <a href="blog-detail.html"><img src="public/img/b-5.jpg" class="img-fluid" alt="" /></a>
-                        <div class="gtid_blog_info"><span>15</span>Aug 2021</div>
-                    </div>								
-                    
-                    <div class="blog-body">
-                        <h4 class="bl-title"><a href="blog-detail.html">UX/UI Developer</a><span class="latest_new_post hot">Hot</span></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
-                    </div>
-                    
-                    <div class="modern_property_footer">
-                        <div class="property-author">
-                            <div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="public/img/user-2.jpg" class="img-fluid" alt=""></a></div>
-                            <h5><a href="agent-page.html" tabindex="-1">Nirgam Singh</a></h5>
-                        </div>
-                        <span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>407</span>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <!-- Single blog Grid -->
-            <div class="col-lg-4 col-md-6">
-                <div class="grid_blog_box">
-                    
-                    <div class="gtid_blog_thumb">
-                        <a href="blog-detail.html"><img src="public/img/b-6.jpg" class="img-fluid" alt="" /></a>
-                        <div class="gtid_blog_info"><span>27</span>Nov 2021</div>
-                    </div>								
-                    
-                    <div class="blog-body">
-                        <h4 class="bl-title"><a href="blog-detail.html">WordPress Developer & UI</a><span class="latest_new_post">New</span></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
-                    </div>
-                    
-                    <div class="modern_property_footer">
-                        <div class="property-author">
-                            <div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="public/img/user-3.jpg" class="img-fluid" alt=""></a></div>
-                            <h5><a href="agent-page.html" tabindex="-1">Dhananjay Singh</a></h5>
-                        </div>
-                        <span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>410</span>
-                    </div>
-                    
-                </div>
-            </div>
+        <?php endforeach; ?>
             
         </div>
         <!-- /row -->
@@ -189,9 +88,9 @@
                         <span class="sr-only">Previous</span>
                         </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item "><a class="page-link" href="#">3</a></li>
                     <li class="page-item"><a class="page-link" href="#">...</a></li>
                     <li class="page-item"><a class="page-link" href="#">18</a></li>
                     <li class="page-item">
