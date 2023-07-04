@@ -1,4 +1,17 @@
 	
+		<?php
+			require_once 'config/db.php';
+			$db = new connect();
+			$conn = $db->getConnection();
+			
+			
+			// Lấy dữ liệu từ bảng "property_types"
+			$propertyTypesQuery = "SELECT * FROM property_types";
+			$propertyTypesResult = $conn->query($propertyTypesQuery);
+			// Lấy dữ liệu từ bảng "utilities"
+			$utilitiesQuery = "SELECT * FROM utilities";
+			$utilitiesResult = $conn->query($utilitiesQuery);
+		?>
 		<!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
@@ -55,6 +68,7 @@
 								
 								<div class="tab-content" id="myTabContent">
 									
+								<form action="" method="GET">
 									<!-- Tab for Buy -->
 									<div class="tab-pane fade show active" id="buy" role="tabpanel" aria-labelledby="buy-tab">
 										<div class="full_search_box nexio_search lightanic_search hero_search-radius modern">
@@ -65,7 +79,7 @@
 													<div class="col-lg-3 col-sm-12 d-md-none d-lg-block">
 														<div class="form-group">
 															<label>Tìm nhanh</label>
-															<input type="text" class="form-control search_input b-0" placeholder="ex. Neighborhood" />
+															<input type="text" name="keyword" class="form-control search_input b-0" placeholder="ex. Tên bất động sản" />
 														</div>
 													</div>
 													
@@ -73,14 +87,13 @@
 														<div class="form-group">
 															<label>Tỉnh/Thành phố</label>
 															<div class="input-with-icon">
-																<select id="location" class="form-control">
+																<select id="location" name="city" class="form-control">
 																	<option value="">&nbsp;</option>
-																	<option value="1">Hà Nội</option>
-																	<option value="2">Đà nẵng</option>
-																	<option value="3">Bình Dương</option>
-																	<option value="4">Hồ Chí  Minh</option>
-																	<option value="5">Cần Thơ</option>
-																	<option value="6">Khác</option>
+																	<option value="Hà Nội">Hà Nội</option>
+																	<option value="Đà nẵng">Đà nẵng</option>
+																	<option value="Bình Dương">Bình Dương</option>
+																	<option value="TP. Hồ Chí Minh">Hồ Chí  Minh</option>
+																	<option value="Cần Thơ">Cần Thơ</option>
 																</select>
 															</div>
 														</div>
@@ -90,14 +103,11 @@
 														<div class="form-group">
 															<label>Loại bất động sản</label>
 															<div class="input-with-icon">
-																<select id="ptypes" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value="1">Căn hộ chung cư</option>
-																	<option value="2">Nhà đất</option>
-																	<option value="3">Vinhomes</option>
-																	<option value="4">Biệt thự</option>
-																	<option value="5">Shophouse</option>
-																	<option value="6">Khác</option>
+																<select id="ptypes" name="propertyType" class="form-control">
+																<option value="">&nbsp;</option>
+																	<?php while ($row = $propertyTypesResult->fetch(PDO::FETCH_ASSOC)) { ?>
+																		<option value="<?php echo $row['type_id']; ?>"><?php echo $row['type_name']; ?></option>
+																	<?php } ?>
 																</select>
 															</div>
 														</div>
@@ -105,13 +115,14 @@
 													
 													<div class="col-lg-2 col-md-3 col-sm-12">
 														<div class="form-group none">
-															<a class="collapsed ad-search" data-toggle="collapse" data-parent="#search" data-target="#advance-search" href="javascript:void(0);" aria-expanded="false" aria-controls="advance-search"><i class="fa fa-sliders-h mr-2"></i>Advance Filter</a>
+															<a class="collapsed ad-search" data-toggle="collapse" data-parent="#search" data-target="#advance-search" href="javascript:void(0);" aria-expanded="false" aria-controls="advance-search"><i class="fa fa-sliders-h mr-2"></i>Tìm kiếm nâng cao</a>
 														</div>
 													</div>
 													
 													<div class="col-lg-2 col-md-3 col-sm-12 small-padd">
 														<div class="form-group none">
-															<a href="#" class="btn search-btn">Tìm kiếm</a>
+															<button class="btn search-btn" type="submit" value="submit" >Tìm kiếm</button>
+
 														</div>
 													</div>
 												</div>
@@ -119,115 +130,21 @@
 												<!-- Collapse Advance Search Form -->
 												<div class="collapse" id="advance-search" aria-expanded="false" role="banner">
 													
-													<!-- row -->
-													<div class="row">
-													
-														<div class="col-lg-3 col-md-6 col-sm-6">
-															<div class="form-group none style-auto">
-																<select id="bedrooms" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value="1">1</option>
-																	<option value="2">2</option>
-																	<option value="3">3</option>
-																	<option value="4">4</option>
-																	<option value="5">5</option>
-																</select>
-															</div>
-														</div>
-														
-														<div class="col-lg-3 col-md-6 col-sm-6">
-															<div class="form-group none style-auto">
-																<select id="bathrooms" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value="1">1</option>
-																	<option value="2">2</option>
-																	<option value="3">3</option>
-																	<option value="4">4</option>
-																	<option value="5">5</option>
-																</select>
-															</div>
-														</div>
-														
-														<div class="col-lg-3 col-md-6 col-sm-6">
-															<div class="form-group none">
-																<input type="text" class="form-control" placeholder="min sqft" />
-															</div>
-														</div>
-														
-														<div class="col-lg-3 col-md-6 col-sm-6">
-															<div class="form-group none">
-																<input type="text" class="form-control" placeholder="max sqft" />
-															</div>
-														</div>
-														
-													</div>
-													<!-- /row -->
-													
-													<!-- row -->
-													<div class="row">
-														<div class="col-lg-12 col-md-12 col-sm-12 mt-2">
-															<h6>Advance Price</h6>
-															<div class="rg-slider">
-																 <input type="text" class="js-range-slider" name="my_range" value="" />
-															</div>
-														</div>
-													</div>
-													<!-- /row -->
+
+
 													
 													<!-- row -->
 													<div class="row">
 													
 														<div class="col-lg-12 col-md-12 col-sm-12 mt-3">
-															<h4 class="text-dark">Amenities & Features</h4>
+															<h4 class="text-dark">Tiện nghi & tính năng</h4>
 															<ul class="no-ul-list third-row">
+															<?php while ($row = $utilitiesResult->fetch(PDO::FETCH_ASSOC)) { ?>
 																<li>
-																	<input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
-																	<label for="a-1" class="checkbox-custom-label">Air Condition</label>
+																	<input id="utilities-<?php echo $row['utility_id']; ?>" class="checkbox-custom" name="utilities[]" type="checkbox" value="<?php echo $row['utility_id']; ?>">
+																	<label for="utilities-<?php echo $row['utility_id']; ?>" class="checkbox-custom-label"><?php echo $row['utility_name']; ?></label>
 																</li>
-																<li>
-																	<input id="a-2" class="checkbox-custom" name="a-2" type="checkbox">
-																	<label for="a-2" class="checkbox-custom-label">Bedding</label>
-																</li>
-																<li>
-																	<input id="a-3" class="checkbox-custom" name="a-3" type="checkbox">
-																	<label for="a-3" class="checkbox-custom-label">Heating</label>
-																</li>
-																<li>
-																	<input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
-																	<label for="a-4" class="checkbox-custom-label">Internet</label>
-																</li>
-																<li>
-																	<input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
-																	<label for="a-5" class="checkbox-custom-label">Microwave</label>
-																</li>
-																<li>
-																	<input id="a-6" class="checkbox-custom" name="a-6" type="checkbox">
-																	<label for="a-6" class="checkbox-custom-label">Smoking Allow</label>
-																</li>
-																<li>
-																	<input id="a-7" class="checkbox-custom" name="a-7" type="checkbox">
-																	<label for="a-7" class="checkbox-custom-label">Terrace</label>
-																</li>
-																<li>
-																	<input id="a-8" class="checkbox-custom" name="a-8" type="checkbox">
-																	<label for="a-8" class="checkbox-custom-label">Balcony</label>
-																</li>
-																<li>
-																	<input id="a-9" class="checkbox-custom" name="a-9" type="checkbox">
-																	<label for="a-9" class="checkbox-custom-label">Icon</label>
-																</li>
-																<li>
-																	<input id="a-10" class="checkbox-custom" name="a-10" type="checkbox">
-																	<label for="a-10" class="checkbox-custom-label">Wi-Fi</label>
-																</li>
-																<li>
-																	<input id="a-11" class="checkbox-custom" name="a-11" type="checkbox">
-																	<label for="a-11" class="checkbox-custom-label">Beach</label>
-																</li>
-																<li>
-																	<input id="a-12" class="checkbox-custom" name="a-12" type="checkbox">
-																	<label for="a-12" class="checkbox-custom-label">Parking</label>
-																</li>
+															<?php } ?>
 															</ul>
 														</div>
 														
@@ -239,6 +156,7 @@
 											</div>
 										</div>
 									</div>
+									</form>
 									
 									<!-- Tab for Sell -->
 									<div class="tab-pane fade" id="sell" role="tabpanel" aria-labelledby="sell-tab">
@@ -845,7 +763,8 @@
 					<!-- Pagination -->
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 text-center">
-							<a href="list-layout-with-map.html" class="btn btn-theme-light-2 rounded">Load more</a>
+
+							<button id="load-more-btn" class="btn btn-theme-light-2 rounded">Xem thêm</button>
 						</div>
 					</div>
 					

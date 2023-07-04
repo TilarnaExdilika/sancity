@@ -272,7 +272,6 @@ session_start();
     <!-- ============================================================== -->
 
 
-
 	<!-- ============================ Call To Action ================================== -->
 	<section class="theme-bg call_action_wrap-wrap">
 		<div class="container">
@@ -548,7 +547,6 @@ $(document).ready(function() {
     document.getElementById("totalRent").innerText = totalRent.toLocaleString() + " VND"; // Hiển thị giá trị tổng hợp đồng
   }
 </script>
-
 
 
 
