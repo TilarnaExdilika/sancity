@@ -59,7 +59,7 @@ class ModelHome extends Mastermodel
         }
     
         $query .= " ORDER BY p.property_id DESC LIMIT 6";
-        
+
         $result = $this->db->getList($query, $params);
     
         return $result;
@@ -69,60 +69,46 @@ class ModelHome extends Mastermodel
 
     public function getLimitedProperties($keyword, $city, $propertyType, $utilities, $offset, $limit)
     {
-        $query = "SELECT p.*, pt.type_name, bd.bedroom_count, ba.bathroom_count, l.city, pi.image_url, p.view_count
-        FROM properties p
-        INNER JOIN property_types pt ON p.type_id = pt.type_id
-        INNER JOIN property_details pd ON p.property_id = pd.property_id
-        INNER JOIN bedrooms bd ON pd.bedroom_id = bd.bedroom_id
-        INNER JOIN bathrooms ba ON pd.bathroom_id = ba.bathroom_id
-        LEFT JOIN locations l ON p.property_id = l.property_id
-        LEFT JOIN (
-            SELECT property_id, MIN(image_url) AS image_url
-            FROM property_images
-            GROUP BY property_id
-        ) pi ON p.property_id = pi.property_id";
+        $query = "SELECT p.property_id, p.property_name, p.price, p.city, pt.property_type
+                FROM properties AS p
+                INNER JOIN property_types AS pt ON p.property_type_id = pt.property_type_id
+                WHERE 1 = 1";
 
-        $conditions = array();
         $params = array();
 
-        // Xử lý các điều kiện tìm kiếm
-        if (!empty($keyword)) {
-            $conditions[] = "p.property_name LIKE ?";
-            $params[] = "%$keyword%";
+        if ($keyword) {
+            $query .= " AND p.property_name LIKE :keyword";
+            $params[':keyword'] = '%' . $keyword . '%';
         }
 
-        if (!empty($city)) {
-            $conditions[] = "l.city = ?";
-            $params[] = $city;
+        if ($city) {
+            $query .= " AND p.city = :city";
+            $params[':city'] = $city;
         }
 
-        if (!empty($propertyType)) {
-            $conditions[] = "p.type_id = ?";
-            $params[] = $propertyType;
+        if ($propertyType) {
+            $query .= " AND pt.property_type = :propertyType";
+            $params[':propertyType'] = $propertyType;
         }
 
         if (!empty($utilities)) {
             $utilityConditions = array();
             foreach ($utilities as $utility) {
-                $utilityConditions[] = "pd.utility_id = ?";
-                $params[] = $utility;
+                $utilityConditions[] = "p.utilities LIKE :utility" . $utility;
+                $params[':utility' . $utility] = '%' . $utility . '%';
             }
-            $conditions[] = "(" . implode(" OR ", $utilityConditions) . ")";
+            $query .= " AND (" . implode(" OR ", $utilityConditions) . ")";
         }
 
-        if (!empty($conditions)) {
-            $query .= " WHERE " . implode(" AND ", $conditions);
-        }
-
-        $query .= " ORDER BY p.property_id DESC";
-
-        // Áp dụng phân trang bằng OFFSET và LIMIT
-        $query .= " LIMIT $offset, $limit";
+        $query .= " ORDER BY p.property_id DESC LIMIT :offset, :limit";
+        $params[':offset'] = $offset;
+        $params[':limit'] = $limit;
 
         $result = $this->db->getList($query, $params);
 
         return $result;
     }
+
 
 
     public function SellProperties()

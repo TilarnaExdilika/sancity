@@ -5,7 +5,6 @@ require_once "model/Property.php";
 class HomeController
 {
     protected $model;
-    private $search;
 
     public function __construct()
     {
@@ -28,12 +27,25 @@ class HomeController
         require_once "view/Home/index.php";
     }
     
-    public function getLimitedProperties($keyword, $city, $propertyType, $utilities, $offset, $limit)
+    public function getLimitedProperties()
     {
+        $offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
+        $limit = isset($_GET['limit']) ? $_GET['limit'] : 6;
+    
+        $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : null;
+        $city = isset($_GET['city']) ? $_GET['city'] : null;
+        $propertyType = isset($_GET['propertyType']) ? $_GET['propertyType'] : null;
+        $utilities = isset($_GET['utilities']) ? $_GET['utilities'] : array();
+    
         $result = $this->model->getLimitedProperties($keyword, $city, $propertyType, $utilities, $offset, $limit);
-        // Tiến hành format giá (nếu cần) và trả về dữ liệu dưới dạng JSON
+        foreach ($result as $key => $row) {
+            $result[$key]['formatted_price'] = $this->formatPrice($row['price']);
+        }
+    
+        header('Content-Type: application/json');
         echo json_encode($result);
     }
+    
 
     private function formatPrice($price)
     {

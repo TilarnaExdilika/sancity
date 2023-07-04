@@ -655,17 +655,8 @@
 			<!-- ============================ Latest Property For Sale Start ================================== -->
 			<section class="min">
 				<div class="container">
-				
-					<!-- <div class="row justify-content-center">
-						<div class="col-lg-7 col-md-10 text-center">
-							<div class="sec-heading center mb-4">
-								<h2>Bất động sản gần đây</h2>
-								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
-							</div>
-						</div>
-					</div> -->
 					
-					<div class="row justify-content-center">
+					<div id="property_list" class="row justify-content-center">
 						
 						<!--đặt đoạn mã PHP xử lý truy vấn ở một file riêng và include vào đây -->
 						<?php foreach ($result as $row) { ?>
@@ -739,13 +730,6 @@
 													?>/<?php echo $row['unit']; ?>
 
 												</span>
-												<div class="_rate_stio">
-													<!-- <i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i> -->
-												</div>
 											</div>
 										</div>
 										<div class="footer-flex">
@@ -760,11 +744,12 @@
 					<!-- End Single Property -->	
 					</div>
 
-					<!-- Pagination -->
+					<!-- Load more -->
 					<div class="row">
+					<div id="property_placeholder"></div>
 						<div class="col-lg-12 col-md-12 col-sm-12 text-center">
 
-							<button id="load-more-btn" class="btn btn-theme-light-2 rounded">Xem thêm</button>
+							<button id="load_more" name="load_more" value="Load more" onclick="load_ajax()" class="btn btn-theme-light-2 rounded">Xem thêm</button>
 						</div>
 					</div>
 					
