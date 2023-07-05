@@ -655,6 +655,15 @@
 			<!-- ============================ Latest Property For Sale Start ================================== -->
 			<section class="min">
 				<div class="container">
+
+				<div class="row justify-content-center">
+						<div class="col-lg-7 col-md-10 text-center">
+							<div style="border-radius: 50px;background: rgba(49, 177, 54,0.1);  color: #31b136;" class="sec-heading center mb-4">
+							
+								<p style="font-size: large;font-weight: 600; color: #00966a"><img src="public/img/deals.png" class="img-fluid" width="80" alt=""> NHÀ MỚI GẦN ĐÂY</p>
+							</div>
+						</div>
+					</div>
 					
 					<div id="property_list" class="row justify-content-center">
 						
@@ -745,13 +754,13 @@
 					</div>
 
 					<!-- Load more -->
-					<div class="row">
+					<!-- <div class="row">
 					<div id="property_placeholder"></div>
 						<div class="col-lg-12 col-md-12 col-sm-12 text-center">
 
 							<button id="load_more" name="load_more" value="Load more" onclick="load_ajax()" class="btn btn-theme-light-2 rounded">Xem thêm</button>
 						</div>
-					</div>
+					</div> -->
 					
 				</div>
 			</section>
