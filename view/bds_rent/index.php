@@ -1,4 +1,16 @@
-
+<?php
+    require_once 'config/db.php';
+    $db = new connect();
+    $conn = $db->getConnection();
+    
+    
+    // Lấy dữ liệu từ bảng "property_types"
+    $propertyTypesQuery = "SELECT * FROM property_types";
+    $propertyTypesResult = $conn->query($propertyTypesQuery);
+    // Lấy dữ liệu từ bảng "utilities"
+    $utilitiesQuery = "SELECT * FROM utilities";
+    $utilitiesResult = $conn->query($utilitiesQuery);
+?>
 <!-- ============================ Page Title Start================================== -->
 <div class="page-title" style="background:#f4f4f4 url(public/img/slider-1.jpg);" data-overlay="5">
     <div class="container">
@@ -74,197 +86,136 @@
             
             <!-- property Sidebar -->
             <div class="col-lg-4 col-md-12 col-sm-12">
-                <div class="page-sidebar p-0">
-                    <a class="filter_links" data-toggle="collapse" href="#fltbox" role="button" aria-expanded="false" aria-controls="fltbox">Open Advance Filter<i class="fa fa-sliders-h ml-2"></i></a>							
-                    <div class="collapse" id="fltbox">
-                        <!-- Find New Property -->
-                        <div class="sidebar-widgets p-4">
-                            
-                            <div class="form-group">
-                                <div class="input-with-icon">
-                                    <input type="text" class="form-control" placeholder="Neighborhood">
-                                    <i class="ti-search"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="input-with-icon">
-                                    <input type="text" class="form-control" placeholder="Location">
-                                    <i class="ti-location-pin"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="simple-input">
-                                    <select id="ptype" class="form-control">
-                                        <option value="">&nbsp;</option>
-                                        <option value="1">Apartment</option>
-                                        <option value="2">Condo</option>
-                                        <option value="3">Family</option>
-                                        <option value="4">Houses</option>
-                                        <option value="5">Villa</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="simple-input">
-                                    <select id="status" class="form-control">
-                                        <option value="">&nbsp;</option>
-                                        <option value="1">Apartment</option>
-                                        <option value="2">Condo</option>
-                                        <option value="3">Houses</option>
-                                        <option value="4">Villa</option>
-                                        <option value="5">Land</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="simple-input">
-                                    <select id="price" class="form-control">
-                                        <option value="">&nbsp;</option>
-                                        <option value="1">Less Then $1000</option>
-                                        <option value="2">$1000 - $2000</option>
-                                        <option value="3">$2000 - $3000</option>
-                                        <option value="4">$3000 - $4000</option>
-                                        <option value="5">Above $5000</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="simple-input">
-                                    <select id="bedrooms" class="form-control">
-                                        <option value="">&nbsp;</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="simple-input">
-                                    <select id="bathrooms" class="form-control">
-                                        <option value="">&nbsp;</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="simple-input">
-                                    <select id="garage" class="form-control">
-                                        <option value="">&nbsp;</option>
-                                        <option value="1">Any Type</option>
-                                        <option value="2">Yes</option>
-                                        <option value="3">No</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="simple-input">
-                                    <select id="built" class="form-control">
-                                        <option value="">&nbsp;</option>
-                                        <option value="1">2010</option>
-                                        <option value="2">2011</option>
-                                        <option value="3">2012</option>
-                                        <option value="4">2013</option>
-                                        <option value="5">2014</option>
-                                        <option value="6">2015</option>
-                                        <option value="7">2016</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="page-sidebar p-0">
+                            <a class="filter_links" data-toggle="collapse" href="#fltbox" role="button" aria-expanded="false" aria-controls="fltbox">Open Advance Filter<i class="fa fa-sliders-h ml-2"></i></a>							
+                            <div class="collapse" id="fltbox">
+                                <form action="" method="POST">
+                                <!-- Find New Property -->
+                                <div class="sidebar-widgets p-4">
+                                
                                     <div class="form-group">
-                                        <div class="simple-input">
-                                            <input type="text" class="form-control" placeholder="Min Area">
+                                        <div class="input-with-icon">
+                                            <input type="text" name="keyword"  class="form-control" placeholder="Ex.Nhà hàng xóm =)">
+                                            <i class="ti-search"></i>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    
                                     <div class="form-group">
-                                        <div class="simple-input">
-                                            <input type="text" class="form-control" placeholder="Max Area">
+                                        <div class="input-with-icon">
+                                            <input type="text" name="city" id="city-input" class="form-control" placeholder="Thành phố">
+                                            <i class="ti-location-pin"></i>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
-                                    <h6>Choose Price</h6>
-                                    <div class="rg-slider">
-                                            <input type="text" class="js-range-slider" name="my_range" value="" />
+                                    
+                                    <div class="form-group">
+                                        <div class="simple-input">
+                                            <select id="ptype" name="propertyTypes" class="form-control" >
+                                            <option value="">Loại nhà</option>
+                                            <?php while ($row = $propertyTypesResult->fetch(PDO::FETCH_ASSOC)) { ?>
+                                                <option value="<?php echo $row['type_id']; ?>"><?php echo $row['type_name']; ?></option>
+                                            <?php } ?>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>									
-                            
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 pt-4">
-                                    <h6>Advance Features</h6>
-                                    <ul class="row p-0 m-0">
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
-                                            <label for="a-1" class="checkbox-custom-label">Air Condition</label>
-                                        </li>
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-2" class="checkbox-custom" name="a-2" type="checkbox">
-                                            <label for="a-2" class="checkbox-custom-label">Bedding</label>
-                                        </li>
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-3" class="checkbox-custom" name="a-3" type="checkbox">
-                                            <label for="a-3" class="checkbox-custom-label">Heating</label>
-                                        </li>
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
-                                            <label for="a-4" class="checkbox-custom-label">Internet</label>
-                                        </li>
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
-                                            <label for="a-5" class="checkbox-custom-label">Microwave</label>
-                                        </li>
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-6" class="checkbox-custom" name="a-6" type="checkbox">
-                                            <label for="a-6" class="checkbox-custom-label">Smoking Allow</label>
-                                        </li>
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-7" class="checkbox-custom" name="a-7" type="checkbox">
-                                            <label for="a-7" class="checkbox-custom-label">Terrace</label>
-                                        </li>
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-8" class="checkbox-custom" name="a-8" type="checkbox">
-                                            <label for="a-8" class="checkbox-custom-label">Balcony</label>
-                                        </li>
-                                        <li class="col-lg-6 col-md-6 p-0">
-                                            <input id="a-9" class="checkbox-custom" name="a-9" type="checkbox">
-                                            <label for="a-9" class="checkbox-custom-label">Icon</label>
-                                        </li>
-                                    </ul>
+                                    
+                                    <div class="form-group">
+                                        <div class="simple-input">
+                                            <select id="price" name="price" class="form-control">
+                                                <option value="">Khoảng giá bán</option>
+                                                <option value="500000000">dưới 500 triệu</option>
+                                                <option value="1000000000">500 triệu -> 1 tỷ</option>
+                                                <option value="2000000000">1 tỷ - 2 tỷ</option>
+                                                <option value="5000000000">2 tỷ - 5 tỷ</option>
+                                                <option value="">Khác</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="simple-input">
+                                            <select id="bedrooms" name="bedroom" class="form-control">
+                                                <option value="">Phòng ngủ</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="simple-input">
+                                            <select id="bathrooms" name="bathroom" class="form-control">
+                                                <option value="">Phòng tắm</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="simple-input">
+                                            <select id="built" name="age" class="form-control">
+                                                <option value="">Năm xây dựng</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2022">2023</option>
+                                                <option value="">Khác</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <div class="simple-input">
+                                                    <input type="text" name="min_area" class="form-control" placeholder="Nhỏ nhất">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <div class="simple-input">
+                                                    <input type="text" name="max_area" class="form-control" placeholder="Lớn nhất">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>								
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 pt-4">
+                                            <h6>Advance Features</h6>
+                                            <ul class="row p-0 m-0">
+                                            <?php while ($row = $utilitiesResult->fetch(PDO::FETCH_ASSOC)) { ?>
+                                                <li class="col-lg-6 col-md-6 p-0">
+                                                    <input id="utilities-<?php echo $row['utility_id']; ?>" class="checkbox-custom" name="utilities[]" type="checkbox" value="<?php echo $row['utility_id']; ?>">
+                                                    <label for="utilities-<?php echo $row['utility_id']; ?>" class="checkbox-custom-label"><?php echo $row['utility_name']; ?></label>
+                                                </li>
+                                            <?php } ?>
+                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 pt-4">
+                                            <button type="submit" class="btn theme-bg rounded full-width">Tìm nhà</button>
+                                        </div>
+                                    </div>
+                                
                                 </div>
                             </div>
-                            
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 pt-4">
-                                    <button class="btn theme-bg rounded full-width">Find New Home</button>
-                                </div>
-                            </div>
-                        
+                            </form>
                         </div>
-                    </div>
-                </div>
-                <!-- Sidebar End -->						
             </div>
             
             <div class="col-lg-8 col-md-12 col-sm-12">

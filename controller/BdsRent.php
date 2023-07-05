@@ -26,13 +26,25 @@ class BdsRentController
     
     public function index()
     {
-        $result = $this->model->RentProperties();
-
+        $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
+        $city = isset($_POST['city']) ? $_POST['city'] : '';
+        $propertyType = isset($_POST['propertyTypes']) ? $_POST['propertyTypes'] : '';
+        $price = isset($_POST['price']) ? $_POST['price'] : '';
+        $bedroom = isset($_POST['bedroom']) ? $_POST['bedroom'] : '';
+        $bathroom = isset($_POST['bathroom']) ? $_POST['bathroom'] : '';
+        $age = isset($_POST['age']) ? $_POST['age'] : '';
+        $minArea = isset($_POST['min_area']) ? $_POST['min_area'] : '';
+        $maxArea = isset($_POST['max_area']) ? $_POST['max_area'] : '';
+        $utilities = isset($_POST['utilities']) ? $_POST['utilities'] : '';
+        $offset = isset($_POST['offset']) ? $_POST['offset'] : 0;
+        $limit = isset($_POST['limit']) ? $_POST['limit'] : 10;
+    
+        $result = $this->model->rentProperties($keyword, $city, $propertyType, $price, $bedroom, $bathroom, $age, $minArea, $maxArea, $utilities, $offset, $limit);
+    
         foreach ($result as $key => $row) {
             $result[$key]['formatted_price'] = $this->formatPrice($row['price']);
         }
-        
-
+    
         require_once 'view/bds_rent/index.php';
     }
 

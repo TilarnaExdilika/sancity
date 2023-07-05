@@ -95,6 +95,13 @@ class DashBoardController
         require_once 'view/dashboard/admin/admin_dashboard.php';
     }
 
+    public function admin_account()
+    {
+        $user = $this->user;
+        // Lấy danh sách người dùng kèm thông tin bất động sản
+        $usersWithProperties = $this->userModel->getUsersWithPropertiesAdmin();
+        require_once 'view/dashboard/admin/admin_account.php';
+    }
 
 }
 

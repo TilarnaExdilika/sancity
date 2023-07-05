@@ -59,7 +59,7 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label>Ảnh đại diện</label>
+                                        <label>Ảnh đại diện<a href="#" class="tip-topdata" data-tip="ảnh 1:1, không quá 2mb"><i class="ti-help"></i></a></label>
                                         <input type="file" name="avatar_url"  class="form-control">
                                     </div>
                                     

@@ -34,21 +34,21 @@
             
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-1">
-                                <div class="dashboard_stats_wrap_content"><h4>607</h4> <span>Listed Property</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4>607</h4> <span>Bất động sản</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-location-pin"></i></div>
                             </div>	
                         </div>
                         
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-3">
-                                <div class="dashboard_stats_wrap_content"><h4>$10,540</h4> <span>Earned This Week</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4>10</h4> <span>Tin tức</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-wallet"></i></div>
                             </div>	
                         </div>
                         
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-2">
-                                <div class="dashboard_stats_wrap_content"><h4>5,40580</h4> <span>Earned This Month</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4>9</h4> <span>Người dùng</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-credit-card"></i></div>
                             </div>	
                         </div>
@@ -65,13 +65,13 @@
                                 <div class="card-body">
                                     <ul class="list-inline text-center m-t-40">
                                         <li>
-                                            <h5><i class="fa fa-circle m-r-5 text-warning"></i>Website A</h5>
+                                            <h5><i class="fa fa-circle m-r-5 text-warning"></i>Bất động sản</h5>
                                         </li>
                                         <li>
-                                            <h5><i class="fa fa-circle m-r-5 text-danger"></i>Website B</h5>
+                                            <h5><i class="fa fa-circle m-r-5 text-danger"></i>Tin tức</h5>
                                         </li>
                                         <li>
-                                            <h5><i class="fa fa-circle m-r-5 text-success"></i>Website C</h5>
+                                            <h5><i class="fa fa-circle m-r-5 text-success"></i>Người dùng</h5>
                                         </li>
                                     </ul>
                                     <div class="chart" id="extra-area-chart" style="height: 300px;"></div>

@@ -96,5 +96,63 @@ class UserModel
     }
 
 
+    // admin
+
+    public function getUsersWithPropertiesAdmin()
+    {
+        $query = "SELECT u.*, p.property_id, p.property_name, p.description, i.image_url,
+                  u.phone_number, u.account_type_id, at.account_type_name, u.created_at,
+                  u.updated_at, u.fullname, u.user_address, u.state, u.about, u.avatar_url,
+                  u.status
+                  FROM users u
+                  LEFT JOIN properties p ON u.user_id = p.user_id
+                  LEFT JOIN (
+                      SELECT property_id, MIN(image_url) AS image_url
+                      FROM property_images
+                      GROUP BY property_id
+                  ) i ON p.property_id = i.property_id
+                  LEFT JOIN account_types at ON u.account_type_id = at.account_type_id";
+        $result = $this->db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    
+        $users = [];
+        foreach ($result as $row) {
+            $user_id = $row['user_id'];
+            if (!isset($users[$user_id])) {
+                $users[$user_id] = [
+                    'user_id' => $row['user_id'],
+                    'username' => $row['username'],
+                    'phone_number' => $row['phone_number'],
+                    'account_type_id' => $row['account_type_id'],
+                    'account_type_name' => $row['account_type_name'],
+                    'created_at' => $row['created_at'],
+                    'updated_at' => $row['updated_at'],
+                    'fullname' => $row['fullname'],
+                    'user_address' => $row['user_address'],
+                    'state' => $row['state'],
+                    'about' => $row['about'],
+                    'avatar_url' => $row['avatar_url'],
+                    'status' => $row['status'],
+                    'properties' => [],
+                ];
+            }
+    
+            if (!empty($row['property_id'])) {
+                $users[$user_id]['properties'][] = [
+                    'property_id' => $row['property_id'],
+                    'property_name' => $row['property_name'],
+                    'description' => $row['description'],
+                    'image_url' => $row['image_url'],
+                ];
+            }
+        }
+    
+        return $users;
+    }
+    
+    
+
+    
+
+
 }
 ?>

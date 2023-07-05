@@ -50,7 +50,7 @@
                                         <div class="frm_submit_wrap">
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <label>Tải ảnh lên<a href="#" class="tip-topdata" data-tip="ảnh 1:1, không quá 2mb"><i class="ti-help"></i></a></label>
+                                                    <label>Tải ảnh lên<a href="#" class="tip-topdata" data-tip="ảnh không quá 2mb"><i class="ti-help"></i></a></label>
                                                     <i class="ti-gallery"></i><input type="file" name="news_image[]" required class="form-control" multiple>
                                                 </div>
                                             </div>

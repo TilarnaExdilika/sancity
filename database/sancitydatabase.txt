@@ -246,3 +246,7 @@ FOREIGN KEY (tags_id) REFERENCES tags(tags_id)
 -- Thêm cột news_image vào bảng news_blog
 ALTER TABLE news_blog
 ADD COLUMN news_image NVARCHAR(200);
+
+-- Bảng Người dùng (Users)
+ALTER TABLE users
+ADD COLUMN status NVARCHAR(50);

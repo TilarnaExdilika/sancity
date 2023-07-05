@@ -13153,6 +13153,18 @@ table.property-table-wrap .dashboard_propert_wrapper .title .table-property-pric
     margin-bottom: 3px;
     display: inline-flex;
 }
+
+._leads_status .verify {
+    padding: 3px 15px;
+    background: rgba(233, 30, 58,0.1);
+    border-radius: 50px;
+    font-size: 12px;
+    border: 1px solid rgba(233, 30, 58,0.2);
+    font-weight: 600;
+    margin-bottom: 3px;
+    display: inline-flex;
+}
+
 ._leads_action a {
     width: 37px;
     height: 37px;
