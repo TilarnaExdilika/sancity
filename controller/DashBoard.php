@@ -7,6 +7,8 @@ require_once 'model/newsModel.php';
 class DashBoardController
 {
     protected $user;
+    protected $user_2;
+
     protected $userModel;
 
     public function __construct()
@@ -14,7 +16,6 @@ class DashBoardController
         $this->userModel = new UserModel();
         $user_id = $_SESSION['auth'];
         $this->user = $this->userModel->getUserByID($user_id);
-        
     }
     public function index()
     {
@@ -101,6 +102,19 @@ class DashBoardController
         // Lấy danh sách người dùng kèm thông tin bất động sản
         $usersWithProperties = $this->userModel->getUsersWithPropertiesAdmin();
         require_once 'view/dashboard/admin/admin_account.php';
+    }
+
+    public function admin_account_per()
+    {
+        $this->userModel = new UserModel();
+        $user_id_2 = $_GET['user_id'];
+        $this->user_2 = $this->userModel->getUserByID_2($user_id_2);
+        $user = $this->user;
+        $user_2 = $this->user_2; // Lưu trữ dữ liệu của getUserByID_2
+        $userModel = new UserModel();
+        $accountTypes = $userModel->getAccountTypes();
+        
+        require_once 'view/dashboard/admin/admin_account_per.php';
     }
 
 }

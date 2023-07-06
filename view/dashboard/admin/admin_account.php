@@ -127,8 +127,9 @@
                                                 </td>
                                                 <td>
                                                     <div class="_leads_action">
-                                                        <a href="#"><i class="fas fa-edit"></i></a>
-                                                        <a id="banned" href="#"><i class="fas fa-trash"></i></a>
+                                                        <a href="index.php?controller=DashBoard&action=admin_account_per&user_id=<?php echo $user['user_id']; ?>"><i class="fas fa-edit"></i></a>
+                                                        <!-- đây là nút delete -->
+                                                        <a id="delete" href="#"><i class="fas fa-trash"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>

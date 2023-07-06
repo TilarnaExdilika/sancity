@@ -25,6 +25,30 @@ class UserModel
         return $user;
     }
 
+    public function getUserByID_2($user_id)
+    {
+        $query = "SELECT u.*, at.account_type_name
+        FROM users u
+        LEFT JOIN account_types at ON u.account_type_id = at.account_type_id
+        WHERE u.user_id = :user_id";
+        $statement = $this->db->prepare($query);
+        $statement->bindParam(':user_id', $user_id);
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $user;
+    }
+
+    public function getAccountTypes()
+{
+    $query = "SELECT * FROM account_types";
+    $result = $this->db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+
+
     
     //Lấy DS tất cả User
     public function getUsers()
