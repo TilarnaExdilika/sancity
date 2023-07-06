@@ -554,7 +554,29 @@ $(document).ready(function() {
 
 
 <!-- ============================================================== -->
+<script>
+	$(document).ready(function() {
+  $('.delete-user').click(function(e) {
+    e.preventDefault();
+    var userId = $(this).data('userid');
+    
+    // Gửi yêu cầu xóa thông qua Ajax
+    $.ajax({
+      url: 'app/delete_user.php', // Đường dẫn tới file xử lý xóa người dùng
+      type: 'POST',
+      data: { user_id: userId },
+      success: function(response) {
+        // Xử lý kết quả trả về sau khi xóa người dùng
+        if (response === 'success') {
+          // Xóa dòng người dùng khỏi danh sách trực tiếp
+          $(e.target).closest('tr').remove();
+        }
+      }
+    });
+  });
+});
 
+</script>
 
 
 </body>
