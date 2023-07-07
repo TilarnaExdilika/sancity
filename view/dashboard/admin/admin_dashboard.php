@@ -24,32 +24,46 @@
             <div class="col-lg-9 col-md-8">
                 <div class="dashboard-body">
                 
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h4>Your Current Package: <span class="pc-title theme-cl">Free Package</span></h4>
-                        </div>
-                    </div>
+
                     
                     <div class="row">
             
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-1">
-                                <div class="dashboard_stats_wrap_content"><h4>607</h4> <span>Bất động sản</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4><?php echo $propertyCount; ?></h4> <span>Bất động sản</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="ti-location-pin"></i></div>
                             </div>	
                         </div>
                         
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="dashboard_stats_wrap widget-3">
-                                <div class="dashboard_stats_wrap_content"><h4>10</h4> <span>Tin tức</span></div>
-                                <div class="dashboard_stats_wrap-icon"><i class="ti-wallet"></i></div>
+                            <div class="dashboard_stats_wrap widget-1">
+                                <div class="dashboard_stats_wrap_content"><h4><?php echo $newsCount; ?></h4> <span>Tin tức</span></div>
+                                <div class="dashboard_stats_wrap-icon"><i class="fa fa-newspaper"></i></div>
                             </div>	
                         </div>
                         
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="dashboard_stats_wrap widget-2">
-                                <div class="dashboard_stats_wrap_content"><h4>9</h4> <span>Người dùng</span></div>
-                                <div class="dashboard_stats_wrap-icon"><i class="ti-credit-card"></i></div>
+                            <div class="dashboard_stats_wrap widget-1">
+                                <div class="dashboard_stats_wrap_content"><h4> <?php echo $userCount; ?></h4> <span>Người dùng</span></div>
+                                <div class="dashboard_stats_wrap-icon"><i class="fa fa-users"></i></div>
+                            </div>	
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="dashboard_stats_wrap widget-1">
+                                <div class="dashboard_stats_wrap_content"><h4><?php echo $imageCount; ?> (2%)</h4> <span>Ảnh đã đăng</span></div>
+                                <div class="dashboard_stats_wrap-icon"><i class="fa fa-image"></i></div>
+                            </div>	
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="dashboard_stats_wrap widget-1">
+                                <div class="dashboard_stats_wrap_content"><h4><?php echo $totalViewCount; ?></h4> <span>Khách truy cập</span></div>
+                                <div class="dashboard_stats_wrap-icon"><i class="fa fa-eye"></i></div>
+                            </div>	
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="dashboard_stats_wrap widget-1">
+                                <div class="dashboard_stats_wrap_content"><h4>0</h4> <span>Số giao dịch</span></div>
+                                <div class="dashboard_stats_wrap-icon"><i class="fa fa-exchange-alt"></i></div>
                             </div>	
                         </div>
 

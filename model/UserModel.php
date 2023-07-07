@@ -11,6 +11,77 @@ class UserModel
         $this->db = $connect->getConnection();
     }
 
+    // Hàm đếm số lượng ảnh trong bảng property_images
+    public function countPropertyImages()
+    {
+        $query = "SELECT COUNT(image_id) AS total_count FROM property_images";
+        $result = $this->db->query($query)->fetch(PDO::FETCH_ASSOC);
+
+        if ($result && isset($result['total_count'])) {
+            return $result['total_count'];
+        }
+
+        return 0;
+    }
+
+    public function countTotalViewCount()
+{
+    $query = "SELECT SUM(view_count) AS total_view_count FROM (
+                SELECT view_count FROM properties
+                UNION ALL
+                SELECT view_count FROM news_blog
+            ) AS view_counts";
+    $statement = $this->db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if ($result && isset($result['total_view_count'])) {
+        return $result['total_view_count'];
+    }
+
+    return 0;
+}
+
+
+    // Hàm đếm tổng số bất động sản trong bảng properties
+    public function countProperties()
+    {
+        $query = "SELECT COUNT(property_id) AS total_count FROM properties";
+        $result = $this->db->query($query)->fetch(PDO::FETCH_ASSOC);
+
+        if ($result && isset($result['total_count'])) {
+            return $result['total_count'];
+        }
+
+        return 0;
+    }
+
+    // Hàm đếm tổng số tin tức trong bảng news_blog
+    public function countNewsBlogs()
+    {
+        $query = "SELECT COUNT(news_id) AS total_count FROM news_blog";
+        $result = $this->db->query($query)->fetch(PDO::FETCH_ASSOC);
+
+        if ($result && isset($result['total_count'])) {
+            return $result['total_count'];
+        }
+
+        return 0;
+    }
+
+    // Hàm đếm tổng số người dùng trong bảng users
+    public function countUsers()
+    {
+        $query = "SELECT COUNT(user_id) AS total_count FROM users";
+        $result = $this->db->query($query)->fetch(PDO::FETCH_ASSOC);
+
+        if ($result && isset($result['total_count'])) {
+            return $result['total_count'];
+        }
+
+        return 0;
+    }
+
     public function getUserByID($user_id)
     {
         $query = "SELECT u.*, at.account_type_name

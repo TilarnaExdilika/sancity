@@ -1,4 +1,5 @@
 <?php
+
 // Kết nối tới cơ sở dữ liệu
 require_once '../config/db.php';
 $db = new connect();
@@ -28,10 +29,6 @@ if (isset($_POST['submit'])) {
     // Hàm format giá
     
     
-    
-    
-    // Format giá trước khi lưu vào cơ sở dữ liệu
-    // $formattedPrice = formatPrice($price);
 
     // Thực hiện câu truy vấn INSERT vào bảng "properties"
     $query = "INSERT INTO properties (property_name, user_id, type_id, description, address, price, status, real_area, age, unit) 

@@ -68,7 +68,7 @@
 
                                                 <div class="form-group col-md-12">
                                                     <label>Nội dung bài đăng</label>
-                                                    <textarea id="description" name="content" class="form-control h-120"></textarea>
+                                                    <textarea id="description_news" name="content" class="form-control h-120"></textarea>
                                                 </div>
 
                                                 <div class="form-group col-md-12">

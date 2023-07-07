@@ -24,9 +24,10 @@ require_once "model/Property.php";
     <!-- Custom CSS -->
     <link href="public/css/styles.css" rel="stylesheet">
 	<script src="public/js/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <title>SANCITY</title>
 	<style>
@@ -502,6 +503,20 @@ document.getElementById('price').addEventListener('input', function (e) {
       ]
     });
 </script>
+
+<script>
+    tinymce.init({
+      selector: '#description_news',
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ]
+    });
+</script>
 <!-- ============================================================== -->
 <!-- Over 4 image -->
 
@@ -631,6 +646,8 @@ $(document).ready(function() {
         priceElement.textContent = formattedPrice;
     }
 </script>
+<!-- ============================================================== -->
+
 <!-- ============================================================== -->
 
 </body>

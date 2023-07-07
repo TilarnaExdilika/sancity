@@ -220,7 +220,7 @@ $loggedIn = $loginModel->isLoggedIn();
                             
                                 <div class="form-group col-md-12">
                                     <label for="description">Mô tả</label>
-                                    <textarea id="description" name="description" required class="form-control h-120"></textarea>
+                                    <textarea id="description" name="description"  class="form-control h-120"></textarea>
                                 </div>
                                 
                                 <div class="form-group col-md-4">

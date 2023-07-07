@@ -103,6 +103,22 @@ class DashBoardController
     public function admin_dashboard()
     {
         $user = $this->user;
+        $user_id = $user['user_id'];
+
+        // Đếm số lượng ảnh trong bảng property_images
+        $imageCount = $this->userModel->countPropertyImages();
+
+        // Đếm tổng số bất động sản trong bảng properties
+        $propertyCount = $this->userModel->countProperties();
+
+        // Đếm tổng số tin tức trong bảng news_blog
+        $newsCount = $this->userModel->countNewsBlogs();
+
+        // Đếm tổng số người dùng trong bảng users
+        $userCount = $this->userModel->countUsers();
+
+        $totalViewCount = $this->userModel->countTotalViewCount();
+
         require_once 'view/dashboard/admin/admin_dashboard.php';
     }
 

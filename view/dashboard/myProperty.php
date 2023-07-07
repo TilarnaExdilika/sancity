@@ -103,10 +103,23 @@
                                                 $createdAt = new DateTime($property['created_at']);
                                                 // Tính khoảng thời gian giữa thời gian hiện tại và thời gian tạo
                                                 $interval = $currentDateTime->diff($createdAt);
-                                                // Lấy số ngày đã trôi qua
-                                                $daysAgo = $interval->days;
-                                                // Tạo chuỗi kết quả
-                                                $timeAgo = "từ " . $daysAgo . " ngày trước";
+
+                                                // Kiểm tra nếu số ngày > 0 thì hiển thị số ngày
+                                                if ($interval->days > 0) {
+                                                    $timeAgo = "từ " . $interval->days . " ngày trước";
+                                                } 
+                                                // Kiểm tra nếu số giờ > 0 thì hiển thị số giờ
+                                                elseif ($interval->h > 0) {
+                                                    $timeAgo = "từ " . $interval->h . " giờ trước";
+                                                } 
+                                                // Kiểm tra nếu số phút > 0 thì hiển thị số phút
+                                                elseif ($interval->i > 0) {
+                                                    $timeAgo = "từ " . $interval->i . " phút trước";
+                                                } 
+                                                // Ngược lại, hiển thị "vừa mới"
+                                                else {
+                                                    $timeAgo = "vừa mới";
+                                                }
                                                 ?>
                                                     <div class="prt_leads"><span><?php echo $timeAgo; ?></span></div>
                                                     <div class="prt_leads_list">
