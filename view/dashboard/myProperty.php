@@ -56,7 +56,7 @@
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th scope="col">Bất động sản</th>
-                                                <th scope="col" class="m2_hide">Leads</th>
+                                                <th scope="col" class="m2_hide">TG đăng</th>
                                                 <th scope="col" class="m2_hide">Stats</th>
                                                 <th scope="col" class="m2_hide">Posted On</th>
                                                 <th scope="col">Status</th>
@@ -96,10 +96,22 @@
                                                     </div>
                                                 </td>
                                                 <td class="m2_hide">
-                                                    <div class="prt_leads"><span>27 till now</span></div>
+                                                <?php
+                                                // Lấy thời gian hiện tại
+                                                $currentDateTime = new DateTime();
+                                                // Chuyển đổi thời gian tạo của bất động sản thành đối tượng DateTime
+                                                $createdAt = new DateTime($property['created_at']);
+                                                // Tính khoảng thời gian giữa thời gian hiện tại và thời gian tạo
+                                                $interval = $currentDateTime->diff($createdAt);
+                                                // Lấy số ngày đã trôi qua
+                                                $daysAgo = $interval->days;
+                                                // Tạo chuỗi kết quả
+                                                $timeAgo = "từ " . $daysAgo . " ngày trước";
+                                                ?>
+                                                    <div class="prt_leads"><span><?php echo $timeAgo; ?></span></div>
                                                     <div class="prt_leads_list">
                                                         <ul>
-                                                            <li><a href="#"><img src="public/img/team-1.jpg" class="img-fluid img-circle" alt="" /></a></li>
+                                                            <li><a href="#"><img src="public/upload/users/<?php echo $property['avatar_url']; ?>" class="img-fluid img-circle" alt="" /></a></li>
                                                         </ul>
                                                     </div>
                                                 </td>

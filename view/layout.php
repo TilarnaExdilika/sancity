@@ -223,15 +223,15 @@ require_once "model/Property.php";
 													<h4>Hi, <?php echo $_SESSION["uauth"]["username"]; ?></h4>
 												</div>
 												<ul>
-													<li><a href="index.php?controller=DashBoard&action=index"><i class="fa fa-tachometer-alt"></i>Dashboard<span class="notti_coun style-1">4</span></a></li>                                  
-													<li><a href="index.php?controller=DashBoard&action=profile"><i class="fa fa-user-tie"></i>My Profile</a></li>                                 
-													<li><a href="index.php?controller=DashBoard&action=saveProperty"><i class="fa fa-bookmark"></i>Saved Property<span class="notti_coun style-2">7</span></a></li>
-													<li><a href="index.php?controller=DashBoard&action=myProperty"><i class="fa fa-tasks"></i>My Properties</a></li>
-													<li><a href="index.php?controller=DashBoard&action=messages"><i class="fa fa-envelope"></i>Messages<span class="notti_coun style-3">3</span></a></li>
-													<li><a href="index.php?controller=DashBoard&action=package"><i class="fa fa-gift"></i>Choose Package</a></li>
-													<li><a href="index.php?controller=DashBoard&action=newProperty"><i class="fa fa-pen-nib"></i>Submit New Property</a></li>
-													<li><a href="index.php?controller=DashBoard&action=changePassword"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
-													<li><a href="index.php?controller=Logout&action=index"><i class="fa fa-power-off"></i>Logout</a></li>
+													<li><a href="index.php?controller=DashBoard&action=index"><i class="fa fa-tachometer-alt"></i>Trang quản trị<span class="notti_coun style-1">4</span></a></li>                                  
+													<li><a href="index.php?controller=DashBoard&action=profile"><i class="fa fa-user-tie"></i>Hồ sơ cá nhân</a></li>                                 
+													<li><a href="index.php?controller=DashBoard&action=saveProperty"><i class="fa fa-bookmark"></i>Tin cá nhân<span class="notti_coun style-2">7</span></a></li>
+													<li><a href="index.php?controller=DashBoard&action=myProperty"><i class="fa fa-tasks"></i>Nhà của bạn</a></li>
+													<li><a href="index.php?controller=DashBoard&action=messages"><i class="fa fa-envelope"></i>Tin nhắn<span class="notti_coun style-3">3</span></a></li>
+													<li><a href="index.php?controller=DashBoard&action=package"><i class="fa fa-gift"></i>Đăng kí gói</a></li>
+													<li><a href="index.php?controller=DashBoard&action=newProperty"><i class="fa fa-pen-nib"></i>Tạo bài viết</a></li>
+													<li><a href="index.php?controller=DashBoard&action=changePassword"><i class="fa fa-unlock-alt"></i>Đổi mật khẩu</a></li>
+													<li><a href="index.php?controller=Logout&action=index"><i class="fa fa-power-off"></i>Thoát</a></li>
 												</ul>
 											</div>
 										</div>

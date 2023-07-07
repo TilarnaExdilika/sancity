@@ -87,22 +87,24 @@ class UserModel
 
     public function getPropertyByUser($user_id)
     {
-        $query = "SELECT p.*, pi.image_url
+        $query = "SELECT p.*, pi.image_url, u.fullname, u.avatar_url
         FROM properties p
         LEFT JOIN (
             SELECT property_id, MIN(image_url) AS image_url
             FROM property_images
             GROUP BY property_id
         ) pi ON p.property_id = pi.property_id
+        LEFT JOIN users u ON p.user_id = u.user_id
         WHERE p.user_id = :user_id
         ORDER BY p.property_id DESC";
         $statement = $this->db->prepare($query);
         $statement->bindParam(':user_id', $user_id);
         $statement->execute();
         $properties = $statement->fetchAll(PDO::FETCH_ASSOC);
-
+    
         return $properties;
     }
+    
 
     public function countTotalByColumn($columnName, $tableName, $user_id)
     {
