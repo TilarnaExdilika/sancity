@@ -578,6 +578,60 @@ $(document).ready(function() {
 
 </script>
 
+<!-- ============================================================== -->
+<script>
+$(document).ready(function() {
+    $("#btnSaveChanges").click(function(e) {
+        e.preventDefault();
+        
+        var oldPassword = $("input[name='oldPassword']").val();
+        var newPassword = $("input[name='newPassword']").val();
+        var confirmPassword = $("input[name='confirmPassword']").val();
+        
+        // Kiểm tra xác nhận mật khẩu
+        if (newPassword !== confirmPassword) {
+            alert("Mật khẩu mới và mật khẩu xác nhận không khớp.");
+            return;
+        }
+        
+        // Mã hóa mật khẩu bằng MD5
+        var oldPasswordMD5 = md5(oldPassword);
+        var newPasswordMD5 = md5(newPassword);
+        
+        // Gửi Ajax request để đổi mật khẩu
+        $.ajax({
+            url: "app/change_password.php",
+            method: "POST",
+            data: {
+                oldPassword: oldPasswordMD5,
+                newPassword: newPasswordMD5
+            },
+            success: function(response) {
+                if (response === "success") {
+                    alert("Đổi mật khẩu thành công.");
+                } else {
+                    alert("Đổi mật khẩu thất bại. Vui lòng kiểm tra lại mật khẩu cũ.");
+                }
+            },
+            error: function() {
+                alert("Đã xảy ra lỗi. Vui lòng thử lại sau.");
+            }
+        });
+    });
+});
+
+</script>
+<!-- ============================================================== -->
+<script>
+    var priceElements = document.getElementsByClassName('formatted-price');
+    for (var i = 0; i < priceElements.length; i++) {
+        var priceElement = priceElements[i];
+        var price = parseFloat(priceElement.getAttribute('data-price'));
+        var formattedPrice = price.toLocaleString('vi-VN');
+        priceElement.textContent = formattedPrice;
+    }
+</script>
+<!-- ============================================================== -->
 
 </body>
 

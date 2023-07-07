@@ -4,6 +4,14 @@ require '../config/db.php';
 $connection = new connect();
 $db = $connection->getConnection();
 
+function getUrl($params) {
+    $baseUrl = "http://localhost/sancity"; // Địa chỉ gốc của trang web của bạn
+
+    $url = $baseUrl . $params;
+
+    return $url;
+}
+
 // Lấy thông tin từ form và user_id
 $accountTypeId = $_POST['account_type_id'];
 $status = $_POST['status'];
@@ -19,7 +27,9 @@ $stmt->bindParam(':status', $status);
 $stmt->bindParam(':userId', $userId);
 
 if ($stmt->execute()) {
-    echo 'Cập nhật thành công';
+    $url = getUrl("?controller=DashBoard&action=admin_account");
+    echo "<script>window.location.href = '{$url}';</script>";
+    exit();
 } else {
     echo "Lỗi khi cập nhật thông tin.";
 }

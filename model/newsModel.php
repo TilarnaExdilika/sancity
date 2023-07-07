@@ -106,5 +106,39 @@ public function countNewsByTags()
 }
  
 
+public function getAllNewsByUserId($userId)
+{
+    $query = "SELECT nb.*, u.fullname AS author_fullname, u.avatar_url
+              FROM news_blog nb
+              INNER JOIN users u ON nb.author_id = u.user_id
+              WHERE nb.author_id = :userId
+              ORDER BY nb.news_id DESC";
+    $stmt = $this->db->prepare($query);
+    $stmt->bindParam(':userId', $userId);
+    $stmt->execute();
+    $newsList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Lấy danh sách các tag cho mỗi tin tức
+    foreach ($newsList as &$news) {
+        $tagQuery = "SELECT t.tags_name
+                     FROM tags t
+                     INNER JOIN news_tags nt ON t.tags_id = nt.tags_id
+                     WHERE nt.news_id = :newsId";
+        $tagStmt = $this->db->prepare($tagQuery);
+        $tagStmt->bindParam(':newsId', $news['news_id']);
+        $tagStmt->execute();
+        $tags = $tagStmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Thêm danh sách các tag vào mảng $news
+        $news['tags'] = $tags;
+    }
+
+    return $newsList;
 }
+
+
+
+}
+
+
 ?>

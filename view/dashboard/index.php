@@ -107,10 +107,12 @@
                                                         $class = 'label text-danger bg-danger-light';
                                                     }
                                                     ?>
+                                                    
                                                     <td><div class="<?php echo $class; ?>"><?php echo $property['status']; ?></div></td>                
-                                                    <td> <?php echo $property['price']; ?> VND/<?php echo $property['unit']; ?></td>
+                                                    <td><span class="formatted-price" data-price="<?php echo $property['price']; ?>">><?php echo $property['price']; ?></span> VND/<?php echo $property['unit']; ?></td>
                                                     <td><?php echo $property['created_at']; ?></td>  
                                                 </tr>
+                                                
                                             <?php endforeach; ?>
 
                                                 

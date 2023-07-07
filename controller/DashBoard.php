@@ -39,12 +39,22 @@ class DashBoardController
     public function saveProperty()
     {
         $user = $this->user;
+        $userId = $_SESSION["uauth"]["user_id"];
+        // Gọi hàm getAllNewsByUserId để lấy danh sách tin tức của user
+        $newsModel = new NewsModel();
+        $newsList = $newsModel->getAllNewsByUserId($userId);
         require_once 'view/dashboard/saveProperty.php';
     }
 
     public function myProperty()
     {
         $user = $this->user;
+        $user_id = $user['user_id'];
+        
+        // Đếm tổng số bất động sản của người dùng
+        $propertyCount = $this->userModel->countTotalByColumn('user_id', 'properties', $user_id);
+    
+        $properties = $this->userModel->getPropertyByUser($user_id);
         require_once 'view/dashboard/myProperty.php';
     }
 

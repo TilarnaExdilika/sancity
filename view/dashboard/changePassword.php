@@ -26,32 +26,28 @@
                     
                         <!-- Basic Information -->
                         <div class="frm_submit_block">	
-                            <h4>Change Your Password</h4>
+                            <h4>Đổi mật khẩu</h4>
                             <div class="frm_submit_wrap">
                                 <div class="form-row">
-                                
                                     <div class="form-group col-lg-12 col-md-6">
-                                        <label>Old Password</label>
-                                        <input type="password" class="form-control">
+                                        <label>Mật khẩu cũ</label>
+                                        <input type="password" class="form-control" name="oldPassword">
                                     </div>
-                                    
                                     <div class="form-group col-md-6">
-                                        <label>New Password</label>
-                                        <input type="password" class="form-control">
+                                        <label>Mật khẩu mới</label>
+                                        <input type="password" class="form-control" name="newPassword">
                                     </div>
-                                    
                                     <div class="form-group col-md-6">
-                                        <label>Confirm password</label>
-                                        <input type="password" class="form-control">
+                                        <label>Nhập lại mật khẩu mới</label>
+                                        <<input type="password" class="form-control" name="confirmPassword">
                                     </div>
-                                    
                                     <div class="form-group col-lg-12 col-md-12">
-                                        <button class="btn btn-theme" type="submit">Save Changes</button>
+                                        <button id="btnSaveChanges" class="btn btn-theme" type="submit">Lưu thay đổi</button>
                                     </div>
-                                    
                                 </div>
                             </div>
                         </div>
+
                         
                     </div>
                 
