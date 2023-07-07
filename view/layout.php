@@ -647,7 +647,14 @@ $(document).ready(function() {
     }
 </script>
 <!-- ============================================================== -->
+<script>
+var imageCount = <?php echo $imageCount; ?>;
+var percentage = (imageCount / 1000) * 100;
 
+document.getElementById("percentageSpan").textContent = '(' + imageCount + ') (' + percentage.toFixed(1) + '%)';
+
+
+</script>
 <!-- ============================================================== -->
 
 </body>

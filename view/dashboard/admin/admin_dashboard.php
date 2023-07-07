@@ -50,7 +50,16 @@
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="dashboard_stats_wrap widget-1">
-                                <div class="dashboard_stats_wrap_content"><h4><?php echo $imageCount; ?> (2%)</h4> <span>Ảnh đã đăng</span></div>
+                                <div class="dashboard_stats_wrap_content"><h4 id="totalImageCount"><?php echo $imageCount; ?> <span id="percentageSpan">
+                                <script>
+                                var imageCount = <?php echo $imageCount; ?>;
+                                var percentage = (imageCount / 2456) * 100;
+
+                                document.getElementById("percentageSpan").textContent = '(' + percentage.toFixed(1) + '% Memory)';
+
+
+                                </script>
+                                </span></h4>  <span>Ảnh đã đăng</span></div>
                                 <div class="dashboard_stats_wrap-icon"><i class="fa fa-image"></i></div>
                             </div>	
                         </div>

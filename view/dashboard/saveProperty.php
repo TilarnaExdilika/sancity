@@ -34,8 +34,9 @@
 
                             <tbody>
                                 <!-- Item #1 -->
+                                <?php foreach ($newsList as $news): ?>
                                 <tr>
-                                    <?php foreach ($newsList as $news): ?>
+                                    
                                         <td class="dashboard_propert_wrapper">
                                             <img src="public/upload/news/<?php echo $news['news_image']; ?>" alt="">
                                             <div class="title">
@@ -51,9 +52,9 @@
                                         <td class="action">
                                             <a href="#" class="delete"><i class="ti-close"></i> Delete</a>
                                         </td>
-                                    <?php endforeach; ?>
+                                    
                                 </tr>
-
+                            <?php endforeach; ?>
                             </tbody>
                         </table>
                         
