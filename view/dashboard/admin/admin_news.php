@@ -1,0 +1,77 @@
+<!-- ============================ Page Title Start================================== -->
+<div class="page-title" style="background:#f4f4f4 url(public/img/slider-1.jpg);" data-overlay="5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================ Page Title End ================================== -->
+
+
+<!-- ============================ User Dashboard ================================== -->
+<section class="gray pt-5 pb-5">
+    <div class="container-fluid">
+                    
+        <div class="row">
+            
+            <!-- dashboard navbar start -->
+            <?php require_once 'sidebar.php'; ?>
+            <!-- dashboard navbar end -->
+            
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <div class="dashboard-body">
+                
+                    <div class="dashboard-wraper">
+                    
+                        <!-- Bookmark Property -->
+                        <div class="frm_submit_block">	
+                            <h4>Danh sách tin tức</h4>
+                        </div>
+                        
+                        <table class="property-table-wrap responsive-table bkmark">
+
+                            <tbody>
+                                <!-- Item #1 -->
+                                <?php foreach ($newsList as $news): ?>
+                                    <tr>
+                                        <td class="dashboard_propert_wrapper">
+                                            <img src="public/upload/news/<?php echo $news['news_image']; ?>" alt="">
+                                            <div class="title">
+                                                <h4><a href="#"><?php echo $news['title']; ?></a></h4>
+                                                <span>Tác giả: <?php echo $news['author_fullname']; ?></span>
+                                                <?php foreach (explode(',', $news['tags']) as $tag): ?>
+                                                    <span class="table-property-price">
+                                                        <?php echo trim($tag) . ' '; ?>
+                                                    </span>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </td>
+                                        <td class="action">
+                                            <a href="#" class="delete"><i class="ti-close"></i> Delete</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 mt-4">
+                            <footer class="text-center">
+                                <p class="mb-0"></p>
+                            </footer>
+                        </div>
+                    </div>
+                    <!-- row -->
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- ============================ User Dashboard End ================================== -->

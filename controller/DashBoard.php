@@ -143,6 +143,14 @@ class DashBoardController
         require_once 'view/dashboard/admin/admin_account_per.php';
     }
 
+    public function admin_news()
+    {
+        $user = $this->user;
+        $newsModel = new NewsModel();
+        $newsList = $newsModel->getAllNews();
+        require_once 'view/dashboard/admin/admin_news.php';
+    }
+
 }
 
 ?>

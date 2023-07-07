@@ -84,13 +84,19 @@
                                                     <div class="prt_leads"><span>Tin gần đây</span></div>
                                                     <div class="prt_leads_list">
                                                     <ul>
-                                                        <?php $propertyCount = count($user['properties']); ?>
-                                                        <?php foreach ($user['properties'] as $property): ?>
-                                                            <?php if (!empty($property['image_url'])): ?>
-                                                                <li><a href="#"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid img-circle" alt="" /></a></li>
-                                                            <?php endif; ?>
-                                                        <?php endforeach; ?>
-                                                        <li><a href="#" class="leades_more"><?php echo $propertyCount; ?>+</a></li>
+                                                    <?php $propertyCount = count($user['properties']); ?>
+                                                    <?php $propertyLimit = 4; // Giới hạn số lượng dữ liệu hiển thị ?>
+                                                    <?php $propertyDisplayed = 0; // Biến đếm số lượng dữ liệu đã hiển thị ?>
+                                                    <?php foreach ($user['properties'] as $property): ?>
+                                                        <?php if (!empty($property['image_url'])): ?>
+                                                            <?php if ($propertyDisplayed >= $propertyLimit) break; // Ngừng lặp khi đã hiển thị đủ số lượng dữ liệu ?>
+                                                            <li><a href="#"><img src="public/upload/properties/<?php echo $property['image_url']; ?>" class="img-fluid img-circle" alt="" /></a></li>
+                                                            <?php $propertyDisplayed++; ?>
+                                                        <?php endif; ?>
+                                                    <?php endforeach; ?>
+                                                    <?php if ($propertyCount > $propertyLimit): ?>
+                                                        <li><a href="#" class="leades_more"><?php echo $propertyCount - $propertyLimit; ?>+</a></li>
+                                                    <?php endif; ?>
                                                     </ul>
                                                     </div>
                                                 </td>

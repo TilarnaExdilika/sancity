@@ -27,8 +27,8 @@ require_once "model/Property.php";
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
-
-
+	<!-- Custom JS -->
+	<!-- Title -->
     <title>SANCITY</title>
 	<style>
     .custom-datepicker {
@@ -459,25 +459,11 @@ require_once "model/Property.php";
 <!-- This page plugins -->
 <!-- ============================================================== -->
 <script src="public/js/ajaxjs.js" ></script>
-<script>
-        $(document).ready(function() {
-            var availableCities = [
-                "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước",
-                "Bình Thuận", "Cà Mau", "Cần Thơ", "Cao Bằng", "Đà Nẵng", "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai",
-                "Hà Giang", "Hà Nam", "Hà Nội", "Hà Tĩnh", "Hải Dương", "Hải Phòng", "Hậu Giang", "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang",
-                "Kon Tum", "Lai Châu", "Lâm Đồng", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định", "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ",
-                "Phú Yên", "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị", "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình",
-                "Thái Nguyên", "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "TP. Hồ Chí Minh", "Trà Vinh", "Tuyên Quang", "Vĩnh Long", "Vĩnh Phúc",
-                "Yên Bái"
-            ];
-
-            $("#city-input").autocomplete({
-                source: availableCities
-            });
-        });
-    </script>
 <!-- ============================================================== -->
-<script>
+
+
+<!-- ============================================================== -->
+<!-- <script>
 // Format price input
 document.getElementById('price').addEventListener('input', function (e) {
     // Remove any non-digit characters
@@ -488,7 +474,7 @@ document.getElementById('price').addEventListener('input', function (e) {
     // Update the input value
     this.value = value;
 });
-</script>
+</script> -->
 <!-- ============================================================== -->
  <script>
     tinymce.init({
@@ -647,14 +633,7 @@ $(document).ready(function() {
     }
 </script>
 <!-- ============================================================== -->
-<script>
-var imageCount = <?php echo $imageCount; ?>;
-var percentage = (imageCount / 1000) * 100;
 
-document.getElementById("percentageSpan").textContent = '(' + imageCount + ') (' + percentage.toFixed(1) + '%)';
-
-
-</script>
 <!-- ============================================================== -->
 
 </body>

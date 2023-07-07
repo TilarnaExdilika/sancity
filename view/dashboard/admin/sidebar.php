@@ -16,12 +16,12 @@ require_once("verify.php");
             <ul>
                 <!-- thêm active vào li tương ứng với url đang chạy -->
                 <li><a href="index.php?controller=DashBoard&action=admin_dashboard"><i class="fa fa-tachometer-alt"></i>Trang chủ<span class="notti_coun style-1">4</span></a></li>
-                <li><a href="index.php?controller=DashBoard&action=admin_account"><i class="fa fa-user-tie"></i>Quản lý tài khoản</a></li>
-                <li><a href="index.php?controller=DashBoard&action=saveProperty"><i class="fa fa-bookmark"></i>Quản lý nhân viên<span class="notti_coun style-2">7</span></a></li>
-                <li><a href="index.php?controller=DashBoard&action=myProperty"><i class="fa fa-tasks"></i>Quản lý bất động sản</a></li>
-                <li><a href="index.php?controller=DashBoard&action=messages"><i class="fa fa-envelope"></i>Quản lý tin tức <span class="notti_coun style-3">3</span></a></li>
+                <li><a href="index.php?controller=DashBoard&action=admin_account"><i class="fa fa-users"></i>Quản lý tài khoản</a></li>
+                <li><a href="index.php?controller=DashBoard&action=admin_news"><i class="fa fa-newspaper"></i>Quản lý tin tức<span class="notti_coun style-2">7</span></a></li>
+                <li><a href="index.php?controller=DashBoard&action=myProperty"><i class="fa fa-folder"></i>Quản lý bất động sản</a></li>
+                <li><a href="index.php?controller=DashBoard&action=messages"><i class="fa fa-list-alt"></i>Quản lý giao dịch <span class="notti_coun style-3">3</span></a></li>
                 <li><a href="index.php?controller=DashBoard&action=package"><i class="fa fa-gift"></i>Quản lý gói dịch vụ<span class="expiration">10 days left</span></a></li>
-                <li><a href="index.php?controller=DashBoard&action=newProperty"><i class="fa fa-pen-nib"></i>Tùy chọn giao diện</a></li>
+                <li><a href="index.php?controller=DashBoard&action=newProperty"><i class="fa fa-cogs"></i>Tùy chọn giao diện</a></li>
                 <li><a href="index.php?controller=DashBoard&action=changePassword"><i class="fa fa-unlock-alt"></i>Đổi mật khẩu</a></li>
             </ul>
         </div>

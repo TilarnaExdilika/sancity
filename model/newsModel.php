@@ -20,13 +20,18 @@ class NewsModel
 
     public function getAllNews()
     {
-        $query = "SELECT nb.*, u.fullname AS author_fullname, u.avatar_url
+        $query = "SELECT nb.*, u.fullname AS author_fullname, u.avatar_url,
+                  GROUP_CONCAT(t.tags_name) AS tags
                   FROM news_blog nb
                   INNER JOIN users u ON nb.author_id = u.user_id
+                  LEFT JOIN news_tags nt ON nb.news_id = nt.news_id
+                  LEFT JOIN tags t ON nt.tags_id = t.tags_id
+                  GROUP BY nb.news_id
                   ORDER BY nb.news_id DESC";
         $news = $this->db->query($query)->fetchAll(PDO::FETCH_ASSOC);
         return $news;
     }
+    
     
     
     public function getNewsWithDetails($newsId)

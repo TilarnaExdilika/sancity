@@ -97,6 +97,7 @@
                                                 </td>
                                                 <td class="m2_hide">
                                                 <?php
+                                                date_default_timezone_set('Asia/Ho_Chi_Minh');
                                                 // Lấy thời gian hiện tại
                                                 $currentDateTime = new DateTime();
                                                 // Chuyển đổi thời gian tạo của bất động sản thành đối tượng DateTime
