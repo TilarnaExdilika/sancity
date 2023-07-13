@@ -150,6 +150,13 @@ class DashBoardController
         $newsList = $newsModel->getAllNews();
         require_once 'view/dashboard/admin/admin_news.php';
     }
+    public function admin_property()
+    {
+        $user = $this->user;
+        // Lấy danh sách bất động sản và dữ liệu người dùng tương ứng
+        $properties = $this->userModel->getAllPropertyAdmin();
+        require_once 'view/dashboard/admin/admin_property.php';
+    }
 
 }
 

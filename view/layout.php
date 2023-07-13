@@ -70,6 +70,21 @@ require_once "model/Property.php";
     .custom-datepicker .datepicker-years table tr td:hover {
       background-color: #666;
     }
+	.image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Tỷ lệ 3:4 */
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
   </style>
 </head>
 

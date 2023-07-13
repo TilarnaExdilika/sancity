@@ -17,7 +17,7 @@
         <div class="row">
             
             <!-- dashboard navbar start -->
-            <?php require_once 'navbar.php'; ?>
+            <?php require_once 'sidebar.php'; ?>
             <!-- dashboard navbar end -->
             
             <div class="col-lg-9 col-md-8 col-sm-12">
@@ -138,8 +138,8 @@
                                                     <div class="_leads_view_title"><span>Sancity</span></div>
                                                 </td>
                                                 <td>
-                                                    <div class="_leads_status"><span class="<?php echo ($property['status'] === 'Thuê') ? 'expire' : (($property['status'] === 'Bán') ? 'active' : ''); ?>">
-                                                            <?php echo $property['status']; ?>
+                                                    <div class="_leads_status"><span class="<?php echo ($property['property_status'] === 'Thuê') ? 'expire' : (($property['property_status'] === 'Bán') ? 'active' : ''); ?>">
+                                                            <?php echo $property['property_status']; ?>
                                                         </span>
                                                         </div>
                                                     <div class="_leads_view_title"><span><?php echo date('d M y', strtotime($property['created_at'])); ?></span></div>

@@ -40,7 +40,8 @@
                                             <img src="public/upload/news/<?php echo $news['news_image']; ?>" alt="">
                                             <div class="title">
                                                 <h4><a href="#"><?php echo $news['title']; ?></a></h4>
-                                                <span>Tác giả: <?php echo $news['author_fullname']; ?></span>
+                                                <span><i class="fa fa-user-circle"></i> Tác giả: <?php echo $news['author_fullname']; ?></span>
+                                                <span><i class="fa fa-eye"></i> <?php echo $news['view_count']; ?> lượt xem</span>
                                                 <?php foreach (explode(',', $news['tags']) as $tag): ?>
                                                     <span class="table-property-price">
                                                         <?php echo trim($tag) . ' '; ?>

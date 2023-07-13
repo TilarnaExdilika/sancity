@@ -246,7 +246,26 @@ class UserModel
         return $users;
     }
     
+    public function getAllPropertyAdmin()
+    {
+        $query = "SELECT p.*, pi.image_url, u.fullname, u.avatar_url, p.status AS property_status
+        FROM properties p
+        LEFT JOIN (
+            SELECT property_id, MIN(image_url) AS image_url
+            FROM property_images
+            GROUP BY property_id
+        ) pi ON p.property_id = pi.property_id
+        LEFT JOIN users u ON p.user_id = u.user_id
+        ORDER BY p.property_id DESC";
     
+        $result = $this->db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $result;
+    }
+    
+    
+    
+
 
     
 

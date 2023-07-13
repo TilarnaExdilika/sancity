@@ -31,10 +31,17 @@
             <div class="col-lg-4 col-md-6">
                 <div class="grid_blog_box">
                     
-                    <div class="gtid_blog_thumb">
-                        <a href="index.php?controller=Blog&action=blog&newsId=<?php echo $news['news_id']; ?>"><img src="public/upload/news/<?php echo $news['news_image']; ?>" class="img-fluid" alt="" /></a>
-                        <div class="gtid_blog_info"><span><?php echo date('d', strtotime($news['created_at'])); ?></span><?php echo date('F', strtotime($news['created_at'])); ?> <?php echo date('Y', strtotime($news['created_at'])); ?></div>
-                    </div>								
+                <div class="gtid_blog_thumb">
+                    <a href="index.php?controller=Blog&action=blog&newsId=<?php echo $news['news_id']; ?>">
+                        <div class="image-wrapper">
+                            <img src="public/upload/news/<?php echo $news['news_image']; ?>" class="img-fluid" alt="" />
+                        </div>
+                    </a>
+                    <div class="gtid_blog_info">
+                        <span><?php echo date('d', strtotime($news['created_at'])); ?></span><?php echo date('F', strtotime($news['created_at'])); ?> <?php echo date('Y', strtotime($news['created_at'])); ?>
+                    </div>
+                </div>
+							
                     
                     <div class="blog-body">
                         <h4 class="bl-title"><a href="index.php?controller=Blog&action=blog&newsId=<?php echo $news['news_id']; ?>">
